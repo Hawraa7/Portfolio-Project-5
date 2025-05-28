@@ -1,0 +1,170 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "sku": "prod001",
+      "name": "Men's Performance Activewear Set",
+      "description": "Breathable and moisture-wicking activewear for gym workouts.",
+      "price": 49.99,
+      "category": 2,
+      "rating": 4.5,
+      "image_url": "products/activewear1.jpg",
+      "image": "activewear1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "sku": "prod002",
+      "name": "Women's Lightweight Running Top",
+      "description": "Comfortable and stylish top perfect for running or training.",
+      "price": 29.99,
+      "category": 3,
+      "rating": 4.5,
+      "image_url": "products/tops1.jpg",
+      "image": "tops1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "sku": "prod003",
+      "name": "High-Performance Gym Shorts",
+      "description": "Durable and flexible gym shorts with elastic waistband.",
+      "price": 24.99,
+      "category": 4,
+      "rating": 4.5,
+      "image_url": "products/bottoms1.jpg",
+      "image": "bottoms1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "sku": "prod004",
+      "name": "Adjustable Dumbbell Set",
+      "description": "Compact and adjustable dumbbells for strength training.",
+      "price": 99.99,
+      "category": 6,
+      "rating": 4.5,
+      "image_url": "products/weights1.jpg",
+      "image": "weights1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "sku": "prod005",
+      "name": "Treadmill Machine",
+      "description": "Electric treadmill with speed and incline controls.",
+      "price": 499.99,
+      "category": 7,
+      "rating": 4.5,
+      "image_url": "products/cardio1.jpg",
+      "image": "cardio1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "sku": "prod006",
+      "name": "Yoga Mat",
+      "description": "Non-slip, cushioned yoga mat for all fitness levels.",
+      "price": 19.99,
+      "category": 8,
+      "rating": 4.5,
+      "image_url": "products/mats1.jpg",
+      "image": "mats1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "sku": "prod007",
+      "name": "Whey Protein Powder",
+      "description": "High-quality whey protein for muscle recovery.",
+      "price": 39.99,
+      "category": 10,
+      "rating": 4.5,
+      "image_url": "products/protein1.jpg",
+      "image": "protein1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+      "sku": "prod008",
+      "name": "Pre-Workout Energy Booster",
+      "description": "Boost your workouts with this powerful pre-workout formula.",
+      "price": 29.99,
+      "category": 11,
+      "rating": 4.5,
+      "image_url": "products/preworkout1.jpg",
+      "image": "preworkout1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+      "sku": "prod009",
+      "name": "Multivitamin Supplement",
+      "description": "Daily multivitamin to support overall health.",
+      "price": 19.99,
+      "category": 12,
+      "rating": 4.5,
+      "image_url": "products/vitamins1.jpg",
+      "image": "vitamins1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+      "sku": "prod010",
+      "name": "New Balance Running Shoes",
+      "description": "Comfortable running shoes with excellent support.",
+      "price": 89.99,
+      "category": 14,
+      "rating": 4.5,
+      "image_url": "products/newarrivals1.jpg",
+      "image": "newarrivals1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+      "sku": "prod011",
+      "name": "Discounted Resistance Bands",
+      "description": "Grab these resistance bands at a special price.",
+      "price": 14.99,
+      "category": 15,
+      "rating": 4.5,
+      "image_url": "products/deals1.jpg",
+      "image": "deals1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+      "sku": "prod012",
+      "name": "Clearance Yoga Blocks",
+      "description": "Yoga blocks available at clearance prices.",
+      "price": 9.99,
+      "category": 16,
+      "rating": 4.5,
+      "image_url": "products/clearance1.jpg",
+      "image": "clearance1.jpg"
+    }
+  }
+]
