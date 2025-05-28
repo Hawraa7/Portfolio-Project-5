@@ -1,0 +1,102 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Apply background only to homepage-background div */
+.homepage-background {
+    background: url('media\background_image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px); /* Adjust for your fixed header height */
+    color: #fff; /* Default text color to white */
+    display: flex;
+    align-items: center; /* Vertically center content */
+}
+
+/* Make container fill the height */
+.homepage-background .container {
+    height: 100%;
+}
+
+/* Utility icons */
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+/* Logo font style */
+.logo-font {
+    text-transform: uppercase;
+}
+
+/* Logo link width */
+.main-logo-link {
+    width: fit-content;
+}
+
+/* Shop button style */
+.shop-now-button {
+    background: black;
+    color: white;
+    min-width: 260px;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+.btn-black {
+    background: black;
+    color: white;
+    border: none;
+}
+
+/* Button hover/focus states */
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
+    outline: none;
+}
+
+/* Text black utility */
+.text-black {
+    color: #000 !important;
+}
+
+/* Border black utility */
+.border-black {
+    border: 1px solid black !important;
+}
+
+/* -------------------------------- Media Queries */
+
+/* Larger container max width on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* Fixed header on medium screens and larger */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    /* Padding to avoid content hidden behind header */
+    .header-container {
+        padding-top: 164px;
+    }
+}
