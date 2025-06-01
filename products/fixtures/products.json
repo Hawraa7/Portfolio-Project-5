@@ -1,170 +1,1929 @@
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "sku": "prod002",
+    "name": "Women's Lightweight Running Top",
+    "description": "Comfortable and stylish top perfect for running or training.",
+    "price": 29.99,
+    "category": 3,
+    "rating": 4.5,
+    "image_url": "media/adidas-pink-outfit.jpg",
+    "image": "adidas-pink-outfit.jpg"
+  }
+}
+  {
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "sku": "adidas001",
+    "name": "Adidas Shoes",
+    "description": "Classic Adidas shoes that blend comfort, performance, and everyday style.",
+    "price": 79.99,
+    "category": 3,
+    "rating": 4.6,
+    "image_url": "media/adidas-shoes.jpg",
+    "image": "adidas-shoes.jpg"
+  }
+}
+{
+  "model": "products.product",
+  "pk": 3,
+  "fields": {
+    "sku": "adidas001",
+    "name": "Adidas Shorts",
+    "description": "Breathable and lightweight Adidas shorts, perfect for training or casual wear.",
+    "price": 34.99,
+    "category": 3,
+    "rating": 4.5,
+    "image_url": "media/adidas-shorts.jpg",
+    "image": "adidas-shorts.jpg"
+  }
+}
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "sku": "adidas001",
+    "name": "Adidas Outfit",
+    "description": "Affordable and stylish Adidas outfit perfect for training or everyday wear.",
+    "price": 49.99,
+    "category": 3,
+    "rating": 4.5,
+    "image_url": "media/affordable.outfit.jpg",
+    "image": "affordable.outfit.jpg"
+  }
+}
+{
+  "model": "products.product",
+  "pk": 5,
+  "fields": {
+    "sku": "adidas001",
+    "name": "Affordable Shoes",
+    "description": "High-quality, budget-friendly shoes suitable for everyday wear.",
+    "price": 59.99,
+    "category": 3,
+    "rating": 4.4,
+    "image_url": "media/affordable-shoes.jpg",
+    "image": "affordable-shoes.jpg"
+  }
+}
+{
+  "model": "products.product",
+  "pk": 6,
+  "fields": {
+    "sku": "avocado-vit001",
+    "name": "Avocado Vitamin Supplement",
+    "description": "Nutritious avocado-based vitamin supplement designed to support gym performance and recovery.",
+    "price": 24.99,
+    "category": 5,
+    "rating": 4.7,
+    "image_url": "media/avocado.jpg",
+    "image": "avocado.jpg"
+  }
+}
 [
-  {
-    "model": "products.product",
-    "pk": 1,
-    "fields": {
-      "sku": "prod001",
-      "name": "Men's Performance Activewear Set",
-      "description": "Breathable and moisture-wicking activewear for gym workouts.",
-      "price": 49.99,
-      "category": 2,
-      "rating": 4.5,
-      "image_url": "products/activewear1.jpg",
-      "image": "activewear1.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 2,
-    "fields": {
-      "sku": "prod002",
-      "name": "Women's Lightweight Running Top",
-      "description": "Comfortable and stylish top perfect for running or training.",
-      "price": 29.99,
-      "category": 3,
-      "rating": 4.5,
-      "image_url": "products/tops1.jpg",
-      "image": "tops1.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 3,
-    "fields": {
-      "sku": "prod003",
-      "name": "High-Performance Gym Shorts",
-      "description": "Durable and flexible gym shorts with elastic waistband.",
-      "price": 24.99,
-      "category": 4,
-      "rating": 4.5,
-      "image_url": "products/bottoms1.jpg",
-      "image": "bottoms1.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 4,
-    "fields": {
-      "sku": "prod004",
-      "name": "Adjustable Dumbbell Set",
-      "description": "Compact and adjustable dumbbells for strength training.",
-      "price": 99.99,
-      "category": 6,
-      "rating": 4.5,
-      "image_url": "products/weights1.jpg",
-      "image": "weights1.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 5,
-    "fields": {
-      "sku": "prod005",
-      "name": "Treadmill Machine",
-      "description": "Electric treadmill with speed and incline controls.",
-      "price": 499.99,
-      "category": 7,
-      "rating": 4.5,
-      "image_url": "products/cardio1.jpg",
-      "image": "cardio1.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 6,
-    "fields": {
-      "sku": "prod006",
-      "name": "Yoga Mat",
-      "description": "Non-slip, cushioned yoga mat for all fitness levels.",
-      "price": 19.99,
-      "category": 8,
-      "rating": 4.5,
-      "image_url": "products/mats1.jpg",
-      "image": "mats1.jpg"
-    }
-  },
   {
     "model": "products.product",
     "pk": 7,
     "fields": {
-      "sku": "prod007",
-      "name": "Whey Protein Powder",
-      "description": "High-quality whey protein for muscle recovery.",
-      "price": 39.99,
-      "category": 10,
-      "rating": 4.5,
-      "image_url": "products/protein1.jpg",
-      "image": "protein1.jpg"
+      "sku": "bands001",
+      "name": "Fitness Resistance Bands Basic",
+      "description": "Durable and versatile resistance bands perfect for strength training and flexibility exercises.",
+      "price": 19.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/bands.jpg",
+      "image": "bands.jpg"
     }
   },
   {
     "model": "products.product",
     "pk": 8,
     "fields": {
-      "sku": "prod008",
-      "name": "Pre-Workout Energy Booster",
-      "description": "Boost your workouts with this powerful pre-workout formula.",
-      "price": 29.99,
-      "category": 11,
-      "rating": 4.5,
-      "image_url": "products/preworkout1.jpg",
-      "image": "preworkout1.jpg"
+      "sku": "bands002",
+      "name": "Fitness Resistance Band Set 1",
+      "description": "Durable resistance bands set perfect for strength training and flexibility exercises.",
+      "price": 21.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/bands1.jpg",
+      "image": "bands1.jpg"
     }
   },
   {
     "model": "products.product",
     "pk": 9,
     "fields": {
-      "sku": "prod009",
-      "name": "Multivitamin Supplement",
-      "description": "Daily multivitamin to support overall health.",
-      "price": 19.99,
-      "category": 12,
-      "rating": 4.5,
-      "image_url": "products/vitamins1.jpg",
-      "image": "vitamins1.jpg"
+      "sku": "bands003",
+      "name": "Fitness Resistance Band Set 2",
+      "description": "High-quality resistance bands designed for versatile workouts and muscle toning.",
+      "price": 22.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/bands2.jpg",
+      "image": "bands2.jpg"
     }
-  },
+  }
+]
+[
   {
     "model": "products.product",
     "pk": 10,
     "fields": {
-      "sku": "prod010",
-      "name": "New Balance Running Shoes",
-      "description": "Comfortable running shoes with excellent support.",
-      "price": 89.99,
-      "category": 14,
+      "sku": "beijset001",
+      "name": "Beij Set",
+      "description": "Complete Beij workout set for effective strength and conditioning training.",
+      "price": 59.99,
+      "category": 5,
       "rating": 4.5,
-      "image_url": "products/newarrivals1.jpg",
-      "image": "newarrivals1.jpg"
+      "image_url": "media/beij-set.jpg",
+      "image": "beij-set.jpg"
     }
   },
   {
     "model": "products.product",
     "pk": 11,
     "fields": {
-      "sku": "prod011",
-      "name": "Discounted Resistance Bands",
-      "description": "Grab these resistance bands at a special price.",
-      "price": 14.99,
-      "category": 15,
-      "rating": 4.5,
-      "image_url": "products/deals1.jpg",
-      "image": "deals1.jpg"
+      "sku": "bicycle001",
+      "name": "Exercise Bicycle",
+      "description": "Indoor exercise bicycle designed for cardio workouts and endurance training.",
+      "price": 299.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/bicycle.jpg",
+      "image": "bicycle.jpg"
     }
-  },
+  }
+]
+[
   {
     "model": "products.product",
     "pk": 12,
     "fields": {
-      "sku": "prod012",
-      "name": "Clearance Yoga Blocks",
-      "description": "Yoga blocks available at clearance prices.",
-      "price": 9.99,
-      "category": 16,
-      "rating": 4.5,
-      "image_url": "products/clearance1.jpg",
-      "image": "clearance1.jpg"
+      "sku": "blackbands001",
+      "name": "Black Resistance Bands",
+      "description": "Strong and durable black resistance bands suitable for all levels of fitness training.",
+      "price": 22.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/black-bands.jpg",
+      "image": "black-bands.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+      "sku": "blackblocks001",
+      "name": "Black Yoga Blocks",
+      "description": "High-density black yoga blocks to support stability and improve yoga poses.",
+      "price": 15.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/black-blocks.jpg",
+      "image": "black-blocks.jpg"
     }
   }
 ]
+[
+  {
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+      "sku": "blackmat001",
+      "name": "Black Yoga Mat",
+      "description": "Premium black yoga mat providing excellent grip and cushioning for all yoga levels.",
+      "price": 39.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/black-mat.jpg",
+      "image": "black-mat.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+      "sku": "blackshoes001",
+      "name": "Black Shoes",
+      "description": "Sleek and comfortable black shoes perfect for training and casual wear.",
+      "price": 89.99,
+      "category": 3,
+      "rating": 4.7,
+      "image_url": "media/black-shoes.jpg",
+      "image": "black-shoes.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 16,
+    "fields": {
+      "sku": "blackshort001",
+      "name": "Black Training Shorts",
+      "description": "Lightweight and breathable black training shorts suitable for all workout sessions.",
+      "price": 29.99,
+      "category": 3,
+      "rating": 4.5,
+      "image_url": "media/black-short.jpg",
+      "image": "black-short.jpg"
+    }
+  }
+]
+[
+  {
+    "model": "products.product",
+    "pk": 17,
+    "fields": {
+      "sku": "blackshort001",
+      "name": "Black Training Shorts 1",
+      "description": "Lightweight and breathable black training shorts perfect for any workout.",
+      "price": 29.99,
+      "category": 3,
+      "rating": 4.5,
+      "image_url": "media/black-short1.jpg",
+      "image": "black-short1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 18,
+    "fields": {
+      "sku": "blackshort002",
+      "name": "Black Training Shorts 2",
+      "description": "Comfortable and durable black shorts designed for training and sports.",
+      "price": 31.99,
+      "category": 3,
+      "rating": 4.6,
+      "image_url": "media/black-short2.jpg",
+      "image": "black-short2.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 19,
+    "fields": {
+      "sku": "blackshort003",
+      "name": "Black Training Shorts 3",
+      "description": "Stylish and functional black shorts ideal for high-intensity workouts.",
+      "price": 28.99,
+      "category": 3,
+      "rating": 4.5,
+      "image_url": "media/black-short3.jpg",
+      "image": "black-short3.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 20,
+    "fields": {
+      "sku": "blackshort004",
+      "name": "Black Training Shorts 4",
+      "description": "Premium black shorts designed for maximum comfort during training sessions.",
+      "price": 33.99,
+      "category": 3,
+      "rating": 4.7,
+      "image_url": "media/black-short4.jpg",
+      "image": "black-short4.jpg"
+    }
+  }
+]
+[
+  {
+    "model": "products.product",
+    "pk": 16,
+    "fields": {
+      "sku": "black001",
+      "name": "Black Fitness Vitamin",
+      "description": "Versatile black fitness vitamin suitable for various workouts.",
+      "price": 25.99,
+      "category": 5,
+      "rating": 4.5,
+      "image_url": "media/black.jpg",
+      "image": "black.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 17,
+    "fields": {
+      "sku": "blackshoes002",
+      "name": "Black Training Shoes",
+      "description": "Comfortable and stylish black training shoes for daily workouts.",
+      "price": 89.99,
+      "category": 3,
+      "rating": 4.7,
+      "image_url": "media/black-shoes.jpg",
+      "image": "black-shoes.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 18,
+    "fields": {
+      "sku": "blocks001",
+      "name": "Yoga Blocks Set 1",
+      "description": "High-density yoga blocks to assist with stretching and balance.",
+      "price": 15.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/blocks.jpg",
+      "image": "blocks.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 19,
+    "fields": {
+      "sku": "blocks002",
+      "name": "Yoga Blocks Set 2",
+      "description": "Durable yoga blocks for enhanced stability and support.",
+      "price": 16.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/blocks1.jpg",
+      "image": "blocks1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 20,
+    "fields": {
+      "sku": "blocks003",
+      "name": "Yoga Blocks Set 3",
+      "description": "Lightweight yoga blocks ideal for all skill levels.",
+      "price": 14.99,
+      "category": 5,
+      "rating": 4.5,
+      "image_url": "media/blocks2.jpg",
+      "image": "blocks2.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 21,
+    "fields": {
+      "sku": "blocks004",
+      "name": "Yoga Blocks Set 4",
+      "description": "Ergonomic yoga blocks designed for comfort and durability.",
+      "price": 17.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/blocks3.jpg",
+      "image": "blocks3.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 22,
+    "fields": {
+      "sku": "blocks005",
+      "name": "Yoga Blocks Set 5",
+      "description": "Premium yoga blocks for enhanced workout support.",
+      "price": 19.99,
+      "category": 5,
+      "rating": 4.9,
+      "image_url": "media/blocks4.jpg",
+      "image": "blocks4.jpg"
+    }
+  }
+]
+[
+  {
+    "model": "products.product",
+    "pk": 23,
+    "fields": {
+      "sku": "bluebands001",
+      "name": "Blue Resistance Bands",
+      "description": "Durable blue resistance bands perfect for strength training and flexibility.",
+      "price": 20.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/blue-bands.jpg",
+      "image": "blue-bands.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 24,
+    "fields": {
+      "sku": "bluebands002",
+      "name": "Blue Resistance Bands Set 1",
+      "description": "Complete set of blue resistance bands for versatile workouts.",
+      "price": 22.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/blue-bands1.jpg",
+      "image": "blue-bands1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 25,
+    "fields": {
+      "sku": "blueblocks001",
+      "name": "Blue Yoga Blocks",
+      "description": "High-density blue yoga blocks to improve your stability and flexibility.",
+      "price": 17.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/blue-blocks.jpg",
+      "image": "blue-blocks.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 26,
+    "fields": {
+      "sku": "bluedumbells001",
+      "name": "Blue Dumbbells",
+      "description": "Ergonomic blue dumbbells ideal for strength training exercises.",
+      "price": 34.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/blue-dumbells.jpg",
+      "image": "blue-dumbells.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 27,
+    "fields": {
+      "sku": "blueoutfit001",
+      "name": "Blue Fitness Outfit",
+      "description": "Comfortable and stylish blue fitness outfit perfect for workouts and casual wear.",
+      "price": 49.99,
+      "category": 3,
+      "rating": 4.6,
+      "image_url": "media/blue-outfit.jpg",
+      "image": "blue-outfit.jpg"
+    }
+  }
+  {
+    "model": "products.product",
+    "pk": 28,
+    "fields": {
+      "sku": "blueset001",
+      "name": "Blue Fitness Set",
+      "description": "Complete blue fitness set including essential workout gear.",
+      "price": 79.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/blue-set.jpg",
+      "image": "blue-set.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 29,
+    "fields": {
+      "sku": "blueset002",
+      "name": "Blue Fitness Set 1",
+      "description": "Extended blue fitness set for versatile training routines.",
+      "price": 89.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/blue-set1.jpg",
+      "image": "blue-set1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 30,
+    "fields": {
+      "sku": "blueshoes001",
+      "name": "Blue Running Shoes",
+      "description": "Lightweight and comfortable blue running shoes designed for performance.",
+      "price": 99.99,
+      "category": 3,
+      "rating": 4.6,
+      "image_url": "media/blue-shoes.jpg",
+      "image": "blue-shoes.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 31,
+    "fields": {
+      "sku": "blueshoes002",
+      "name": "Blue Training Shoes 1",
+      "description": "Stylish blue training shoes perfect for gym workouts and casual wear.",
+      "price": 92.99,
+      "category": 3,
+      "rating": 4.7,
+      "image_url": "media/blue-shoes1.jpg",
+      "image": "blue-shoes1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 32,
+    "fields": {
+      "sku": "blueshoes003",
+      "name": "Blue Training Shoes 2",
+      "description": "Durable and comfortable blue training shoes for everyday use.",
+      "price": 94.99,
+      "category": 3,
+      "rating": 4.5,
+      "image_url": "media/blue-shoes2.jpg",
+      "image": "blue-shoes2.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 33,
+    "fields": {
+      "sku": "bounci001",
+      "name": "Bounci Shoes",
+      "description": "High-performance Bounci shoes designed for maximum comfort and energy return.",
+      "price": 120.00,
+      "category": 3,
+      "rating": 4.8,
+      "image_url": "media/bounci.jpg",
+      "image": "bounci.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 34,
+    "fields": {
+      "sku": "brownvit001",
+      "name": "Brown Vitamin Supplement",
+      "description": "Nutrient-rich brown vitamin supplement to support gym recovery and health.",
+      "price": 25.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/brown.jpg",
+      "image": "brown.jpg"
+    }
+  }
+  {
+    "model": "products.product",
+    "pk": 35,
+    "fields": {
+      "sku": "cacaobar001",
+      "name": "Cacao Chocolate Bar",
+      "description": "Delicious cacao chocolate bar, perfect for a healthy snack.",
+      "price": 3.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/cacao-bar.jpg",
+      "image": "cacao-bar.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 36,
+    "fields": {
+      "sku": "cacaovanilla001",
+      "name": "Cacao Vanilla Protein",
+      "description": "Smooth cacao vanilla protein powder for muscle recovery and energy.",
+      "price": 39.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/cacao-vanilla-protein.jpg",
+      "image": "cacao-vanilla-protein.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 37,
+    "fields": {
+      "sku": "chocobar001",
+      "name": "Chocolate Bar",
+      "description": "Rich and tasty chocolate bar, ideal for a quick energy boost.",
+      "price": 2.99,
+      "category": 5,
+      "rating": 4.5,
+      "image_url": "media/chocolate-bar.jpg",
+      "image": "chocolate-bar.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 38,
+    "fields": {
+      "sku": "chocobar002",
+      "name": "Chocolate Bar 1",
+      "description": "Premium chocolate bar with a smooth texture and rich flavor.",
+      "price": 3.49,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/chocolate-bar1.jpg",
+      "image": "chocolate-bar1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 39,
+    "fields": {
+      "sku": "chronium001",
+      "name": "Chromium Vitamin",
+      "description": "Essential chromium supplement to support metabolism and health.",
+      "price": 18.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/chronium.jpg",
+      "image": "chronium.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 40,
+    "fields": {
+      "sku": "comfortset001",
+      "name": "Comfortable Fitness Set",
+      "description": "Complete fitness set designed for comfort and performance.",
+      "price": 69.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/comfortable-set.jpg",
+      "image": "comfortable-set.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 41,
+    "fields": {
+      "sku": "comfortshoes001",
+      "name": "Comfortable Fitness Shoes",
+      "description": "Ergonomic and stylish shoes designed for comfort during workouts.",
+      "price": 79.99,
+      "category": 3,
+      "rating": 4.7,
+      "image_url": "media/comfortable-shoes.jpg",
+      "image": "comfortable-shoes.jpg"
+    }
+  }
+  {
+    "model": "products.product",
+    "pk": 42,
+    "fields": {
+      "sku": "crazyoutfit001",
+      "name": "Crazy Fitness Outfit",
+      "description": "Vibrant and energetic fitness outfit perfect for making a statement at the gym.",
+      "price": 54.99,
+      "category": 3,
+      "rating": 4.6,
+      "image_url": "media/crazy-outfit.jpg",
+      "image": "crazy-outfit.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 43,
+    "fields": {
+      "sku": "creatine001",
+      "name": "Creatine Supplement",
+      "description": "High-quality creatine supplement to boost muscle strength and recovery.",
+      "price": 29.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/creatine.jpg",
+      "image": "creatine.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 44,
+    "fields": {
+      "sku": "creatine002",
+      "name": "Creatine Supplement 1",
+      "description": "Pure creatine powder designed for optimal athletic performance.",
+      "price": 31.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/creatine1.jpg",
+      "image": "creatine1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 45,
+    "fields": {
+      "sku": "cuteset001",
+      "name": "Cute Fitness Set",
+      "description": "Adorable and functional fitness set designed for comfort and style.",
+      "price": 59.99,
+      "category": 5,
+      "rating": 4.5,
+      "image_url": "media/cute-set.jpg",
+      "image": "cute-set.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 46,
+    "fields": {
+      "sku": "cuteset002",
+      "name": "Cute Fitness Set 1",
+      "description": "Stylish and comfortable fitness set perfect for any workout.",
+      "price": 62.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/cute-set1.jpg",
+      "image": "cute-set1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 47,
+    "fields": {
+      "sku": "cuteshoes001",
+      "name": "Cute Fitness Shoes",
+      "description": "Lightweight and trendy fitness shoes for everyday workouts.",
+      "price": 74.99,
+      "category": 3,
+      "rating": 4.7,
+      "image_url": "media/cute-shoes.jpg",
+      "image": "cute-shoes.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 48,
+    "fields": {
+      "sku": "cuteset003",
+      "name": "Cutes Fitness Set",
+      "description": "Charming and functional fitness set for stylish training sessions.",
+      "price": 61.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/cutes-set.jpg",
+      "image": "cutes-set.jpg"
+    }
+  }
+  {
+    "model": "products.product",
+    "pk": 49,
+    "fields": {
+      "sku": "drink001",
+      "name": "Gym Hydration Drink",
+      "description": "Refreshing hydration drink to keep you energized during workouts.",
+      "price": 3.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/drink.jpg",
+      "image": "drink.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 50,
+    "fields": {
+      "sku": "dumbell001",
+      "name": "Standard Dumbbells",
+      "description": "Durable dumbbells ideal for strength training and muscle toning.",
+      "price": 29.99,
+      "category": 5,
+      "rating": 4.5,
+      "image_url": "media/dumbells.jpg",
+      "image": "dumbells.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 51,
+    "fields": {
+      "sku": "dumbell002",
+      "name": "Dumbbells Set 1",
+      "description": "Adjustable dumbbells for versatile strength workouts.",
+      "price": 39.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/dumbells1.jpg",
+      "image": "dumbells1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 52,
+    "fields": {
+      "sku": "dumbell003",
+      "name": "Dumbbells Set 2",
+      "description": "Compact dumbbells for home or gym use.",
+      "price": 34.99,
+      "category": 5,
+      "rating": 4.4,
+      "image_url": "media/dumbells2.jpg",
+      "image": "dumbells2.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 53,
+    "fields": {
+      "sku": "dumbell004",
+      "name": "Dumbbells Set 3",
+      "description": "Ergonomic dumbbells designed for comfort and control.",
+      "price": 37.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/dumbells3.jpg",
+      "image": "dumbells3.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 54,
+    "fields": {
+      "sku": "dumbell005",
+      "name": "Dumbbells Set 4",
+      "description": "Heavy-duty dumbbells for advanced training routines.",
+      "price": 44.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/dumbells4.jpg",
+      "image": "dumbells4.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 55,
+    "fields": {
+      "sku": "dumbell006",
+      "name": "Dumbbells Set 5",
+      "description": "Lightweight dumbbells suitable for beginners and rehab exercises.",
+      "price": 26.99,
+      "category": 5,
+      "rating": 4.3,
+      "image_url": "media/dumbells5.jpg",
+      "image": "dumbells5.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 56,
+    "fields": {
+      "sku": "dumbell007",
+      "name": "Dumbbells Set 6",
+      "description": "Multi-weight dumbbells designed for strength and endurance training.",
+      "price": 41.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/dumbells6.jpg",
+      "image": "dumbells6.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 57,
+    "fields": {
+      "sku": "dumbell008",
+      "name": "Dumbbells Set 7",
+      "description": "Premium dumbbells crafted for serious athletes.",
+      "price": 49.99,
+      "category": 5,
+      "rating": 4.9,
+      "image_url": "media/dumbells7.jpg",
+      "image": "dumbells7.jpg"
+    }
+  }
+{
+  "model": "products.product",
+  "pk": 58,
+  "fields": {
+    "sku": "elliptical001",
+    "name": "Elliptical Trainer",
+    "description": "Smooth and efficient elliptical trainer for low-impact cardio workouts.",
+    "price": 499.99,
+    "category": 5,
+    "rating": 4.7,
+    "image_url": "media/ellepticel.jpg",
+    "image": "ellepticel.jpg"
+  }
+}
+[
+  {
+    "model": "products.product",
+    "pk": 59,
+    "fields": {
+      "sku": "goldvitamin001",
+      "name": "Gold Vitamin Supplement",
+      "description": "Premium vitamin supplement designed to support overall health and energy.",
+      "price": 24.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/gold.jpg",
+      "image": "gold.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 60,
+    "fields": {
+      "sku": "graymat001",
+      "name": "Gray Exercise Mat",
+      "description": "Comfortable, non-slip exercise mat ideal for yoga, stretching, and floor workouts.",
+      "price": 19.99,
+      "category": 5,
+      "rating": 4.5,
+      "image_url": "media/gray-mat.jpg",
+      "image": "gray-mat.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 61,
+    "fields": {
+      "sku": "graymat002",
+      "name": "Gray Exercise Mat 1",
+      "description": "Durable and cushioned gray mat for comfortable workout sessions.",
+      "price": 22.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/gray-mat1.jpg",
+      "image": "gray-mat1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 62,
+    "fields": {
+      "sku": "grayshoes001",
+      "name": "Gray Training Shoes",
+      "description": "Lightweight and supportive training shoes designed for comfort and performance.",
+      "price": 69.99,
+      "category": 3,
+      "rating": 4.7,
+      "image_url": "media/gray-shoes.jpg",
+      "image": "gray-shoes.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 63,
+    "fields": {
+      "sku": "greenbands001",
+      "name": "Green Resistance Bands",
+      "description": "Set of durable resistance bands for strength training and rehabilitation exercises.",
+      "price": 15.99,
+      "category": 5,
+      "rating": 4.5,
+      "image_url": "media/green-bands.jpg",
+      "image": "green-bands.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 64,
+    "fields": {
+      "sku": "greenblocks001",
+      "name": "Green Yoga Blocks",
+      "description": "Lightweight yoga blocks to support stability and balance in your practice.",
+      "price": 12.99,
+      "category": 5,
+      "rating": 4.4,
+      "image_url": "media/green-blocks.jpg",
+      "image": "green-blocks.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 65,
+    "fields": {
+      "sku": "greenmat001",
+      "name": "Green Exercise Mat",
+      "description": "Eco-friendly, cushioned mat perfect for all your workout needs.",
+      "price": 21.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/green-mat.jpg",
+      "image": "green-mat.jpg"
+    }
+  }
+][
+  {
+    "model": "products.product",
+    "pk": 66,
+    "fields": {
+      "sku": "hiking-shoes001",
+      "name": "Durable Hiking Shoes",
+      "description": "Sturdy and comfortable hiking shoes designed for rough terrains and long treks.",
+      "price": 89.99,
+      "category": 3,
+      "rating": 4.7,
+      "image_url": "media/hiking-shoes.jpg",
+      "image": "hiking-shoes.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 67,
+    "fields": {
+      "sku": "lemon-drink001",
+      "name": "Lemon Refreshing Drink",
+      "description": "Fresh and tangy lemon drink to hydrate and refresh you during workouts.",
+      "price": 2.99,
+      "category": 5,
+      "rating": 4.5,
+      "image_url": "media/lemon.jpg",
+      "image": "lemon.jpg"
+    }
+  }
+]
+[
+  {
+    "model": "products.product",
+    "pk": 68,
+    "fields": {
+      "sku": "machines-apps001",
+      "name": "Ab Crunch Machine",
+      "description": "Target your core with this adjustable abdominal training machine.",
+      "price": 249.99,
+      "category": 5,
+      "rating": 4.4,
+      "image_url": "media/machines.jpg",
+      "image": "machines.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 69,
+    "fields": {
+      "sku": "machines-weights001",
+      "name": "Weight Stack Machine",
+      "description": "Full-body cable weight machine with customizable resistance.",
+      "price": 799.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/machines1.jpg",
+      "image": "machines1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 70,
+    "fields": {
+      "sku": "machines-treadmill001",
+      "name": "Treadmill Pro 1000",
+      "description": "Advanced treadmill with multiple incline and speed settings.",
+      "price": 599.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/machines2.jpg",
+      "image": "machines2.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 71,
+    "fields": {
+      "sku": "machines-treadmill002",
+      "name": "Smart Treadmill X",
+      "description": "Bluetooth-enabled treadmill with interactive training features.",
+      "price": 749.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/machines3.jpg",
+      "image": "machines3.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 72,
+    "fields": {
+      "sku": "machines-treadmill003",
+      "name": "Foldable Treadmill",
+      "description": "Compact treadmill ideal for home workouts and small spaces.",
+      "price": 429.99,
+      "category": 5,
+      "rating": 4.5,
+      "image_url": "media/machines4.jpg",
+      "image": "machines4.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 73,
+    "fields": {
+      "sku": "machines-treadmill004",
+      "name": "Endurance Treadmill",
+      "description": "Durable treadmill built for intense cardio and distance training.",
+      "price": 689.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/machines5.jpg",
+      "image": "machines5.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 74,
+    "fields": {
+      "sku": "machines-treadmill005",
+      "name": "Performance Treadmill",
+      "description": "Gym-grade treadmill offering high performance and long lifespan.",
+      "price": 899.99,
+      "category": 5,
+      "rating": 4.9,
+      "image_url": "media/machines6.jpg",
+      "image": "machines6.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 75,
+    "fields": {
+      "sku": "machines-apps002",
+      "name": "Core Twister Machine",
+      "description": "Twisting motion ab machine designed to tone obliques and core.",
+      "price": 199.99,
+      "category": 5,
+      "rating": 4.3,
+      "image_url": "media/machines7.jpg",
+      "image": "machines7.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 76,
+    "fields": {
+      "sku": "machines-weights002",
+      "name": "Power Rack with Weights",
+      "description": "Heavy-duty power rack perfect for squats, bench press, and more.",
+      "price": 999.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/machines8.jpg",
+      "image": "machines8.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 77,
+    "fields": {
+      "sku": "machines-treadmill006",
+      "name": "Ultra-Speed Treadmill",
+      "description": "High-speed treadmill with shock absorption and heart rate monitor.",
+      "price": 799.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/machines9.jpg",
+      "image": "machines9.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 78,
+    "fields": {
+      "sku": "machines-elliptical001",
+      "name": "Elliptical Cross Trainer",
+      "description": "Smooth elliptical machine for joint-friendly, full-body cardio.",
+      "price": 649.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/machines10.jpg",
+      "image": "machines10.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 79,
+    "fields": {
+      "sku": "machines-weights003",
+      "name": "Multi-Gym Weight Machine",
+      "description": "Compact multi-station gym system for a complete workout.",
+      "price": 1099.99,
+      "category": 5,
+      "rating": 4.9,
+      "image_url": "media/machines11.jpg",
+      "image": "machines11.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 80,
+    "fields": {
+      "sku": "machines-bicycle001",
+      "name": "Stationary Exercise Bike",
+      "description": "Indoor cycling bike with adjustable resistance and ergonomic seat.",
+      "price": 449.99,
+      "category": 5,
+      "rating": 4.5,
+      "image_url": "media/machines12.jpg",
+      "image": "machines12.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 81,
+    "fields": {
+      "sku": "machines-treadmill007",
+      "name": "Studio Treadmill",
+      "description": "Modern treadmill with virtual running programs and app sync.",
+      "price": 849.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/machines13.jpg",
+      "image": "machines13.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 82,
+    "fields": {
+      "sku": "machines-treadmill008",
+      "name": "Commercial Grade Treadmill",
+      "description": "High-capacity treadmill ideal for gyms and intensive use.",
+      "price": 999.99,
+      "category": 5,
+      "rating": 4.9,
+      "image_url": "media/machines14.jpg",
+      "image": "machines14.jpg"
+    }
+  }
+]
+[
+  {
+    "model": "products.product",
+    "pk": 83,
+    "fields": {
+      "sku": "vitamin-magic001",
+      "name": "Mushroom Magic Supplement",
+      "description": "A powerful blend of adaptogenic mushrooms to support focus, recovery, and immune health.",
+      "price": 24.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/magic.jpg",
+      "image": "magic.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 84,
+    "fields": {
+      "sku": "vitamin-magnesium001",
+      "name": "Magnesium Complex",
+      "description": "Essential magnesium supplement to support muscle function and energy production.",
+      "price": 14.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/magnesium.jpg",
+      "image": "magnesium.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 85,
+    "fields": {
+      "sku": "mat-basic001",
+      "name": "Basic Workout Mat",
+      "description": "Durable and lightweight exercise mat, perfect for stretching and floor workouts.",
+      "price": 19.99,
+      "category": 5,
+      "rating": 4.4,
+      "image_url": "media/mat.jpg",
+      "image": "mat.jpg"
+    }
+  }
+]
+[
+  {
+    "model": "products.product",
+    "pk": 86,
+    "fields": {
+      "sku": "matrix-treadmill001",
+      "name": "Matrix Treadmill",
+      "description": "Premium-grade treadmill with advanced tracking and incline features.",
+      "price": 1299.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/matrix-treadmill.jpg",
+      "image": "matrix-treadmill.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 87,
+    "fields": {
+      "sku": "mens-activewear001",
+      "name": "Men's Activewear Set",
+      "description": "Comfortable and moisture-wicking activewear ideal for workouts or casual wear.",
+      "price": 49.99,
+      "category": 3,
+      "rating": 4.5,
+      "image_url": "media/men's-activewear.jpg",
+      "image": "men's-activewear.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 88,
+    "fields": {
+      "sku": "mens-activewear002",
+      "name": "Men's Activewear Performance Set",
+      "description": "High-performance activewear with breathable fabric and sleek design.",
+      "price": 54.99,
+      "category": 3,
+      "rating": 4.6,
+      "image_url": "media/men's-activewear1.jpg",
+      "image": "men's-activewear1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 89,
+    "fields": {
+      "sku": "mens-blackset001",
+      "name": "Men's Black Workout Set",
+      "description": "Stylish black training set built for mobility and durability.",
+      "price": 59.99,
+      "category": 3,
+      "rating": 4.7,
+      "image_url": "media/men's-black-set.jpg",
+      "image": "men's-black-set.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 90,
+    "fields": {
+      "sku": "mens-set002",
+      "name": "Men's Essential Training Set",
+      "description": "All-purpose gym wear for strength, cardio, or daily comfort.",
+      "price": 44.99,
+      "category": 3,
+      "rating": 4.4,
+      "image_url": "media/men's-set.jpg",
+      "image": "men's-set.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 91,
+    "fields": {
+      "sku": "mens-set003",
+      "name": "Men's Workout Outfit",
+      "description": "Breathable and durable outfit for high-performance training.",
+      "price": 47.99,
+      "category": 3,
+      "rating": 4.5,
+      "image_url": "media/men's-set1.jpg",
+      "image": "men's-set1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 92,
+    "fields": {
+      "sku": "vitamin-creatine001",
+      "name": "Mono Creatine Supplement",
+      "description": "Pure micronized creatine monohydrate to boost muscle power and recovery.",
+      "price": 22.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/mono-creatine.jpg",
+      "image": "mono-creatine.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 93,
+    "fields": {
+      "sku": "vitamin-multivitamin001",
+      "name": "Multivitamin Complex",
+      "description": "Daily multivitamin formula supporting overall health and performance.",
+      "price": 18.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/mutli-vitamins.jpg",
+      "image": "mutli-vitamins.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 94,
+    "fields": {
+      "sku": "vitamin-multivitamin002",
+      "name": "Balanced Multivitamins",
+      "description": "Nutrient-rich formula to support energy, immunity, and recovery.",
+      "price": 19.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/multivitamins.jpg",
+      "image": "multivitamins.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 95,
+    "fields": {
+      "sku": "vitamin-multivitamin003",
+      "name": "Advanced Multivitamins",
+      "description": "Full-spectrum vitamins and minerals to fuel your active lifestyle.",
+      "price": 21.99,
+      "category": 5,
+      "rating": 4.9,
+      "image_url": "media/multivitamins1.jpg",
+      "image": "multivitamins1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 96,
+    "fields": {
+      "sku": "vitamin-multivitamin004",
+      "name": "Complete Wellness Multivitamin",
+      "description": "Comprehensive blend of nutrients for total body health.",
+      "price": 23.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/multivitamins2.jpg",
+      "image": "multivitamins2.jpg"
+    }
+  }
+]
+[
+  {
+    "model": "products.product",
+    "pk": 97,
+    "fields": {
+      "sku": "shoes-nb001",
+      "name": "New Balance Training Shoes",
+      "description": "Supportive and lightweight New Balance shoes for performance and comfort.",
+      "price": 74.99,
+      "category": 2,
+      "rating": 4.6,
+      "image_url": "media/new-balance.jpg",
+      "image": "new-balance.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 98,
+    "fields": {
+      "sku": "shoes-nikewhite001",
+      "name": "Nike White Trainers",
+      "description": "Clean, crisp white Nike trainers for gym sessions or everyday style.",
+      "price": 79.99,
+      "category": 2,
+      "rating": 4.7,
+      "image_url": "media/nike-white.jpg",
+      "image": "nike-white.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 99,
+      "fields": {
+      "sku": "shoes-nike001",
+      "name": "Nike Training Shoes",
+      "description": "Durable and responsive Nike shoes designed for dynamic workouts.",
+      "price": 82.99,
+      "category": 2,
+      "rating": 4.8,
+      "image_url": "media/nike.jpg",
+      "image": "nike.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 100,
+    "fields": {
+      "sku": "shoes-nike002",
+      "name": "Nike Sport Runners",
+      "description": "Comfort-engineered Nike running shoes with excellent grip and cushioning.",
+      "price": 85.99,
+      "category": 2,
+      "rating": 4.6,
+      "image_url": "media/nike1.jpg",
+      "image": "nike1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 101,
+    "fields": {
+      "sku": "outfit-orange001",
+      "name": "Orange Workout Set",
+      "description": "Bright and bold activewear set that combines comfort with style.",
+      "price": 52.99,
+      "category": 3,
+      "rating": 4.5,
+      "image_url": "media/orange-set.jpg",
+      "image": "orange-set.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 102,
+    "fields": {
+      "sku": "shoes-orange001",
+      "name": "Orange Gym Shoes",
+      "description": "Vibrant orange shoes that offer both function and fashion in the gym.",
+      "price": 69.99,
+      "category": 2,
+      "rating": 4.4,
+      "image_url": "media/orange-shoes.jpg",
+      "image": "orange-shoes.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 103,
+    "fields": {
+      "sku": "short-orange001",
+      "name": "Orange Workout Shorts",
+      "description": "Breathable, lightweight shorts ideal for high-intensity training.",
+      "price": 24.99,
+      "category": 3,
+      "rating": 4.3,
+      "image_url": "media/orange-short.jpg",
+      "image": "orange-short.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 104,
+    "fields": {
+      "sku": "bands-orange001",
+      "name": "Orange Resistance Bands",
+      "description": "Durable resistance bands for strength and mobility training.",
+      "price": 14.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/orange-bands.jpg",
+      "image": "orange-bands.jpg"
+    }
+  }
+]
+{
+  "model": "products.product",
+  "pk": 105,
+  "fields": {
+    "sku": "vitamin-orange001",
+    "name": "Orange Vitamin C Boost",
+    "description": "A refreshing orange-flavored vitamin supplement rich in Vitamin C to support immunity and recovery.",
+    "price": 13.99,
+    "category": 5,
+    "rating": 4.7,
+    "image_url": "media/orange.jpg",
+    "image": "orange.jpg"
+  }
+}
+[
+  {
+    "model": "products.product",
+    "pk": 106,
+    "fields": {
+      "sku": "vitamin-palmetto001",
+      "name": "Palmetto Herbal Supplement",
+      "description": "Natural palmetto extract to support wellness and hormonal balance.",
+      "price": 15.99,
+      "category": 5,
+      "rating": 4.5,
+      "image_url": "media/palmetto.jpg",
+      "image": "palmetto.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 107,
+    "fields": {
+      "sku": "app-pilates001",
+      "name": "Pilates App Subscription",
+      "description": "On-demand pilates workouts and guided routines to improve strength and flexibility.",
+      "price": 9.99,
+      "category": 4,
+      "rating": 4.6,
+      "image_url": "media/pilates.jpg",
+      "image": "pilates.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 108,
+    "fields": {
+      "sku": "blocks-pink001",
+      "name": "Pink Yoga Blocks",
+      "description": "Supportive foam yoga blocks for balance and deeper stretches.",
+      "price": 11.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/pink-blocks.jpg",
+      "image": "pink-blocks.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 109,
+    "fields": {
+      "sku": "mat-pink001",
+      "name": "Pink Yoga Mat",
+      "description": "Comfortable and non-slip mat perfect for yoga or general workouts.",
+      "price": 19.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/pink-mat.jpg",
+      "image": "pink-mat.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 110,
+    "fields": {
+      "sku": "outfit-pink001",
+      "name": "Pink Activewear Set",
+      "description": "Stylish and breathable pink workout set ideal for training or yoga.",
+      "price": 49.99,
+      "category": 3,
+      "rating": 4.5,
+      "image_url": "media/pink-set.jpg",
+      "image": "pink-set.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 111,
+    "fields": {
+      "sku": "outfit-pink002",
+      "name": "Pink Fitness Outfit",
+      "description": "Lightweight and flexible activewear designed for optimal performance.",
+      "price": 52.99,
+      "category": 3,
+      "rating": 4.6,
+      "image_url": "media/pink-set1.jpg",
+      "image": "pink-set1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 112,
+    "fields": {
+      "sku": "shoes-pink001",
+      "name": "Pink Training Shoes",
+      "description": "Comfortable pink shoes perfect for workouts, walking, or running.",
+      "price": 64.99,
+      "category": 2,
+      "rating": 4.5,
+      "image_url": "media/pink-shoes.jpg",
+      "image": "pink-shoes.jpg"
+    }
+  }
+]
+[
+  {
+    "model": "products.product",
+    "pk": 113,
+    "fields": {
+      "sku": "vitamin-powerup001",
+      "name": "Power Up Pre-Workout Formula",
+      "description": "Boost your energy and endurance before workouts with this high-performance formula.",
+      "price": 24.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/power-up.jpg",
+      "image": "power-up.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 114,
+    "fields": {
+      "sku": "vitamin-preworkout001",
+      "name": "Pre-Workout Energy Boost",
+      "description": "Explosive energy and enhanced focus for better training results.",
+      "price": 22.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/pre-workout.jpg",
+      "image": "pre-workout.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 115,
+    "fields": {
+      "sku": "vitamin-preworkout002",
+      "name": "Advanced Pre-Workout Mix",
+      "description": "Formulated for strength, stamina, and fast recovery before intense workouts.",
+      "price": 25.99,
+      "category": 5,
+      "rating": 4.5,
+      "image_url": "media/pre-workout1.jpg",
+      "image": "pre-workout1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 116,
+    "fields": {
+      "sku": "vitamin-pregym001",
+      "name": "PreGym Energy Supplement",
+      "description": "Get ready for your session with this powerful pre-gym formula.",
+      "price": 21.49,
+      "category": 5,
+      "rating": 4.4,
+      "image_url": "media/pregym.jpg",
+      "image": "pregym.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 117,
+    "fields": {
+      "sku": "vitamin-preworkout003",
+      "name": "Intense Pre-Workout Fuel",
+      "description": "Fuel your muscles and mind before every session with this advanced pre-workout.",
+      "price": 23.49,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/preworkout1.jpg",
+      "image": "preworkout1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 118,
+    "fields": {
+      "sku": "vitamin-products001",
+      "name": "Assorted Gym Vitamins Pack",
+      "description": "A mix of essential gym supplements designed to support strength, focus, and recovery.",
+      "price": 29.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/products.jpg",
+      "image": "products.jpg"
+    }
+  }
+]
+[
+  {
+    "model": "products.product",
+    "pk": 119,
+    "fields": {
+      "sku": "protein-drink001",
+      "name": "Protein Recovery Drink",
+      "description": "Ready-to-drink protein shake ideal for post-workout recovery.",
+      "price": 4.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/protein-drink.jpg",
+      "image": "protein-drink.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 120,
+    "fields": {
+      "sku": "protein-powder001",
+      "name": "Whey Protein Powder",
+      "description": "High-quality whey protein for muscle growth and repair.",
+      "price": 34.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/protein.jpg",
+      "image": "protein.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 121,
+    "fields": {
+      "sku": "protein-blend001",
+      "name": "Protein Blend Shake",
+      "description": "Balanced blend of proteins and nutrients to fuel your workouts.",
+      "price": 32.49,
+      "category": 5,
+      "rating": 4.5,
+      "image_url": "media/protein1.jpg",
+      "image": "protein1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 122,
+    "fields": {
+      "sku": "protein-vanilla001",
+      "name": "Vanilla Whey Protein",
+      "description": "Rich vanilla flavor protein powder for daily nutrition.",
+      "price": 36.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/protein2.jpg",
+      "image": "protein2.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 123,
+    "fields": {
+      "sku": "protein-vanilla002",
+      "name": "Vanilla Protein",
+      "description": "Delicious vanilla packed with muscle-supporting protein.",
+      "price": 33.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/protein3.jpg",
+      "image": "protein3.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 124,
+    "fields": {
+      "sku": "proteinpowder-premium001",
+      "name": "Premium Protein Powder",
+      "description": "All-in-one premium protein formula for strength and endurance.",
+      "price": 39.99,
+      "category": 5,
+      "rating": 4.9,
+      "image_url": "media/proteinpowder.jpg",
+      "image": "proteinpowder.jpg"
+    }
+  }
+]
+[
+  {
+    "model": "products.product",
+    "pk": 125,
+    "fields": {
+      "sku": "bands-purple001",
+      "name": "Purple Resistance Bands",
+      "description": "Durable resistance bands for strength training and stretching.",
+      "price": 10.99,
+      "category": 5,
+      "rating": 4.6,
+      "image_url": "media/purple-bands.jpg",
+      "image": "purple-bands.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 126,
+    "fields": {
+      "sku": "bands-purple002",
+      "name": "Heavy-Duty Purple Bands",
+      "description": "Extra strength resistance bands for intense home workouts.",
+      "price": 11.99,
+      "category": 5,
+      "rating": 4.5,
+      "image_url": "media/purple-bands1.jpg",
+      "image": "purple-bands1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 127,
+    "fields": {
+      "sku": "dumbbells-purple001",
+      "name": "Purple Dumbbells (Pair)",
+      "description": "Compact, non-slip dumbbells perfect for toning and home workouts.",
+      "price": 18.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/purple-dumbells.jpg",
+      "image": "purple-dumbells.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 128,
+    "fields": {
+      "sku": "set-purple001",
+      "name": "Purple Workout Set",
+      "description": "Comfortable and flexible activewear set designed for fitness and yoga.",
+      "price": 46.99,
+      "category": 3,
+      "rating": 4.6,
+      "image_url": "media/purple-set.jpg",
+      "image": "purple-set.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 129,
+    "fields": {
+      "sku": "set-purple002",
+      "name": "Purple Fitness Set",
+      "description": "Sleek and breathable workout outfit for high performance.",
+      "price": 48.99,
+      "category": 3,
+      "rating": 4.7,
+      "image_url": "media/purple-set1.jpg",
+      "image": "purple-set1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 130,
+    "fields": {
+      "sku": "mat-purple001",
+      "name": "Purple Yoga Mat",
+      "description": "Soft, non-slip yoga mat for pilates, stretching, and floor workouts.",
+      "price": 20.99,
+      "category": 5,
+      "rating": 4.8,
+      "image_url": "media/purple-yoga-mat.jpg",
+      "image": "purple-yoga-mat.jpg"
+    }
+  }
+]
+
+
+
+
+
+
+
