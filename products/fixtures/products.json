@@ -1,73 +1,74 @@
-{
-  "model": "products.product",
-  "pk": 1,
-  "fields": {
-    "sku": "prod002",
-    "name": "Women's Lightweight Running Top",
-    "description": "Comfortable and stylish top perfect for running or training.",
-    "price": 29.99,
-    "category": 3,
-    "rating": 4.5,
-    "image_url": "media/adidas-pink-outfit.jpg",
-    "image": "adidas-pink-outfit.jpg"
-  }
-}
+[
   {
-  "model": "products.product",
-  "pk": 2,
-  "fields": {
-    "sku": "adidas001",
-    "name": "Adidas Shoes",
-    "description": "Classic Adidas shoes that blend comfort, performance, and everyday style.",
-    "price": 79.99,
-    "category": 3,
-    "rating": 4.6,
-    "image_url": "media/adidas-shoes.jpg",
-    "image": "adidas-shoes.jpg"
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "sku": "prod002",
+      "name": "Women's Lightweight Running Top",
+      "description": "Comfortable and stylish top perfect for running or training.",
+      "price": 29.99,
+      "category": 3,
+      "rating": 4.5,
+      "image_url": "",
+      "image": "adidas-pink-outfit.jpg"
   }
-}
-{
-  "model": "products.product",
-  "pk": 3,
-  "fields": {
-    "sku": "adidas001",
-    "name": "Adidas Shorts",
-    "description": "Breathable and lightweight Adidas shorts, perfect for training or casual wear.",
-    "price": 34.99,
-    "category": 3,
-    "rating": 4.5,
-    "image_url": "media/adidas-shorts.jpg",
-    "image": "adidas-shorts.jpg"
+},
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "sku": "adidas001",
+      "name": "Adidas Shoes",
+      "description": "Classic Adidas shoes that blend comfort, performance, and everyday style.",
+      "price": 79.99,
+      "category": 1,
+      "rating": 4.6,
+      "image_url": "media/adidas-shoes.jpg",
+      "image": "adidas-shoes.jpg"
   }
-}
-{
-  "model": "products.product",
-  "pk": 4,
-  "fields": {
-    "sku": "adidas001",
-    "name": "Adidas Outfit",
-    "description": "Affordable and stylish Adidas outfit perfect for training or everyday wear.",
-    "price": 49.99,
-    "category": 3,
-    "rating": 4.5,
-    "image_url": "media/affordable.outfit.jpg",
-    "image": "affordable.outfit.jpg"
-  }
-}
-{
-  "model": "products.product",
-  "pk": 5,
-  "fields": {
-    "sku": "adidas001",
-    "name": "Affordable Shoes",
-    "description": "High-quality, budget-friendly shoes suitable for everyday wear.",
-    "price": 59.99,
-    "category": 3,
-    "rating": 4.4,
-    "image_url": "media/affordable-shoes.jpg",
-    "image": "affordable-shoes.jpg"
-  }
-}
+},
+ {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "sku": "adidas001",
+      "name": "Adidas Shorts",
+      "description": "Breathable and lightweight Adidas shorts, perfect for training or casual wear.",
+      "price": 34.99,
+      "category": 3,
+      "rating": 4.5,
+      "image_url": "media/adidas-shorts.jpg",
+      "image": "adidas-shorts.jpg"
+    }
+},
+ {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "sku": "adidas001",
+      "name": "Adidas Outfit",
+      "description": "Affordable and stylish Adidas outfit perfect for training or everyday wear.",
+      "price": 49.99,
+      "category": 3,
+      "rating": 4.5,
+      "image_url": "media/affordable.outfit.jpg",
+      "image": "affordable.outfit.jpg"
+    }
+},
+ {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "sku": "adidas001",
+      "name": "Affordable Shoes",
+      "description": "High-quality, budget-friendly shoes suitable for everyday wear.",
+      "price": 59.99,
+      "category": 1,
+      "rating": 4.4,
+      "image_url": "media/affordable-shoes.jpg",
+      "image": "affordable-shoes.jpg"
+    }
+},
 {
   "model": "products.product",
   "pk": 6,
@@ -81,8 +82,7 @@
     "image_url": "media/avocado.jpg",
     "image": "avocado.jpg"
   }
-}
-[
+},
   {
     "model": "products.product",
     "pk": 7,
@@ -124,9 +124,7 @@
       "image_url": "media/bands2.jpg",
       "image": "bands2.jpg"
     }
-  }
-]
-[
+  },
   {
     "model": "products.product",
     "pk": 10,
@@ -154,9 +152,7 @@
       "image_url": "media/bicycle.jpg",
       "image": "bicycle.jpg"
     }
-  }
-]
-[
+  },
   {
     "model": "products.product",
     "pk": 12,
@@ -184,9 +180,7 @@
       "image_url": "media/black-blocks.jpg",
       "image": "black-blocks.jpg"
     }
-  }
-]
-[
+  },
   {
     "model": "products.product",
     "pk": 14,
@@ -209,7 +203,7 @@
       "name": "Black Shoes",
       "description": "Sleek and comfortable black shoes perfect for training and casual wear.",
       "price": 89.99,
-      "category": 3,
+      "category": 1,
       "rating": 4.7,
       "image_url": "media/black-shoes.jpg",
       "image": "black-shoes.jpg"
@@ -228,9 +222,7 @@
       "image_url": "media/black-short.jpg",
       "image": "black-short.jpg"
     }
-  }
-]
-[
+  },
   {
     "model": "products.product",
     "pk": 17,
@@ -286,9 +278,7 @@
       "image_url": "media/black-short4.jpg",
       "image": "black-short4.jpg"
     }
-  }
-]
-[
+  },
   {
     "model": "products.product",
     "pk": 16,
@@ -311,7 +301,7 @@
       "name": "Black Training Shoes",
       "description": "Comfortable and stylish black training shoes for daily workouts.",
       "price": 89.99,
-      "category": 3,
+      "category": 1,
       "rating": 4.7,
       "image_url": "media/black-shoes.jpg",
       "image": "black-shoes.jpg"
@@ -386,9 +376,7 @@
       "image_url": "media/blocks4.jpg",
       "image": "blocks4.jpg"
     }
-  }
-]
-[
+  },
   {
     "model": "products.product",
     "pk": 23,
@@ -458,7 +446,7 @@
       "image_url": "media/blue-outfit.jpg",
       "image": "blue-outfit.jpg"
     }
-  }
+  },
   {
     "model": "products.product",
     "pk": 28,
@@ -495,7 +483,7 @@
       "name": "Blue Running Shoes",
       "description": "Lightweight and comfortable blue running shoes designed for performance.",
       "price": 99.99,
-      "category": 3,
+      "category": 1,
       "rating": 4.6,
       "image_url": "media/blue-shoes.jpg",
       "image": "blue-shoes.jpg"
@@ -509,7 +497,7 @@
       "name": "Blue Training Shoes 1",
       "description": "Stylish blue training shoes perfect for gym workouts and casual wear.",
       "price": 92.99,
-      "category": 3,
+      "category": 1,
       "rating": 4.7,
       "image_url": "media/blue-shoes1.jpg",
       "image": "blue-shoes1.jpg"
@@ -523,7 +511,7 @@
       "name": "Blue Training Shoes 2",
       "description": "Durable and comfortable blue training shoes for everyday use.",
       "price": 94.99,
-      "category": 3,
+      "category": 1,
       "rating": 4.5,
       "image_url": "media/blue-shoes2.jpg",
       "image": "blue-shoes2.jpg"
@@ -537,7 +525,7 @@
       "name": "Bounci Shoes",
       "description": "High-performance Bounci shoes designed for maximum comfort and energy return.",
       "price": 120.00,
-      "category": 3,
+      "category": 1,
       "rating": 4.8,
       "image_url": "media/bounci.jpg",
       "image": "bounci.jpg"
@@ -556,7 +544,7 @@
       "image_url": "media/brown.jpg",
       "image": "brown.jpg"
     }
-  }
+  },
   {
     "model": "products.product",
     "pk": 35,
@@ -649,12 +637,12 @@
       "name": "Comfortable Fitness Shoes",
       "description": "Ergonomic and stylish shoes designed for comfort during workouts.",
       "price": 79.99,
-      "category": 3,
+      "category": 1,
       "rating": 4.7,
       "image_url": "media/comfortable-shoes.jpg",
       "image": "comfortable-shoes.jpg"
     }
-  }
+  },
   {
     "model": "products.product",
     "pk": 42,
@@ -733,7 +721,7 @@
       "name": "Cute Fitness Shoes",
       "description": "Lightweight and trendy fitness shoes for everyday workouts.",
       "price": 74.99,
-      "category": 3,
+      "category": 1,
       "rating": 4.7,
       "image_url": "media/cute-shoes.jpg",
       "image": "cute-shoes.jpg"
@@ -752,7 +740,7 @@
       "image_url": "media/cutes-set.jpg",
       "image": "cutes-set.jpg"
     }
-  }
+  },
   {
     "model": "products.product",
     "pk": 49,
@@ -878,8 +866,8 @@
       "image_url": "media/dumbells7.jpg",
       "image": "dumbells7.jpg"
     }
-  }
-{
+},
+  {
   "model": "products.product",
   "pk": 58,
   "fields": {
@@ -892,8 +880,7 @@
     "image_url": "media/ellepticel.jpg",
     "image": "ellepticel.jpg"
   }
-}
-[
+},
   {
     "model": "products.product",
     "pk": 59,
@@ -944,7 +931,7 @@
       "name": "Gray Training Shoes",
       "description": "Lightweight and supportive training shoes designed for comfort and performance.",
       "price": 69.99,
-      "category": 3,
+      "category": 1,
       "rating": 4.7,
       "image_url": "media/gray-shoes.jpg",
       "image": "gray-shoes.jpg"
@@ -991,8 +978,7 @@
       "image_url": "media/green-mat.jpg",
       "image": "green-mat.jpg"
     }
-  }
-][
+  },
   {
     "model": "products.product",
     "pk": 66,
@@ -1001,7 +987,7 @@
       "name": "Durable Hiking Shoes",
       "description": "Sturdy and comfortable hiking shoes designed for rough terrains and long treks.",
       "price": 89.99,
-      "category": 3,
+      "category": 1,
       "rating": 4.7,
       "image_url": "media/hiking-shoes.jpg",
       "image": "hiking-shoes.jpg"
@@ -1020,9 +1006,7 @@
       "image_url": "media/lemon.jpg",
       "image": "lemon.jpg"
     }
-  }
-]
-[
+  },
   {
     "model": "products.product",
     "pk": 68,
@@ -1232,9 +1216,7 @@
       "image_url": "media/machines14.jpg",
       "image": "machines14.jpg"
     }
-  }
-]
-[
+  },
   {
     "model": "products.product",
     "pk": 83,
@@ -1276,9 +1258,7 @@
       "image_url": "media/mat.jpg",
       "image": "mat.jpg"
     }
-  }
-]
-[
+  },
   {
     "model": "products.product",
     "pk": 86,
@@ -1432,9 +1412,7 @@
       "image_url": "media/multivitamins2.jpg",
       "image": "multivitamins2.jpg"
     }
-  }
-]
-[
+  },
   {
     "model": "products.product",
     "pk": 97,
@@ -1443,7 +1421,7 @@
       "name": "New Balance Training Shoes",
       "description": "Supportive and lightweight New Balance shoes for performance and comfort.",
       "price": 74.99,
-      "category": 2,
+      "category": 1,
       "rating": 4.6,
       "image_url": "media/new-balance.jpg",
       "image": "new-balance.jpg"
@@ -1457,7 +1435,7 @@
       "name": "Nike White Trainers",
       "description": "Clean, crisp white Nike trainers for gym sessions or everyday style.",
       "price": 79.99,
-      "category": 2,
+      "category": 1,
       "rating": 4.7,
       "image_url": "media/nike-white.jpg",
       "image": "nike-white.jpg"
@@ -1471,7 +1449,7 @@
       "name": "Nike Training Shoes",
       "description": "Durable and responsive Nike shoes designed for dynamic workouts.",
       "price": 82.99,
-      "category": 2,
+      "category": 1,
       "rating": 4.8,
       "image_url": "media/nike.jpg",
       "image": "nike.jpg"
@@ -1485,7 +1463,7 @@
       "name": "Nike Sport Runners",
       "description": "Comfort-engineered Nike running shoes with excellent grip and cushioning.",
       "price": 85.99,
-      "category": 2,
+      "category": 1,
       "rating": 4.6,
       "image_url": "media/nike1.jpg",
       "image": "nike1.jpg"
@@ -1513,7 +1491,7 @@
       "name": "Orange Gym Shoes",
       "description": "Vibrant orange shoes that offer both function and fashion in the gym.",
       "price": 69.99,
-      "category": 2,
+      "category": 1,
       "rating": 4.4,
       "image_url": "media/orange-shoes.jpg",
       "image": "orange-shoes.jpg"
@@ -1546,23 +1524,21 @@
       "image_url": "media/orange-bands.jpg",
       "image": "orange-bands.jpg"
     }
+  },
+  {
+    "model": "products.product",
+    "pk": 105,
+    "fields": {
+      "sku": "vitamin-orange001",
+      "name": "Orange Vitamin C Boost",
+      "description": "A refreshing orange-flavored vitamin supplement rich in Vitamin C to support immunity and recovery.",
+      "price": 13.99,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/orange.jpg",
+      "image": "orange.jpg"
   }
-]
-{
-  "model": "products.product",
-  "pk": 105,
-  "fields": {
-    "sku": "vitamin-orange001",
-    "name": "Orange Vitamin C Boost",
-    "description": "A refreshing orange-flavored vitamin supplement rich in Vitamin C to support immunity and recovery.",
-    "price": 13.99,
-    "category": 5,
-    "rating": 4.7,
-    "image_url": "media/orange.jpg",
-    "image": "orange.jpg"
-  }
-}
-[
+},
   {
     "model": "products.product",
     "pk": 106,
@@ -1655,14 +1631,12 @@
       "name": "Pink Training Shoes",
       "description": "Comfortable pink shoes perfect for workouts, walking, or running.",
       "price": 64.99,
-      "category": 2,
+      "category": 1,
       "rating": 4.5,
       "image_url": "media/pink-shoes.jpg",
       "image": "pink-shoes.jpg"
     }
-  }
-]
-[
+  },
   {
     "model": "products.product",
     "pk": 113,
@@ -1746,9 +1720,7 @@
       "image_url": "media/products.jpg",
       "image": "products.jpg"
     }
-  }
-]
-[
+  },
   {
     "model": "products.product",
     "pk": 119,
@@ -1832,9 +1804,7 @@
       "image_url": "media/proteinpowder.jpg",
       "image": "proteinpowder.jpg"
     }
-  }
-]
-[
+  },
   {
     "model": "products.product",
     "pk": 125,
@@ -1917,6 +1887,692 @@
       "rating": 4.8,
       "image_url": "media/purple-yoga-mat.jpg",
       "image": "purple-yoga-mat.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 131,
+    "fields": {
+      "sku": "res-band-red001",
+      "name": "Red Resistance Bands",
+      "description": "High-quality red resistance bands perfect for strength training, rehabilitation, and stretching exercises.",
+      "price": 12.49,
+      "category": 5,
+      "rating": 4.7,
+      "image_url": "media/red-bands.jpg",
+      "image": "red-bands.jpg"
+    }
+},
+ {
+  "model": "products.product",
+  "pk": 132,
+  "fields": {
+    "sku": "mat-red001",
+    "name": "Red Yoga Mat",
+    "description": "Durable non-slip red yoga mat designed for pilates, floor workouts, and stretching routines.",
+    "price": 19.99,
+    "category": 5,
+    "rating": 4.6,
+    "image_url": "media/red-mat.jpg",
+    "image": "red-mat.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 133,
+  "fields": {
+    "sku": "mat-red002",
+    "name": "Red Yoga Mat",
+    "description": "Extra thick red yoga mat for maximum comfort and joint support during intense workouts.",
+    "price": 24.99,
+    "category": 5,
+    "rating": 4.8,
+    "image_url": "media/red-mat1.jpg",
+    "image": "red-mat1.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 134,
+  "fields": {
+    "sku": "shoes-run001",
+    "name": "Running Shoes",
+    "description": "Lightweight and breathable running shoes with red trim for optimal comfort and speed.",
+    "price": 59.99,
+    "category": 1,
+    "rating": 4.5,
+    "image_url": "media/run-shoes.jpg",
+    "image": "run-shoes.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 135,
+  "fields": {
+    "sku": "shoes-run002",
+    "name": "Running Shoes – Urban Grey",
+    "description": "Ergonomic running shoes designed for both road and trail with shock-absorbing soles.",
+    "price": 64.99,
+    "category": 1,
+    "rating": 4.6,
+    "image_url": "media/running-shoes.jpg",
+    "image": "running-shoes.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 136,
+  "fields": {
+    "sku": "shoes-run003",
+    "name": "Running Shoes",
+    "description": "Stylish black running shoes built for durability and speed with breathable mesh fabric.",
+    "price": 62.99,
+    "category": 1,
+    "rating": 4.7,
+    "image_url": "media/running-shoes1.jpg",
+    "image": "running-shoes1.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 137,
+  "fields": {
+    "sku": "shoes-run004",
+    "name": "Running Shoes",
+    "description": "Premium running shoes with advanced cushioning for marathon-level endurance.",
+    "price": 79.99,
+    "category": 1,
+    "rating": 4.9,
+    "image_url": "media/running-shoes2.jpg",
+    "image": "running-shoes2.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 138,
+  "fields": {
+    "sku": "shoes-run005",
+    "name": "Runningshoes – Classic Edition",
+    "description": "Versatile classic running shoes suitable for daily jogs and fitness training.",
+    "price": 55.00,
+    "category": 1,
+    "rating": 4.4,
+    "image_url": "media/runningshoes.jpg",
+    "image": "runningshoes.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 139,
+  "fields": {
+    "sku": "set-run001",
+    "name": "Women’s Running Set",
+    "description": " Lightweight women’s running set with moisture-wicking fabric and flexible fit.",
+    "price": 39.99,
+    "category": 7,
+    "rating": 4.6,
+    "image_url": "media/running-set.jpg",
+    "image": "running-set.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 140,
+  "fields": {
+    "sku": "set-run002",
+    "name": "Men’s Running Set",
+    "description": "LBreathable men's running outfit including shirt and shorts for peak performance.",
+    "price": 19.99,
+    "category": 7,
+    "rating": 4.7,
+    "image_url": "media/running-set1.jpg",
+    "image": "running-set1.jpg"
+  }
+},
+  {
+    "model": "products.product",
+    "pk": 141,
+    "fields": {
+      "sku": "set-men001",
+      "name": "Men’s Workout Set",
+      "description": "Complete men’s workout outfit with a moisture-wicking shirt and flexible shorts for training and running.",
+      "price": 44.99,
+      "category": 7,
+      "rating": 4.5,
+      "image_url": "media/set1.jpg",
+      "image": "set1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 142,
+    "fields": {
+      "sku": "shirt-men001",
+      "name": "Men’s Performance Shirt",
+      "description": "Breathable, sweat-resistant men’s athletic shirt designed for high-intensity workouts.",
+      "price": 22.99,
+      "category": 7,
+      "rating": 4.6,
+      "image_url": "media/shirt1.jpg",
+      "image": "shirt1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 143,
+    "fields": {
+      "sku": "shoes-women001",
+      "name": "Women’s Running Shoes – Coral",
+      "description": "Lightweight coral-colored running shoes for women, ideal for daily jogs and workouts.",
+      "price": 58.99,
+      "category": 1,
+      "rating": 4.7,
+      "image_url": "media/shoes.jpg",
+      "image": "shoes.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 144,
+    "fields": {
+      "sku": "shoes-women002",
+      "name": "Women’s Sports Trainers – Black & White",
+      "description": "Sleek and modern trainers with supportive soles for all-day wear and athletic performance.",
+      "price": 61.99,
+      "category": 1,
+      "rating": 4.6,
+      "image_url": "media/shoes1.jpg",
+      "image": "shoes1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 145,
+    "fields": {
+      "sku": "shoes-women003",
+      "name": "Women’s Trail Runners – Gray",
+      "description": "Durable and supportive trail running shoes for women with high-traction soles.",
+      "price": 67.49,
+      "category": 1,
+      "rating": 4.8,
+      "image_url": "media/shoes3.jpg",
+      "image": "shoes3.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 146,
+    "fields": {
+      "sku": "shoes-women004",
+      "name": "Women’s Running Shoes – Pink Flex",
+      "description": "Comfortable, flexible pink running shoes perfect for gym and outdoor use.",
+      "price": 54.99,
+      "category": 1,
+      "rating": 4.5,
+      "image_url": "media/shoes4.jpg",
+      "image": "shoes4.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 147,
+    "fields": {
+      "sku": "shoes-women005",
+      "name": "Women’s Slip-On Trainers",
+      "description": "Convenient slip-on athletic shoes with breathable fabric and a snug fit.",
+      "price": 49.99,
+      "category": 1,
+      "rating": 4.4,
+      "image_url": "media/shoes5.jpg",
+      "image": "shoes5.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 148,
+    "fields": {
+      "sku": "shoes-women006",
+      "name": "Women’s Lightweight Runners",
+      "description": "Featherlight running shoes designed to boost performance and reduce fatigue.",
+      "price": 60.00,
+      "category": 1,
+      "rating": 4.7,
+      "image_url": "media/shoes6.jpg",
+      "image": "shoes6.jpg"
+    }
+  },
+{
+    "model": "products.product",
+    "pk": 149,
+    "fields": {
+      "sku": "shorts-men001",
+      "name": "Men’s Training Shorts",
+      "description": "Flexible, breathable training shorts for men, perfect for cardio, lifting, and daily workouts.",
+      "price": 27.99,
+      "category": 7,
+      "rating": 4.5,
+      "image_url": "media/shorts.jpg",
+      "image": "shorts.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 150,
+    "fields": {
+      "sku": "sports-women001",
+      "name": "Women’s Sport Set",
+      "description": "Matching activewear set for women featuring a fitted top and high-stretch leggings.",
+      "price": 49.99,
+      "category": 7,
+      "rating": 4.7,
+      "image_url": "media/sport's-set.jpg",
+      "image": "sport's-set.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 151,
+    "fields": {
+      "sku": "supplement-vit001",
+      "name": "Daily Vitamin Supplement",
+      "description": "A daily multivitamin blend to support energy, immunity, and recovery.",
+      "price": 18.99,
+      "category": 8,
+      "rating": 4.6,
+      "image_url": "media/supplement.jpg",
+      "image": "supplement.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 152,
+    "fields": {
+      "sku": "tennis001",
+      "name": "Pro Tennis Racket",
+      "description": "Lightweight and balanced tennis racket for intermediate and advanced players.",
+      "price": 79.99,
+      "category": 9,
+      "rating": 4.8,
+      "image_url": "media/tennis.jpg",
+      "image": "tennis.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 153,
+    "fields": {
+      "sku": "training-kit001",
+      "name": "Training Equipment Set",
+      "description": "Essential equipment for weight training",
+      "price": 59.99,
+      "category": 7,
+      "rating": 4.7,
+      "image_url": "media/training.jpg",
+      "image": "training.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 154,
+    "fields": {
+      "sku": "treadmill001",
+      "name": "Foldable Home Treadmill",
+      "description": "Compact, foldable treadmill with incline adjustment and LCD display for home cardio workouts.",
+      "price": 349.00,
+      "category": 10,
+      "rating": 4.9,
+      "image_url": "media/treadmill.jpg",
+      "image": "treadmill.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 155,
+    "fields": {
+      "sku": "vegan-choc001",
+      "name": "Vegan Chocolate Protein Bar",
+      "description": "Delicious and nutritious vegan protein bar with rich chocolate flavor, perfect post-workout snack.",
+      "price": 3.99,
+      "category": 8,
+      "rating": 4.6,
+      "image_url": "media/vegan-chocolate.jpg",
+      "image": "vegan-chocolate.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 156,
+    "fields": {
+      "sku": "vegan-protein001",
+      "name": "Vegan Protein Powder",
+      "description": "Plant-based protein powder with a smooth vanilla flavor, ideal for muscle recovery and growth.",
+      "price": 29.99,
+      "category": 8,
+      "rating": 4.7,
+      "image_url": "media/vegan-protein.jpg",
+      "image": "vegan-protein.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 157,
+    "fields": {
+      "sku": "vitamin-d3001",
+      "name": "Vitamin D3 Supplement",
+      "description": "High potency Vitamin D3 capsules to support bone health and immune function.",
+      "price": 12.99,
+      "category": 8,
+      "rating": 4.8,
+      "image_url": "media/vitaminD3.jpg",
+      "image": "vitaminD3.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 158,
+    "fields": {
+      "sku": "vitamins-multi001",
+      "name": "Daily Multivitamins",
+      "description": "Comprehensive daily multivitamins to support overall health and wellness.",
+      "price": 19.99,
+      "category": 8,
+      "rating": 4.5,
+      "image_url": "media/vitamins.jpg",
+      "image": "vitamins.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 159,
+    "fields": {
+      "sku": "vitamins-multi002",
+      "name": "Women’s Multivitamins",
+      "description": "Tailored multivitamin blend for women to support energy, skin health, and immune system.",
+      "price": 21.99,
+      "category": 8,
+      "rating": 4.6,
+      "image_url": "media/vitamins1.jpg",
+      "image": "vitamins1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 160,
+    "fields": {
+      "sku": "walk-shoes-women001",
+      "name": "Women’s Walking Shoes",
+      "description": "Comfortable and supportive walking shoes designed for everyday use and light training.",
+      "price": 65.00,
+      "category": 1,
+      "rating": 4.6,
+      "image_url": "media/walking-shoes.jpg",
+      "image": "walking-shoes.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 161,
+    "fields": {
+      "sku": "white-set-men001",
+      "name": "Men’s White Training Set",
+      "description": "Lightweight and breathable activewear set designed for weight training and gym workouts.",
+      "price": 48.99,
+      "category": 7,
+      "rating": 4.7,
+      "image_url": "media/white-set.jpg",
+      "image": "white-set.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 162,
+    "fields": {
+      "sku": "white-shoes-men001",
+      "name": "Men’s White Training Shoes",
+      "description": "Durable training shoes with great traction and support for weightlifting and cross-training.",
+      "price": 70.00,
+      "category": 1,
+      "rating": 4.8,
+      "image_url": "media/white-shoes.jpg",
+      "image": "white-shoes.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 163,
+    "fields": {
+      "sku": "white-shoes-men002",
+      "name": "Men’s White Cross Trainers",
+      "description": "Cross-training shoes designed for multi-functional gym workouts including weight training.",
+      "price": 72.00,
+      "category": 1,
+      "rating": 4.7,
+      "image_url": "media/white-shoes1.jpg",
+      "image": "white-shoes1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 164,
+    "fields": {
+      "sku": "white-shoes-women001",
+      "name": "Women’s White Training Shoes",
+      "description": "Sleek, supportive training shoes perfect for lifting and high-intensity workouts.",
+      "price": 68.00,
+      "category": 1,
+      "rating": 4.7,
+      "image_url": "media/white-shoes2.jpg",
+      "image": "white-shoes2.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 165,
+    "fields": {
+      "sku": "women-activewear001",
+      "name": "Women’s Activewear Set",
+      "description": "Flexible and breathable activewear designed to support strength training and cardio workouts.",
+      "price": 54.99,
+      "category": 7,
+      "rating": 4.8,
+      "image_url": "media/women's-activewear.jpg",
+      "image": "women's-activewear.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 166,
+    "fields": {
+      "sku": "workout-weight001",
+      "name": "Weight Training Workout Gear",
+      "description": "High-performance gear for weight training sessions, including gloves and sweatbands.",
+      "price": 39.99,
+      "category": 7,
+      "rating": 4.7,
+      "image_url": "media/workout.jpg",
+      "image": "workout.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 167,
+    "fields": {
+      "sku": "workout-weight002",
+      "name": "Advanced Weight Training Gear",
+      "description": "Durable gear optimized for intense weight training and gym sessions.",
+      "price": 44.99,
+      "category": 7,
+      "rating": 4.8,
+      "image_url": "media/workout1.jpg",
+      "image": "workout1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 168,
+    "fields": {
+      "sku": "yellow-bands001",
+      "name": "Yellow Resistance Bands",
+      "description": "Light resistance bands ideal for yoga, stretching, and light strength training.",
+      "price": 12.99,
+      "category": 10,
+      "rating": 4.6,
+      "image_url": "media/yellow-bands.jpg",
+      "image": "yellow-bands.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 169,
+    "fields": {
+      "sku": "yellow-set-women001",
+      "name": "Women’s Yellow Yoga Set",
+      "description": "Complete yoga set for women including mat, blocks, and straps, perfect for all skill levels.",
+      "price": 59.99,
+      "category": 7,
+      "rating": 4.7,
+      "image_url": "media/yellow-set.jpg",
+      "image": "yellow-set.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 170,
+    "fields": {
+      "sku": "yoga-class001",
+      "name": "Yoga Class Session 1",
+      "description": "Guided yoga session focusing on flexibility and relaxation techniques.",
+      "price": 15.00,
+      "category": 11,
+      "rating": 4.8,
+      "image_url": "media/yoga-class.jpg",
+      "image": "yoga-class.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 171,
+    "fields": {
+      "sku": "yoga-class002",
+      "name": "Yoga Class Session 2",
+      "description": "Intermediate flow yoga class emphasizing core strength and balance.",
+      "price": 15.00,
+      "category": 11,
+      "rating": 4.7,
+      "image_url": "media/yoga-class1.jpg",
+      "image": "yoga-class1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 172,
+    "fields": {
+      "sku": "yoga-class003",
+      "name": "Yoga Class Session 3",
+      "description": "Power yoga session for increased endurance and flexibility.",
+      "price": 15.00,
+      "category": 11,
+      "rating": 4.7,
+      "image_url": "media/yoga-class2.jpg",
+      "image": "yoga-class2.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 173,
+    "fields": {
+      "sku": "yoga-class004",
+      "name": "Yoga Class Session 4",
+      "description": "Restorative yoga focusing on muscle recovery and deep stretching.",
+      "price": 15.00,
+      "category": 11,
+      "rating": 4.8,
+      "image_url": "media/yoga-class3.jpg",
+      "image": "yoga-class3.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 174,
+    "fields": {
+      "sku": "yoga-class005",
+      "name": "Yoga Class Session 5",
+      "description": "Gentle yoga for beginners, emphasizing breath control and mindfulness.",
+      "price": 15.00,
+      "category": 11,
+      "rating": 4.9,
+      "image_url": "media/yoga-class4.jpg",
+      "image": "yoga-class4.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 175,
+    "fields": {
+      "sku": "yoga-class006",
+      "name": "Yoga Class Session 6",
+      "description": "Vinyasa flow to enhance strength and fluidity in movements.",
+      "price": 15.00,
+      "category": 11,
+      "rating": 4.7,
+      "image_url": "media/yoga-class5.jpg",
+      "image": "yoga-class5.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 176,
+    "fields": {
+      "sku": "yoga-class007",
+      "name": "Yoga Class Session 7",
+      "description": "Advanced yoga session focusing on balance and advanced postures.",
+      "price": 15.00,
+      "category": 11,
+      "rating": 4.8,
+      "image_url": "media/yoga-class6.jpg",
+      "image": "yoga-class6.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 177,
+    "fields": {
+      "sku": "yoga-class008",
+      "name": "Yoga Class Session 8",
+      "description": "Yoga class emphasizing meditation and breathing techniques.",
+      "price": 15.00,
+      "category": 11,
+      "rating": 4.7,
+      "image_url": "media/yoga-class7.jpg",
+      "image": "yoga-class7.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 178,
+    "fields": {
+      "sku": "yoga-mat001",
+      "name": "Eco-Friendly Yoga Mat",
+      "description": "Durable, non-slip eco-friendly yoga mat designed for all types of yoga and Pilates.",
+      "price": 35.99,
+      "category": 7,
+      "rating": 4.8,
+      "image_url": "media/yoga-mat.jpg",
+      "image": "yoga-mat.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 179,
+    "fields": {
+      "sku": "yoga-mat002",
+      "name": "Extra Thick Yoga Mat",
+      "description": "Extra cushioned yoga mat providing superior comfort and support for floor exercises.",
+      "price": 42.99,
+      "category": 7,
+      "rating": 4.7,
+      "image_url": "media/yoga-mat1.jpg",
+      "image": "yoga-mat1.jpg"
     }
   }
 ]
