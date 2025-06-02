@@ -7,7 +7,7 @@
       "name": "Women's Lightweight Running Top",
       "description": "Comfortable and stylish top perfect for running or training.",
       "price": 29.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.5,
       "image_url": "",
       "image": "adidas-pink-outfit.jpg"
@@ -35,7 +35,7 @@
       "name": "Adidas Shorts",
       "description": "Breathable and lightweight Adidas shorts, perfect for training or casual wear.",
       "price": 34.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.5,
       "image_url": "media/adidas-shorts.jpg",
       "image": "adidas-shorts.jpg"
@@ -49,7 +49,7 @@
       "name": "Adidas Outfit",
       "description": "Affordable and stylish Adidas outfit perfect for training or everyday wear.",
       "price": 49.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.5,
       "image_url": "media/affordable.outfit.jpg",
       "image": "affordable.outfit.jpg"
@@ -77,7 +77,7 @@
     "name": "Avocado Vitamin Supplement",
     "description": "Nutritious avocado-based vitamin supplement designed to support gym performance and recovery.",
     "price": 24.99,
-    "category": 5,
+    "category": 3,
     "rating": 4.7,
     "image_url": "media/avocado.jpg",
     "image": "avocado.jpg"
@@ -91,7 +91,7 @@
       "name": "Fitness Resistance Bands Basic",
       "description": "Durable and versatile resistance bands perfect for strength training and flexibility exercises.",
       "price": 19.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.6,
       "image_url": "media/bands.jpg",
       "image": "bands.jpg"
@@ -105,7 +105,7 @@
       "name": "Fitness Resistance Band Set 1",
       "description": "Durable resistance bands set perfect for strength training and flexibility exercises.",
       "price": 21.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.7,
       "image_url": "media/bands1.jpg",
       "image": "bands1.jpg"
@@ -119,7 +119,7 @@
       "name": "Fitness Resistance Band Set 2",
       "description": "High-quality resistance bands designed for versatile workouts and muscle toning.",
       "price": 22.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.8,
       "image_url": "media/bands2.jpg",
       "image": "bands2.jpg"
@@ -133,7 +133,7 @@
       "name": "Beij Set",
       "description": "Complete Beij workout set for effective strength and conditioning training.",
       "price": 59.99,
-      "category": 5,
+      "category": 2,
       "rating": 4.5,
       "image_url": "media/beij-set.jpg",
       "image": "beij-set.jpg"
@@ -161,7 +161,7 @@
       "name": "Black Resistance Bands",
       "description": "Strong and durable black resistance bands suitable for all levels of fitness training.",
       "price": 22.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.7,
       "image_url": "media/black-bands.jpg",
       "image": "black-bands.jpg"
@@ -175,7 +175,7 @@
       "name": "Black Yoga Blocks",
       "description": "High-density black yoga blocks to support stability and improve yoga poses.",
       "price": 15.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.6,
       "image_url": "media/black-blocks.jpg",
       "image": "black-blocks.jpg"
@@ -189,7 +189,7 @@
       "name": "Black Yoga Mat",
       "description": "Premium black yoga mat providing excellent grip and cushioning for all yoga levels.",
       "price": 39.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.8,
       "image_url": "media/black-mat.jpg",
       "image": "black-mat.jpg"
@@ -217,7 +217,7 @@
       "name": "Black Training Shorts",
       "description": "Lightweight and breathable black training shorts suitable for all workout sessions.",
       "price": 29.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.5,
       "image_url": "media/black-short.jpg",
       "image": "black-short.jpg"
@@ -231,7 +231,7 @@
       "name": "Black Training Shorts 1",
       "description": "Lightweight and breathable black training shorts perfect for any workout.",
       "price": 29.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.5,
       "image_url": "media/black-short1.jpg",
       "image": "black-short1.jpg"
@@ -245,7 +245,7 @@
       "name": "Black Training Shorts 2",
       "description": "Comfortable and durable black shorts designed for training and sports.",
       "price": 31.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.6,
       "image_url": "media/black-short2.jpg",
       "image": "black-short2.jpg"
@@ -259,7 +259,7 @@
       "name": "Black Training Shorts 3",
       "description": "Stylish and functional black shorts ideal for high-intensity workouts.",
       "price": 28.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.5,
       "image_url": "media/black-short3.jpg",
       "image": "black-short3.jpg"
@@ -273,7 +273,7 @@
       "name": "Black Training Shorts 4",
       "description": "Premium black shorts designed for maximum comfort during training sessions.",
       "price": 33.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.7,
       "image_url": "media/black-short4.jpg",
       "image": "black-short4.jpg"
@@ -287,7 +287,7 @@
       "name": "Black Fitness Vitamin",
       "description": "Versatile black fitness vitamin suitable for various workouts.",
       "price": 25.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.5,
       "image_url": "media/black.jpg",
       "image": "black.jpg"
@@ -315,7 +315,7 @@
       "name": "Yoga Blocks Set 1",
       "description": "High-density yoga blocks to assist with stretching and balance.",
       "price": 15.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.6,
       "image_url": "media/blocks.jpg",
       "image": "blocks.jpg"
@@ -329,7 +329,7 @@
       "name": "Yoga Blocks Set 2",
       "description": "Durable yoga blocks for enhanced stability and support.",
       "price": 16.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.7,
       "image_url": "media/blocks1.jpg",
       "image": "blocks1.jpg"
@@ -343,7 +343,7 @@
       "name": "Yoga Blocks Set 3",
       "description": "Lightweight yoga blocks ideal for all skill levels.",
       "price": 14.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.5,
       "image_url": "media/blocks2.jpg",
       "image": "blocks2.jpg"
@@ -357,7 +357,7 @@
       "name": "Yoga Blocks Set 4",
       "description": "Ergonomic yoga blocks designed for comfort and durability.",
       "price": 17.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.8,
       "image_url": "media/blocks3.jpg",
       "image": "blocks3.jpg"
@@ -371,7 +371,7 @@
       "name": "Yoga Blocks Set 5",
       "description": "Premium yoga blocks for enhanced workout support.",
       "price": 19.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.9,
       "image_url": "media/blocks4.jpg",
       "image": "blocks4.jpg"
@@ -385,7 +385,7 @@
       "name": "Blue Resistance Bands",
       "description": "Durable blue resistance bands perfect for strength training and flexibility.",
       "price": 20.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.6,
       "image_url": "media/blue-bands.jpg",
       "image": "blue-bands.jpg"
@@ -399,7 +399,7 @@
       "name": "Blue Resistance Bands Set 1",
       "description": "Complete set of blue resistance bands for versatile workouts.",
       "price": 22.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.7,
       "image_url": "media/blue-bands1.jpg",
       "image": "blue-bands1.jpg"
@@ -413,7 +413,7 @@
       "name": "Blue Yoga Blocks",
       "description": "High-density blue yoga blocks to improve your stability and flexibility.",
       "price": 17.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.8,
       "image_url": "media/blue-blocks.jpg",
       "image": "blue-blocks.jpg"
@@ -441,7 +441,7 @@
       "name": "Blue Fitness Outfit",
       "description": "Comfortable and stylish blue fitness outfit perfect for workouts and casual wear.",
       "price": 49.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.6,
       "image_url": "media/blue-outfit.jpg",
       "image": "blue-outfit.jpg"
@@ -455,7 +455,7 @@
       "name": "Blue Fitness Set",
       "description": "Complete blue fitness set including essential workout gear.",
       "price": 79.99,
-      "category": 5,
+      "category": 2,
       "rating": 4.7,
       "image_url": "media/blue-set.jpg",
       "image": "blue-set.jpg"
@@ -469,7 +469,7 @@
       "name": "Blue Fitness Set 1",
       "description": "Extended blue fitness set for versatile training routines.",
       "price": 89.99,
-      "category": 5,
+      "category": 2,
       "rating": 4.8,
       "image_url": "media/blue-set1.jpg",
       "image": "blue-set1.jpg"
@@ -539,7 +539,7 @@
       "name": "Brown Vitamin Supplement",
       "description": "Nutrient-rich brown vitamin supplement to support gym recovery and health.",
       "price": 25.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.7,
       "image_url": "media/brown.jpg",
       "image": "brown.jpg"
@@ -553,7 +553,7 @@
       "name": "Cacao Chocolate Bar",
       "description": "Delicious cacao chocolate bar, perfect for a healthy snack.",
       "price": 3.99,
-      "category": 5,
+      "category": 4,
       "rating": 4.6,
       "image_url": "media/cacao-bar.jpg",
       "image": "cacao-bar.jpg"
@@ -567,7 +567,7 @@
       "name": "Cacao Vanilla Protein",
       "description": "Smooth cacao vanilla protein powder for muscle recovery and energy.",
       "price": 39.99,
-      "category": 5,
+      "category": 4,
       "rating": 4.7,
       "image_url": "media/cacao-vanilla-protein.jpg",
       "image": "cacao-vanilla-protein.jpg"
@@ -581,7 +581,7 @@
       "name": "Chocolate Bar",
       "description": "Rich and tasty chocolate bar, ideal for a quick energy boost.",
       "price": 2.99,
-      "category": 5,
+      "category": 4,
       "rating": 4.5,
       "image_url": "media/chocolate-bar.jpg",
       "image": "chocolate-bar.jpg"
@@ -595,7 +595,7 @@
       "name": "Chocolate Bar 1",
       "description": "Premium chocolate bar with a smooth texture and rich flavor.",
       "price": 3.49,
-      "category": 5,
+      "category": 4,
       "rating": 4.6,
       "image_url": "media/chocolate-bar1.jpg",
       "image": "chocolate-bar1.jpg"
@@ -609,7 +609,7 @@
       "name": "Chromium Vitamin",
       "description": "Essential chromium supplement to support metabolism and health.",
       "price": 18.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.7,
       "image_url": "media/chronium.jpg",
       "image": "chronium.jpg"
@@ -623,7 +623,7 @@
       "name": "Comfortable Fitness Set",
       "description": "Complete fitness set designed for comfort and performance.",
       "price": 69.99,
-      "category": 5,
+      "category": 2,
       "rating": 4.8,
       "image_url": "media/comfortable-set.jpg",
       "image": "comfortable-set.jpg"
@@ -651,7 +651,7 @@
       "name": "Crazy Fitness Outfit",
       "description": "Vibrant and energetic fitness outfit perfect for making a statement at the gym.",
       "price": 54.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.6,
       "image_url": "media/crazy-outfit.jpg",
       "image": "crazy-outfit.jpg"
@@ -665,7 +665,7 @@
       "name": "Creatine Supplement",
       "description": "High-quality creatine supplement to boost muscle strength and recovery.",
       "price": 29.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.7,
       "image_url": "media/creatine.jpg",
       "image": "creatine.jpg"
@@ -679,7 +679,7 @@
       "name": "Creatine Supplement 1",
       "description": "Pure creatine powder designed for optimal athletic performance.",
       "price": 31.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.8,
       "image_url": "media/creatine1.jpg",
       "image": "creatine1.jpg"
@@ -693,7 +693,7 @@
       "name": "Cute Fitness Set",
       "description": "Adorable and functional fitness set designed for comfort and style.",
       "price": 59.99,
-      "category": 5,
+      "category": 2,
       "rating": 4.5,
       "image_url": "media/cute-set.jpg",
       "image": "cute-set.jpg"
@@ -707,7 +707,7 @@
       "name": "Cute Fitness Set 1",
       "description": "Stylish and comfortable fitness set perfect for any workout.",
       "price": 62.99,
-      "category": 5,
+      "category": 2,
       "rating": 4.6,
       "image_url": "media/cute-set1.jpg",
       "image": "cute-set1.jpg"
@@ -735,7 +735,7 @@
       "name": "Cutes Fitness Set",
       "description": "Charming and functional fitness set for stylish training sessions.",
       "price": 61.99,
-      "category": 5,
+      "category": 2,
       "rating": 4.6,
       "image_url": "media/cutes-set.jpg",
       "image": "cutes-set.jpg"
@@ -749,7 +749,7 @@
       "name": "Gym Hydration Drink",
       "description": "Refreshing hydration drink to keep you energized during workouts.",
       "price": 3.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.7,
       "image_url": "media/drink.jpg",
       "image": "drink.jpg"
@@ -889,7 +889,7 @@
       "name": "Gold Vitamin Supplement",
       "description": "Premium vitamin supplement designed to support overall health and energy.",
       "price": 24.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.7,
       "image_url": "media/gold.jpg",
       "image": "gold.jpg"
@@ -903,7 +903,7 @@
       "name": "Gray Exercise Mat",
       "description": "Comfortable, non-slip exercise mat ideal for yoga, stretching, and floor workouts.",
       "price": 19.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.5,
       "image_url": "media/gray-mat.jpg",
       "image": "gray-mat.jpg"
@@ -917,7 +917,7 @@
       "name": "Gray Exercise Mat 1",
       "description": "Durable and cushioned gray mat for comfortable workout sessions.",
       "price": 22.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.6,
       "image_url": "media/gray-mat1.jpg",
       "image": "gray-mat1.jpg"
@@ -945,7 +945,7 @@
       "name": "Green Resistance Bands",
       "description": "Set of durable resistance bands for strength training and rehabilitation exercises.",
       "price": 15.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.5,
       "image_url": "media/green-bands.jpg",
       "image": "green-bands.jpg"
@@ -959,7 +959,7 @@
       "name": "Green Yoga Blocks",
       "description": "Lightweight yoga blocks to support stability and balance in your practice.",
       "price": 12.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.4,
       "image_url": "media/green-blocks.jpg",
       "image": "green-blocks.jpg"
@@ -973,7 +973,7 @@
       "name": "Green Exercise Mat",
       "description": "Eco-friendly, cushioned mat perfect for all your workout needs.",
       "price": 21.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.6,
       "image_url": "media/green-mat.jpg",
       "image": "green-mat.jpg"
@@ -1001,7 +1001,7 @@
       "name": "Lemon Refreshing Drink",
       "description": "Fresh and tangy lemon drink to hydrate and refresh you during workouts.",
       "price": 2.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.5,
       "image_url": "media/lemon.jpg",
       "image": "lemon.jpg"
@@ -1225,7 +1225,7 @@
       "name": "Mushroom Magic Supplement",
       "description": "A powerful blend of adaptogenic mushrooms to support focus, recovery, and immune health.",
       "price": 24.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.7,
       "image_url": "media/magic.jpg",
       "image": "magic.jpg"
@@ -1239,7 +1239,7 @@
       "name": "Magnesium Complex",
       "description": "Essential magnesium supplement to support muscle function and energy production.",
       "price": 14.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.6,
       "image_url": "media/magnesium.jpg",
       "image": "magnesium.jpg"
@@ -1253,7 +1253,7 @@
       "name": "Basic Workout Mat",
       "description": "Durable and lightweight exercise mat, perfect for stretching and floor workouts.",
       "price": 19.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.4,
       "image_url": "media/mat.jpg",
       "image": "mat.jpg"
@@ -1281,7 +1281,7 @@
       "name": "Men's Activewear Set",
       "description": "Comfortable and moisture-wicking activewear ideal for workouts or casual wear.",
       "price": 49.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.5,
       "image_url": "media/men's-activewear.jpg",
       "image": "men's-activewear.jpg"
@@ -1295,7 +1295,7 @@
       "name": "Men's Activewear Performance Set",
       "description": "High-performance activewear with breathable fabric and sleek design.",
       "price": 54.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.6,
       "image_url": "media/men's-activewear1.jpg",
       "image": "men's-activewear1.jpg"
@@ -1309,7 +1309,7 @@
       "name": "Men's Black Workout Set",
       "description": "Stylish black training set built for mobility and durability.",
       "price": 59.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.7,
       "image_url": "media/men's-black-set.jpg",
       "image": "men's-black-set.jpg"
@@ -1323,7 +1323,7 @@
       "name": "Men's Essential Training Set",
       "description": "All-purpose gym wear for strength, cardio, or daily comfort.",
       "price": 44.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.4,
       "image_url": "media/men's-set.jpg",
       "image": "men's-set.jpg"
@@ -1337,7 +1337,7 @@
       "name": "Men's Workout Outfit",
       "description": "Breathable and durable outfit for high-performance training.",
       "price": 47.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.5,
       "image_url": "media/men's-set1.jpg",
       "image": "men's-set1.jpg"
@@ -1351,7 +1351,7 @@
       "name": "Mono Creatine Supplement",
       "description": "Pure micronized creatine monohydrate to boost muscle power and recovery.",
       "price": 22.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.6,
       "image_url": "media/mono-creatine.jpg",
       "image": "mono-creatine.jpg"
@@ -1365,10 +1365,10 @@
       "name": "Multivitamin Complex",
       "description": "Daily multivitamin formula supporting overall health and performance.",
       "price": 18.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.7,
-      "image_url": "media/mutli-vitamins.jpg",
-      "image": "mutli-vitamins.jpg"
+      "image_url": "media/multi-vitamins.jpg",
+      "image": "multi-vitamins.jpg"
     }
   },
   {
@@ -1379,7 +1379,7 @@
       "name": "Balanced Multivitamins",
       "description": "Nutrient-rich formula to support energy, immunity, and recovery.",
       "price": 19.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.8,
       "image_url": "media/multivitamins.jpg",
       "image": "multivitamins.jpg"
@@ -1393,7 +1393,7 @@
       "name": "Advanced Multivitamins",
       "description": "Full-spectrum vitamins and minerals to fuel your active lifestyle.",
       "price": 21.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.9,
       "image_url": "media/multivitamins1.jpg",
       "image": "multivitamins1.jpg"
@@ -1407,7 +1407,7 @@
       "name": "Complete Wellness Multivitamin",
       "description": "Comprehensive blend of nutrients for total body health.",
       "price": 23.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.7,
       "image_url": "media/multivitamins2.jpg",
       "image": "multivitamins2.jpg"
@@ -1477,7 +1477,7 @@
       "name": "Orange Workout Set",
       "description": "Bright and bold activewear set that combines comfort with style.",
       "price": 52.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.5,
       "image_url": "media/orange-set.jpg",
       "image": "orange-set.jpg"
@@ -1505,7 +1505,7 @@
       "name": "Orange Workout Shorts",
       "description": "Breathable, lightweight shorts ideal for high-intensity training.",
       "price": 24.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.3,
       "image_url": "media/orange-short.jpg",
       "image": "orange-short.jpg"
@@ -1519,7 +1519,7 @@
       "name": "Orange Resistance Bands",
       "description": "Durable resistance bands for strength and mobility training.",
       "price": 14.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.6,
       "image_url": "media/orange-bands.jpg",
       "image": "orange-bands.jpg"
@@ -1533,7 +1533,7 @@
       "name": "Orange Vitamin C Boost",
       "description": "A refreshing orange-flavored vitamin supplement rich in Vitamin C to support immunity and recovery.",
       "price": 13.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.7,
       "image_url": "media/orange.jpg",
       "image": "orange.jpg"
@@ -1547,7 +1547,7 @@
       "name": "Palmetto Herbal Supplement",
       "description": "Natural palmetto extract to support wellness and hormonal balance.",
       "price": 15.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.5,
       "image_url": "media/palmetto.jpg",
       "image": "palmetto.jpg"
@@ -1561,7 +1561,7 @@
       "name": "Pilates App Subscription",
       "description": "On-demand pilates workouts and guided routines to improve strength and flexibility.",
       "price": 9.99,
-      "category": 4,
+      "category": 5,
       "rating": 4.6,
       "image_url": "media/pilates.jpg",
       "image": "pilates.jpg"
@@ -1575,7 +1575,7 @@
       "name": "Pink Yoga Blocks",
       "description": "Supportive foam yoga blocks for balance and deeper stretches.",
       "price": 11.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.6,
       "image_url": "media/pink-blocks.jpg",
       "image": "pink-blocks.jpg"
@@ -1589,7 +1589,7 @@
       "name": "Pink Yoga Mat",
       "description": "Comfortable and non-slip mat perfect for yoga or general workouts.",
       "price": 19.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.7,
       "image_url": "media/pink-mat.jpg",
       "image": "pink-mat.jpg"
@@ -1603,7 +1603,7 @@
       "name": "Pink Activewear Set",
       "description": "Stylish and breathable pink workout set ideal for training or yoga.",
       "price": 49.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.5,
       "image_url": "media/pink-set.jpg",
       "image": "pink-set.jpg"
@@ -1617,7 +1617,7 @@
       "name": "Pink Fitness Outfit",
       "description": "Lightweight and flexible activewear designed for optimal performance.",
       "price": 52.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.6,
       "image_url": "media/pink-set1.jpg",
       "image": "pink-set1.jpg"
@@ -1645,7 +1645,7 @@
       "name": "Power Up Pre-Workout Formula",
       "description": "Boost your energy and endurance before workouts with this high-performance formula.",
       "price": 24.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.7,
       "image_url": "media/power-up.jpg",
       "image": "power-up.jpg"
@@ -1659,7 +1659,7 @@
       "name": "Pre-Workout Energy Boost",
       "description": "Explosive energy and enhanced focus for better training results.",
       "price": 22.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.6,
       "image_url": "media/pre-workout.jpg",
       "image": "pre-workout.jpg"
@@ -1673,7 +1673,7 @@
       "name": "Advanced Pre-Workout Mix",
       "description": "Formulated for strength, stamina, and fast recovery before intense workouts.",
       "price": 25.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.5,
       "image_url": "media/pre-workout1.jpg",
       "image": "pre-workout1.jpg"
@@ -1687,7 +1687,7 @@
       "name": "PreGym Energy Supplement",
       "description": "Get ready for your session with this powerful pre-gym formula.",
       "price": 21.49,
-      "category": 5,
+      "category": 3,
       "rating": 4.4,
       "image_url": "media/pregym.jpg",
       "image": "pregym.jpg"
@@ -1701,7 +1701,7 @@
       "name": "Intense Pre-Workout Fuel",
       "description": "Fuel your muscles and mind before every session with this advanced pre-workout.",
       "price": 23.49,
-      "category": 5,
+      "category": 3,
       "rating": 4.6,
       "image_url": "media/preworkout1.jpg",
       "image": "preworkout1.jpg"
@@ -1715,7 +1715,7 @@
       "name": "Assorted Gym Vitamins Pack",
       "description": "A mix of essential gym supplements designed to support strength, focus, and recovery.",
       "price": 29.99,
-      "category": 5,
+      "category": 3,
       "rating": 4.8,
       "image_url": "media/products.jpg",
       "image": "products.jpg"
@@ -1729,7 +1729,7 @@
       "name": "Protein Recovery Drink",
       "description": "Ready-to-drink protein shake ideal for post-workout recovery.",
       "price": 4.99,
-      "category": 5,
+      "category": 4,
       "rating": 4.6,
       "image_url": "media/protein-drink.jpg",
       "image": "protein-drink.jpg"
@@ -1743,7 +1743,7 @@
       "name": "Whey Protein Powder",
       "description": "High-quality whey protein for muscle growth and repair.",
       "price": 34.99,
-      "category": 5,
+      "category": 4,
       "rating": 4.7,
       "image_url": "media/protein.jpg",
       "image": "protein.jpg"
@@ -1757,7 +1757,7 @@
       "name": "Protein Blend Shake",
       "description": "Balanced blend of proteins and nutrients to fuel your workouts.",
       "price": 32.49,
-      "category": 5,
+      "category": 4,
       "rating": 4.5,
       "image_url": "media/protein1.jpg",
       "image": "protein1.jpg"
@@ -1771,7 +1771,7 @@
       "name": "Vanilla Whey Protein",
       "description": "Rich vanilla flavor protein powder for daily nutrition.",
       "price": 36.99,
-      "category": 5,
+      "category": 4,
       "rating": 4.8,
       "image_url": "media/protein2.jpg",
       "image": "protein2.jpg"
@@ -1785,7 +1785,7 @@
       "name": "Vanilla Protein",
       "description": "Delicious vanilla packed with muscle-supporting protein.",
       "price": 33.99,
-      "category": 5,
+      "category": 4,
       "rating": 4.6,
       "image_url": "media/protein3.jpg",
       "image": "protein3.jpg"
@@ -1799,7 +1799,7 @@
       "name": "Premium Protein Powder",
       "description": "All-in-one premium protein formula for strength and endurance.",
       "price": 39.99,
-      "category": 5,
+      "category": 4,
       "rating": 4.9,
       "image_url": "media/proteinpowder.jpg",
       "image": "proteinpowder.jpg"
@@ -1813,7 +1813,7 @@
       "name": "Purple Resistance Bands",
       "description": "Durable resistance bands for strength training and stretching.",
       "price": 10.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.6,
       "image_url": "media/purple-bands.jpg",
       "image": "purple-bands.jpg"
@@ -1827,7 +1827,7 @@
       "name": "Heavy-Duty Purple Bands",
       "description": "Extra strength resistance bands for intense home workouts.",
       "price": 11.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.5,
       "image_url": "media/purple-bands1.jpg",
       "image": "purple-bands1.jpg"
@@ -1869,7 +1869,7 @@
       "name": "Purple Fitness Set",
       "description": "Sleek and breathable workout outfit for high performance.",
       "price": 48.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.7,
       "image_url": "media/purple-set1.jpg",
       "image": "purple-set1.jpg"
@@ -1883,7 +1883,7 @@
       "name": "Purple Yoga Mat",
       "description": "Soft, non-slip yoga mat for pilates, stretching, and floor workouts.",
       "price": 20.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.8,
       "image_url": "media/purple-yoga-mat.jpg",
       "image": "purple-yoga-mat.jpg"
@@ -1897,7 +1897,7 @@
       "name": "Red Resistance Bands",
       "description": "High-quality red resistance bands perfect for strength training, rehabilitation, and stretching exercises.",
       "price": 12.49,
-      "category": 5,
+      "category": 7,
       "rating": 4.7,
       "image_url": "media/red-bands.jpg",
       "image": "red-bands.jpg"
@@ -1911,7 +1911,7 @@
     "name": "Red Yoga Mat",
     "description": "Durable non-slip red yoga mat designed for pilates, floor workouts, and stretching routines.",
     "price": 19.99,
-    "category": 5,
+    "category": 7,
     "rating": 4.6,
     "image_url": "media/red-mat.jpg",
     "image": "red-mat.jpg"
@@ -1925,7 +1925,7 @@
     "name": "Red Yoga Mat",
     "description": "Extra thick red yoga mat for maximum comfort and joint support during intense workouts.",
     "price": 24.99,
-    "category": 5,
+    "category": 7,
     "rating": 4.8,
     "image_url": "media/red-mat1.jpg",
     "image": "red-mat1.jpg"
@@ -2009,7 +2009,7 @@
     "name": "Women’s Running Set",
     "description": " Lightweight women’s running set with moisture-wicking fabric and flexible fit.",
     "price": 39.99,
-    "category": 7,
+    "category": 2,
     "rating": 4.6,
     "image_url": "media/running-set.jpg",
     "image": "running-set.jpg"
@@ -2023,7 +2023,7 @@
     "name": "Men’s Running Set",
     "description": "LBreathable men's running outfit including shirt and shorts for peak performance.",
     "price": 19.99,
-    "category": 7,
+    "category": 2,
     "rating": 4.7,
     "image_url": "media/running-set1.jpg",
     "image": "running-set1.jpg"
@@ -2037,7 +2037,7 @@
       "name": "Men’s Workout Set",
       "description": "Complete men’s workout outfit with a moisture-wicking shirt and flexible shorts for training and running.",
       "price": 44.99,
-      "category": 7,
+      "category": 2,
       "rating": 4.5,
       "image_url": "media/set1.jpg",
       "image": "set1.jpg"
@@ -2051,7 +2051,7 @@
       "name": "Men’s Performance Shirt",
       "description": "Breathable, sweat-resistant men’s athletic shirt designed for high-intensity workouts.",
       "price": 22.99,
-      "category": 7,
+      "category": 2,
       "rating": 4.6,
       "image_url": "media/shirt1.jpg",
       "image": "shirt1.jpg"
@@ -2149,7 +2149,7 @@
       "name": "Men’s Training Shorts",
       "description": "Flexible, breathable training shorts for men, perfect for cardio, lifting, and daily workouts.",
       "price": 27.99,
-      "category": 7,
+      "category": 2,
       "rating": 4.5,
       "image_url": "media/shorts.jpg",
       "image": "shorts.jpg"
@@ -2163,7 +2163,7 @@
       "name": "Women’s Sport Set",
       "description": "Matching activewear set for women featuring a fitted top and high-stretch leggings.",
       "price": 49.99,
-      "category": 7,
+      "category": 2,
       "rating": 4.7,
       "image_url": "media/sport's-set.jpg",
       "image": "sport's-set.jpg"
@@ -2177,7 +2177,7 @@
       "name": "Daily Vitamin Supplement",
       "description": "A daily multivitamin blend to support energy, immunity, and recovery.",
       "price": 18.99,
-      "category": 8,
+      "category": 3,
       "rating": 4.6,
       "image_url": "media/supplement.jpg",
       "image": "supplement.jpg"
@@ -2191,7 +2191,7 @@
       "name": "Pro Tennis Racket",
       "description": "Lightweight and balanced tennis racket for intermediate and advanced players.",
       "price": 79.99,
-      "category": 9,
+      "category": 5,
       "rating": 4.8,
       "image_url": "media/tennis.jpg",
       "image": "tennis.jpg"
@@ -2205,7 +2205,7 @@
       "name": "Training Equipment Set",
       "description": "Essential equipment for weight training",
       "price": 59.99,
-      "category": 7,
+      "category": 5,
       "rating": 4.7,
       "image_url": "media/training.jpg",
       "image": "training.jpg"
@@ -2219,7 +2219,7 @@
       "name": "Foldable Home Treadmill",
       "description": "Compact, foldable treadmill with incline adjustment and LCD display for home cardio workouts.",
       "price": 349.00,
-      "category": 10,
+      "category": 5,
       "rating": 4.9,
       "image_url": "media/treadmill.jpg",
       "image": "treadmill.jpg"
@@ -2233,7 +2233,7 @@
       "name": "Vegan Chocolate Protein Bar",
       "description": "Delicious and nutritious vegan protein bar with rich chocolate flavor, perfect post-workout snack.",
       "price": 3.99,
-      "category": 8,
+      "category": 4,
       "rating": 4.6,
       "image_url": "media/vegan-chocolate.jpg",
       "image": "vegan-chocolate.jpg"
@@ -2247,7 +2247,7 @@
       "name": "Vegan Protein Powder",
       "description": "Plant-based protein powder with a smooth vanilla flavor, ideal for muscle recovery and growth.",
       "price": 29.99,
-      "category": 8,
+      "category": 4,
       "rating": 4.7,
       "image_url": "media/vegan-protein.jpg",
       "image": "vegan-protein.jpg"
@@ -2261,7 +2261,7 @@
       "name": "Vitamin D3 Supplement",
       "description": "High potency Vitamin D3 capsules to support bone health and immune function.",
       "price": 12.99,
-      "category": 8,
+      "category": 3,
       "rating": 4.8,
       "image_url": "media/vitaminD3.jpg",
       "image": "vitaminD3.jpg"
@@ -2275,7 +2275,7 @@
       "name": "Daily Multivitamins",
       "description": "Comprehensive daily multivitamins to support overall health and wellness.",
       "price": 19.99,
-      "category": 8,
+      "category": 3,
       "rating": 4.5,
       "image_url": "media/vitamins.jpg",
       "image": "vitamins.jpg"
@@ -2289,7 +2289,7 @@
       "name": "Women’s Multivitamins",
       "description": "Tailored multivitamin blend for women to support energy, skin health, and immune system.",
       "price": 21.99,
-      "category": 8,
+      "category": 3,
       "rating": 4.6,
       "image_url": "media/vitamins1.jpg",
       "image": "vitamins1.jpg"
@@ -2317,7 +2317,7 @@
       "name": "Men’s White Training Set",
       "description": "Lightweight and breathable activewear set designed for weight training and gym workouts.",
       "price": 48.99,
-      "category": 7,
+      "category": 2,
       "rating": 4.7,
       "image_url": "media/white-set.jpg",
       "image": "white-set.jpg"
@@ -2373,7 +2373,7 @@
       "name": "Women’s Activewear Set",
       "description": "Flexible and breathable activewear designed to support strength training and cardio workouts.",
       "price": 54.99,
-      "category": 7,
+      "category": 2,
       "rating": 4.8,
       "image_url": "media/women's-activewear.jpg",
       "image": "women's-activewear.jpg"
@@ -2387,7 +2387,7 @@
       "name": "Weight Training Workout Gear",
       "description": "High-performance gear for weight training sessions, including gloves and sweatbands.",
       "price": 39.99,
-      "category": 7,
+      "category": 5,
       "rating": 4.7,
       "image_url": "media/workout.jpg",
       "image": "workout.jpg"
@@ -2401,7 +2401,7 @@
       "name": "Advanced Weight Training Gear",
       "description": "Durable gear optimized for intense weight training and gym sessions.",
       "price": 44.99,
-      "category": 7,
+      "category": 5,
       "rating": 4.8,
       "image_url": "media/workout1.jpg",
       "image": "workout1.jpg"
@@ -2415,7 +2415,7 @@
       "name": "Yellow Resistance Bands",
       "description": "Light resistance bands ideal for yoga, stretching, and light strength training.",
       "price": 12.99,
-      "category": 10,
+      "category": 7,
       "rating": 4.6,
       "image_url": "media/yellow-bands.jpg",
       "image": "yellow-bands.jpg"
@@ -2429,7 +2429,7 @@
       "name": "Women’s Yellow Yoga Set",
       "description": "Complete yoga set for women including mat, blocks, and straps, perfect for all skill levels.",
       "price": 59.99,
-      "category": 7,
+      "category": 2,
       "rating": 4.7,
       "image_url": "media/yellow-set.jpg",
       "image": "yellow-set.jpg"
@@ -2443,7 +2443,7 @@
       "name": "Yoga Class Session 1",
       "description": "Guided yoga session focusing on flexibility and relaxation techniques.",
       "price": 15.00,
-      "category": 11,
+      "category": 6,
       "rating": 4.8,
       "image_url": "media/yoga-class.jpg",
       "image": "yoga-class.jpg"
@@ -2457,7 +2457,7 @@
       "name": "Yoga Class Session 2",
       "description": "Intermediate flow yoga class emphasizing core strength and balance.",
       "price": 15.00,
-      "category": 11,
+      "category": 6,
       "rating": 4.7,
       "image_url": "media/yoga-class1.jpg",
       "image": "yoga-class1.jpg"
@@ -2471,7 +2471,7 @@
       "name": "Yoga Class Session 3",
       "description": "Power yoga session for increased endurance and flexibility.",
       "price": 15.00,
-      "category": 11,
+      "category": 6,
       "rating": 4.7,
       "image_url": "media/yoga-class2.jpg",
       "image": "yoga-class2.jpg"
@@ -2485,7 +2485,7 @@
       "name": "Yoga Class Session 4",
       "description": "Restorative yoga focusing on muscle recovery and deep stretching.",
       "price": 15.00,
-      "category": 11,
+      "category": 6,
       "rating": 4.8,
       "image_url": "media/yoga-class3.jpg",
       "image": "yoga-class3.jpg"
@@ -2499,7 +2499,7 @@
       "name": "Yoga Class Session 5",
       "description": "Gentle yoga for beginners, emphasizing breath control and mindfulness.",
       "price": 15.00,
-      "category": 11,
+      "category": 6,
       "rating": 4.9,
       "image_url": "media/yoga-class4.jpg",
       "image": "yoga-class4.jpg"
@@ -2513,7 +2513,7 @@
       "name": "Yoga Class Session 6",
       "description": "Vinyasa flow to enhance strength and fluidity in movements.",
       "price": 15.00,
-      "category": 11,
+      "category": 6,
       "rating": 4.7,
       "image_url": "media/yoga-class5.jpg",
       "image": "yoga-class5.jpg"
@@ -2527,7 +2527,7 @@
       "name": "Yoga Class Session 7",
       "description": "Advanced yoga session focusing on balance and advanced postures.",
       "price": 15.00,
-      "category": 11,
+      "category": 6,
       "rating": 4.8,
       "image_url": "media/yoga-class6.jpg",
       "image": "yoga-class6.jpg"
@@ -2541,7 +2541,7 @@
       "name": "Yoga Class Session 8",
       "description": "Yoga class emphasizing meditation and breathing techniques.",
       "price": 15.00,
-      "category": 11,
+      "category": 6,
       "rating": 4.7,
       "image_url": "media/yoga-class7.jpg",
       "image": "yoga-class7.jpg"
