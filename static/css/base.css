@@ -3,6 +3,7 @@ html {
 }
 
 body {
+    /* Update the background image path to your project or keep blank if none */
     background: url('/media/background_image.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
@@ -29,8 +30,8 @@ body {
     width: fit-content;
 }
 
-/* Shop button style */
-.shop-now-button {
+/* Get Started button style */
+.get-started-button {
     background: black;
     color: white;
     min-width: 260px;
@@ -38,6 +39,7 @@ body {
     transition: background 0.3s ease;
 }
 
+/* Alternative button style */
 .btn-black {
     background: black;
     color: white;
@@ -45,9 +47,9 @@ body {
 }
 
 /* Button hover/focus states */
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
+.get-started-button:hover,
+.get-started-button:active,
+.get-started-button:focus,
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
@@ -65,19 +67,33 @@ body {
 .border-black {
     border: 1px solid black !important;
 }
+
+/* Background black utility */
 .bg-black {
     background: #000 !important;
 }
-/* -------------------------------- Media Queries */
 
-/* Larger container max width on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
+/* Full screen white overlay behind content */
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
 }
 
-/* Fixed header on medium screens and larger */
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+/* Fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -87,8 +103,20 @@ body {
         z-index: 1030;
     }
 
-    /* Padding to avoid content hidden behind header */
+    /* Add top padding to prevent content hidden behind header */
     .header-container {
         padding-top: 164px;
     }
 }
+
+/* Pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
+}
+
