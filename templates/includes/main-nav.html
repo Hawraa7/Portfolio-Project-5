@@ -8,10 +8,9 @@
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}?sort=price" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?sort=rating" class="dropdown-item">By Rating</a>
-                <a href="{% url 'products' %}?category=shoes,activewear,supplements,protein,training-machines,yoga-classes,yoga-accessories,special-offers"
-                    class="dropdown-item">By Category</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
