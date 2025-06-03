@@ -8,9 +8,10 @@
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item">By Rating</a>
-                <a href="" class="dropdown-item">By Category</a>
+                <a href="{% url 'products' %}?sort=price" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating" class="dropdown-item">By Rating</a>
+                <a href="{% url 'products' %}?category=shoes,activewear,supplements,protein,training-machines,yoga-classes,yoga-accessories,special-offers"
+                    class="dropdown-item">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
@@ -22,10 +23,9 @@
                 Apparel
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="apparel-link">
-                <a href="" class="dropdown-item">Activewear</a>
-                <a href="" class="dropdown-item">Tops</a>
-                <a href="" class="dropdown-item">Bottoms</a>
-                <a href="" class="dropdown-item">All Apparel</a>
+                <a href="{% url 'products' %}?category=activewear" class="dropdown-item">Activewear</a>
+                <a href="{% url 'products' %}?category=shoes" class="dropdown-item">Shoes</a>
+                <a href="{% url 'products' %}?category=activewear,shoes" class="dropdown-item">All Apparel</a>
             </div>
         </li>
 
@@ -36,10 +36,8 @@
                 Equipment
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="equipment-link">
-                <a href="" class="dropdown-item">Weights</a>
-                <a href="" class="dropdown-item">Cardio Machines</a>
-                <a href="" class="dropdown-item">Mats & Accessories</a>
-                <a href="" class="dropdown-item">All Equipment</a>
+                <a href="{% url 'products' %}?category=training-machines" class="dropdown-item">Training Machines</a>
+                <a href="{% url 'products' %}?category=training-machines" class="dropdown-item">All Equipment</a>
             </div>
         </li>
 
@@ -50,25 +48,31 @@
                 Supplements
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="supplements-link">
-                <a href="" class="dropdown-item">Protein</a>
-                <a href="" class="dropdown-item">Pre-Workout</a>
-                <a href="" class="dropdown-item">Vitamins</a>
-                <a href="" class="dropdown-item">All Supplements</a>
+                <a href="{% url 'products' %}?category=protein" class="dropdown-item">Protein</a>
+                <a href="{% url 'products' %}?category=supplements" class="dropdown-item">Other Supplements</a>
+                <a href="{% url 'products' %}?category=protein,supplements" class="dropdown-item">All Supplements</a>
+            </div>
+        </li>
+
+        <!-- Yoga -->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-dark mr-5" href="#" id="yoga-link" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Yoga
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="yoga-link">
+                <a href="{% url 'products' %}?category=yoga-classes" class="dropdown-item">Yoga Classes</a>
+                <a href="{% url 'products' %}?category=yoga-accessories" class="dropdown-item">Yoga Accessories</a>
+                <a href="{% url 'products' %}?category=yoga-classes,yoga-accessories" class="dropdown-item">All Yoga</a>
             </div>
         </li>
 
         <!-- Specials -->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-dark" href="#" id="specials-link" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-dark"
+                href="{% url 'products' %}?category=special-offers">
                 Special Offers
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
-            </div>
         </li>
 
     </ul>
