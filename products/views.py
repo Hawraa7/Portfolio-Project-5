@@ -14,14 +14,17 @@ def all_products(request):
     direction = None
 
     if request.GET:
-        # Sorting
+        # Sorting logic
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
+
             if sortkey == 'name':
-                # Annotate with lower_name for case-insensitive sorting
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
+
+            if sortkey == 'category':
+                sortkey = 'category__name'
 
             if 'direction' in request.GET:
                 direction = request.GET['direction']
@@ -30,13 +33,13 @@ def all_products(request):
 
             products = products.order_by(sortkey)
 
-        # Filtering by categories
+        # Category filtering
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
-        # Search query
+        # Search functionality
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -68,5 +71,4 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
-
 
