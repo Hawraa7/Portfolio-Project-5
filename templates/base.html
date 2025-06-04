@@ -91,11 +91,11 @@
             </div>
           </li>
           <li class="list-inline-item">
-            <a href=""
-              class="nav-link {% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %}">
-              <div class="d-inline-block text-center">
-                <i class="fas fa-shopping-bag fa-lg"></i>
-                <p class="mb-0 small">
+            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+              href="{% url 'view_bag' %}">
+              <div class="text-center">
+                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                <p class="my-0">
                   {% if grand_total %}
                   ${{ grand_total|floatformat:2 }}
                   {% else %}
@@ -105,6 +105,7 @@
               </div>
             </a>
           </li>
+
         </ul>
       </div>
     </div>
@@ -125,7 +126,7 @@
     <!-- Delivery banner -->
     <div id="delivery-banner" class="row text-center">
       <div class="col bg-black text-white">
-        <h4 class="logo-font my-1">Free delivery on orders over ${{ free_shipping_threshold }}!</h4>
+        <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
       </div>
     </div>
   </header>
