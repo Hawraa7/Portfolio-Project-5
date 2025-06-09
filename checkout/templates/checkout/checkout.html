@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">Checkout</h2>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <p class="text-muted">Please fill out the form below to complete your order</p>
+                <form method="POST" action="{% url 'checkout' %}">
+                    {% csrf_token %}
+                    {% for field in order_form %}
+                        <div class="form-group">
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="text-danger small">{{ field.errors }}</div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-black mt-3">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
