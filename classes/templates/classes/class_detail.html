@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2>{{ class.title }}</h2>
+    <p><strong>Instructor:</strong> {{ class.instructor }}</p>
+    <p><strong>Date:</strong> {{ class.date|date:"M d, Y" }}</p>
+    <p><strong>Time:</strong> {{ class.time|time:"H:i" }}</p>
+    <p>{{ class.description }}</p>
+    <p><strong>Spots left:</strong> {{ spots_left }}</p>
+
+    {% if user.is_authenticated %}
+        {% if booked %}
+            <a href="{% url 'cancel_booking' class.id %}" class="btn btn-danger">Cancel Booking</a>
+        {% elif spots_left > 0 %}
+            <a href="{% url 'book_class' class.id %}" class="btn btn-success">Book This Class</a>
+        {% else %}
+            <button class="btn btn-secondary" disabled>Fully Booked</button>
+        {% endif %}
+    {% else %}
+        <a href="{% url 'account_login' %}" class="btn btn-primary">Log in to book</a>
+    {% endif %}
+</div>
+{% endblock %}

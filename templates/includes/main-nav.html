@@ -72,5 +72,19 @@
                 Special Offers
             </a>
         </li>
-    </ul>
+        
+        <!-- Fitness Classes Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-dark mr-5" href="#" id="yoga-link" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Classes
+            </a>
+            <div class="dropdown-menu" aria-labelledby="classesDropdown">
+                <a class="dropdown-item" href="{% url 'class_list' %}">All Classes</a>
+                <a class="dropdown-item" href="{% url 'my_bookings' %}">My Bookings</a>
+                {% if request.user.is_staff %}
+                <a class="dropdown-item" href="{% url 'create_class' %}">Create Class</a>
+                {% endif %}
+            </div>
+        </li>
 </div>

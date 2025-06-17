@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Fitness Class Schedule</h2>
+    <hr>
+    {% for class in classes %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4 class="card-title">{{ class.title }}</h4>
+                <p class="text-muted">With {{ class.instructor }} on {{ class.date }} at {{ class.time }}</p>
+                <p>{{ class.description }}</p>
+                <p><strong>{{ class.bookings.count }}/{{ class.max_participants }}</strong> spots filled</p>
+
+                {% if user.is_authenticated %}
+                    {% if class.id in user_bookings %}
+                        <a href="{% url 'cancel_booking' class.id %}" class="btn btn-danger">Cancel Booking</a>
+                    {% elif class.bookings.count < class.max_participants %}
+                        <a href="{% url 'book_class' class.id %}" class="btn btn-success">Book Now</a>
+                    {% else %}
+                        <button class="btn btn-secondary" disabled>Fully Booked</button>
+                    {% endif %}
+                {% else %}
+                    <a href="{% url 'account_login' %}" class="btn btn-outline-primary">Log in to book</a>
+                {% endif %}
+            </div>
+        </div>
+    {% empty %}
+        <p>No classes scheduled.</p>
+    {% endfor %}
+</div>
+{% endblock %}
