@@ -1,23 +1,31 @@
 {% extends "base.html" %}
-{% block content %}
-<div class="container mt-5">
-    <h2>{{ class.title }}</h2>
-    <p><strong>Instructor:</strong> {{ class.instructor }}</p>
-    <p><strong>Date:</strong> {{ class.date|date:"M d, Y" }}</p>
-    <p><strong>Time:</strong> {{ class.time|time:"H:i" }}</p>
-    <p>{{ class.description }}</p>
-    <p><strong>Spots left:</strong> {{ spots_left }}</p>
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
+{% endblock %}
 
-    {% if user.is_authenticated %}
-        {% if booked %}
-            <a href="{% url 'cancel_booking' class.id %}" class="btn btn-danger">Cancel Booking</a>
-        {% elif spots_left > 0 %}
-            <a href="{% url 'book_class' class.id %}" class="btn btn-success">Book This Class</a>
+{% block content %}
+<div class="class-detail-container container mt-5">
+    <h2 class="class-detail-title">{{ class.title }}</h2>
+
+    <p class="class-detail-instructor"><strong>Instructor:</strong> {{ class.instructor }}</p>
+    <p class="class-detail-date"><strong>Date:</strong> {{ class.date|date:"M d, Y" }}</p>
+    <p class="class-detail-time"><strong>Time:</strong> {{ class.time|time:"H:i" }}</p>
+    <p class="class-detail-description">{{ class.description }}</p>
+    <p class="class-detail-spots-left"><strong>Spots left:</strong> {{ spots_left }}</p>
+
+    <div class="class-detail-actions mt-3">
+        {% if user.is_authenticated %}
+            {% if booked %}
+                <a href="{% url 'cancel_booking' class.id %}" class="btn btn-danger btn-cancel-booking">Cancel Booking</a>
+            {% elif spots_left > 0 %}
+                <a href="{% url 'book_class' class.id %}" class="btn btn-success btn-book-class">Book This Class</a>
+            {% else %}
+                <button class="btn btn-secondary btn-fully-booked" disabled>Fully Booked</button>
+            {% endif %}
         {% else %}
-            <button class="btn btn-secondary" disabled>Fully Booked</button>
+            <a href="{% url 'account_login' %}" class="btn btn-primary btn-login-to-book">Log in to book</a>
         {% endif %}
-    {% else %}
-        <a href="{% url 'account_login' %}" class="btn btn-primary">Log in to book</a>
-    {% endif %}
+    </div>
 </div>
 {% endblock %}

@@ -1,0 +1,272 @@
+/* --- General container for classes app --- */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  background-color: #fff;
+}
+
+/* --- Classes List Page --- */
+.card {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  background-color: #fafafa;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Buttons on list */
+.btn-info,
+.btn-success,
+.btn-secondary,
+.btn-outline-primary {
+  min-width: 140px;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border: none;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  color: white;
+  cursor: not-allowed;
+}
+
+.btn-outline-primary {
+  border: 1.5px solid #007bff;
+  color: #007bff;
+  background: transparent;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* --- Class Detail Page --- */
+.class-detail-container {
+  max-width: 650px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.class-detail-title {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.class-detail-info p {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: #444;
+}
+
+.class-detail-actions {
+  margin-top: 1.5rem;
+}
+
+.class-detail-actions .btn {
+  min-width: 160px;
+  font-weight: 600;
+  padding: 0.6rem 1.25rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+/* --- My Bookings Page --- */
+.bookings-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.bookings-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.bookings-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.booking-item {
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.booking-info {
+  font-size: 1rem;
+  color: #444;
+}
+
+.booking-class-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 0.2rem;
+}
+
+.booking-class-datetime,
+.booking-class-instructor {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.booking-actions .btn {
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  min-width: 80px;
+}
+
+.btn-cancel-booking {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cancel-booking:hover {
+  background-color: #b02a37;
+}
+
+.no-bookings-message {
+  font-style: italic;
+  color: #888;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* --- Create Class Page --- */
+.create-class-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-class-title {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 1.5rem;
+}
+
+.create-class-form label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #333;
+}
+
+.create-class-form input,
+.create-class-form textarea,
+.create-class-form select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+}
+
+.create-class-form input:focus,
+.create-class-form textarea:focus,
+.create-class-form select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.create-class-submit {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.create-class-submit:hover {
+  background-color: #0056b3;
+}
+
+/* --- Responsive tweaks --- */
+@media (max-width: 576px) {
+  .card-body, .create-class-container, .bookings-container, .class-detail-container {
+    padding: 1rem;
+  }
+
+  .btn-info, .btn-success, .btn-secondary, .btn-outline-primary {
+    min-width: 100%;
+    margin-top: 0.5rem;
+  }
+}

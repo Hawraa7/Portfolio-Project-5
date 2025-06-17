@@ -11,8 +11,8 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
                 <div class="dropdown-menu border-0" aria-labelledby="all-products-link"></div>
             </div>
@@ -36,6 +36,7 @@
             <a class="logo-font font-weight-bold nav-link text-dark mr-5" href="#" id="equipment-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Equipment
+            </a>
             <div class="dropdown-menu border-0" aria-labelledby="equipment-link">
                 <a href="{% url 'products' %}?category=training-machines" class="dropdown-item">Training Machines</a>
                 <a href="{% url 'products' %}?category=training-machines" class="dropdown-item">All Equipment</a>
@@ -46,13 +47,14 @@
             <a class="logo-font font-weight-bold nav-link text-dark mr-5" href="#" id="supplements-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Supplements
+            </a>
             <div class="dropdown-menu border-0" aria-labelledby="supplements-link">
                 <a href="{% url 'products' %}?category=protein" class="dropdown-item">Protein</a>
                 <a href="{% url 'products' %}?category=supplements" class="dropdown-item">Other Supplements</a>
                 <a href="{% url 'products' %}?category=protein,supplements" class="dropdown-item">All Supplements</a>
         </li>
 
-     <!-- Yoga -->
+        <!-- Yoga -->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-dark mr-5" href="#" id="yoga-link" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
@@ -72,10 +74,10 @@
                 Special Offers
             </a>
         </li>
-        
+
         <!-- Fitness Classes Dropdown -->
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-dark mr-5" href="#" id="yoga-link" data-toggle="dropdown"
+            <a class="logo-font font-weight-bold nav-link text-dark mr-5" href="#" id="classes-link" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 Classes
             </a>
@@ -87,4 +89,5 @@
                 {% endif %}
             </div>
         </li>
+    </ul>
 </div>
