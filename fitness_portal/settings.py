@@ -24,10 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3mr!7zs@ye0t&(1oaj12@4!+6fi!r(4aelwdmb1&elf7u)-au7'
+#SECRET_KEY = 'django-insecure-3mr!7zs@ye0t&(1oaj12@4!+6fi!r(4aelwdmb1&elf7u)-au7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = 'DEVELOPMENT' in os.environ
+
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -184,6 +185,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
 if 'USE_AWS' in os.environ:
+    # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'zouzou-fitness-media'
     AWS_S3_REGION_NAME = 'us-east-1'
