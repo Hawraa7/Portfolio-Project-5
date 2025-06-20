@@ -1,35 +1,50 @@
+body {
+    background: none !important;
+    background-color: #fff !important;
+    height: auto !important;
+}
+
+
 /* --- General container for classes app --- */
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 1rem 1.5rem;
   background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 /* --- Classes List Page --- */
 .card {
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #ddd;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.75rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
   background-color: #fafafa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  padding: 1.5rem 2rem;
 }
 
-.card-body {
-  padding: 1.25rem;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .card-title {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: #222;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
 }
 
 .card p {
   color: #555;
-  font-size: 1rem;
-  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
 }
 
 /* Buttons on list */
@@ -39,32 +54,37 @@
 .btn-outline-primary {
   min-width: 140px;
   font-weight: 600;
-  padding: 0.4rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-right: 0.75rem;
+  margin-top: 0.75rem;
   display: inline-block;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .btn-info {
   background-color: #17a2b8;
   border: none;
   color: white;
+  box-shadow: 0 4px 10px rgba(23, 162, 184, 0.5);
 }
 
 .btn-info:hover {
   background-color: #138496;
+  box-shadow: 0 6px 16px rgba(19, 132, 150, 0.7);
 }
 
 .btn-success {
   background-color: #28a745;
   border: none;
   color: white;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.5);
 }
 
 .btn-success:hover {
   background-color: #218838;
+  box-shadow: 0 6px 16px rgba(33, 136, 56, 0.7);
 }
 
 .btn-secondary {
@@ -72,69 +92,81 @@
   border: none;
   color: white;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
 .btn-outline-primary {
-  border: 1.5px solid #007bff;
+  border: 2px solid #007bff;
   color: #007bff;
   background: transparent;
+  box-shadow: none;
+  font-weight: 700;
 }
 
 .btn-outline-primary:hover {
   background-color: #007bff;
   color: white;
+  box-shadow: 0 4px 12px rgba(0,123,255,0.5);
 }
 
 /* --- Class Detail Page --- */
 .class-detail-container {
-  max-width: 650px;
-  margin: 0 auto;
+  max-width: 700px;
+  margin: 2rem auto;
   background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  color: #333;
 }
 
 .class-detail-title {
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #222;
+  font-weight: 800;
+  font-size: 2.25rem;
+  margin-bottom: 1.25rem;
+  color: #111;
+  letter-spacing: 0.03em;
 }
 
 .class-detail-info p {
-  font-size: 1.1rem;
-  margin-bottom: 0.8rem;
-  color: #444;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #555;
+  line-height: 1.6;
 }
 
 .class-detail-actions {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .class-detail-actions .btn {
   min-width: 160px;
-  font-weight: 600;
-  padding: 0.6rem 1.25rem;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* --- My Bookings Page --- */
 .bookings-container {
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 720px;
+  margin: 2rem auto;
   background: #fff;
-  padding: 1.5rem 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  color: #444;
 }
 
 .bookings-title {
-  font-weight: 700;
-  font-size: 1.8rem;
+  font-weight: 800;
+  font-size: 2rem;
   color: #222;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .bookings-list {
@@ -143,94 +175,107 @@
 }
 
 .booking-item {
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  margin-bottom: 1rem;
-  padding: 1rem 1.25rem;
-  background-color: #fafafa;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background-color: #f9f9f9;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.booking-item:hover {
+  background-color: #e9ecef;
 }
 
 .booking-info {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #444;
 }
 
 .booking-class-title {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: #111;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
 }
 
 .booking-class-datetime,
 .booking-class-instructor {
   color: #666;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .booking-actions .btn {
-  font-weight: 600;
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  min-width: 80px;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  min-width: 90px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-cancel-booking {
   background-color: #dc3545;
   border: none;
   color: white;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.5);
 }
 
 .btn-cancel-booking:hover {
   background-color: #b02a37;
+  box-shadow: 0 6px 16px rgba(176, 42, 55, 0.7);
 }
 
 .no-bookings-message {
   font-style: italic;
   color: #888;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
+  font-size: 1.1rem;
 }
 
 /* --- Create Class Page --- */
 .create-class-container {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 620px;
+  margin: 2.5rem auto;
   background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  color: #333;
 }
 
 .create-class-title {
-  font-weight: 700;
-  font-size: 2rem;
+  font-weight: 800;
+  font-size: 2.25rem;
   color: #222;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.02em;
 }
 
 .create-class-form label {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
   display: block;
-  color: #333;
+  color: #444;
+  font-size: 1.05rem;
 }
 
 .create-class-form input,
 .create-class-form textarea,
 .create-class-form select {
   width: 100%;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
+  padding: 0.6rem 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
   font-family: inherit;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .create-class-form input:focus,
@@ -238,35 +283,26 @@
 .create-class-form select:focus {
   outline: none;
   border-color: #007bff;
+  box-shadow: 0 0 6px #007bff;
 }
 
-.create-class-submit {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.25rem;
-  font-weight: 700;
-  font-size: 1.1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: block;
-  margin-top: 1rem;
-  width: 100%;
-}
-
-.create-class-submit:hover {
-  background-color: #0056b3;
-}
-
-/* --- Responsive tweaks --- */
-@media (max-width: 576px) {
-  .card-body, .create-class-container, .bookings-container, .class-detail-container {
-    padding: 1rem;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container,
+  .class-detail-container,
+  .create-class-container {
+    padding: 1rem 1.25rem;
+    max-width: 95%;
   }
 
-  .btn-info, .btn-success, .btn-secondary, .btn-outline-primary {
+  .class-detail-actions {
+    flex-direction: column;
+  }
+
+  .btn-info,
+  .btn-success,
+  .btn-outline-primary {
     min-width: 100%;
-    margin-top: 0.5rem;
+    margin-right: 0;
   }
 }
