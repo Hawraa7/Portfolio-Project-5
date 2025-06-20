@@ -29,34 +29,6 @@
 },
  {
     "model": "products.product",
-    "pk": 3,
-    "fields": {
-      "sku": "adidas001",
-      "name": "Adidas Shorts",
-      "description": "Breathable and lightweight Adidas shorts, perfect for training or casual wear.",
-      "price": 34.99,
-      "category": 2,
-      "rating": 4.5,
-      "image_url": "media/adidas-shorts.jpg",
-      "image": "adidas-shorts.jpg"
-    }
-},
- {
-    "model": "products.product",
-    "pk": 4,
-    "fields": {
-      "sku": "adidas001",
-      "name": "Adidas Outfit",
-      "description": "Affordable and stylish Adidas outfit perfect for training or everyday wear.",
-      "price": 49.99,
-      "category": 2,
-      "rating": 4.5,
-      "image_url": "media/affordable.outfit.jpg",
-      "image": "affordable.outfit.jpg"
-    }
-},
- {
-    "model": "products.product",
     "pk": 5,
     "fields": {
       "sku": "adidas001",
@@ -627,35 +599,7 @@
       "rating": 4.8,
       "image_url": "media/comfortable-set.jpg",
       "image": "comfortable-set.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 41,
-    "fields": {
-      "sku": "comfortshoes001",
-      "name": "Comfortable Fitness Shoes",
-      "description": "Ergonomic and stylish shoes designed for comfort during workouts.",
-      "price": 79.99,
-      "category": 1,
-      "rating": 4.7,
-      "image_url": "media/comfortable-shoes.jpg",
-      "image": "comfortable-shoes.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 42,
-    "fields": {
-      "sku": "crazyoutfit001",
-      "name": "Crazy Fitness Outfit",
-      "description": "Vibrant and energetic fitness outfit perfect for making a statement at the gym.",
-      "price": 54.99,
-      "category": 2,
-      "rating": 4.6,
-      "image_url": "media/crazy-outfit.jpg",
-      "image": "crazy-outfit.jpg"
-    }
+  }
   },
   {
     "model": "products.product",
@@ -1513,20 +1457,6 @@
   },
   {
     "model": "products.product",
-    "pk": 104,
-    "fields": {
-      "sku": "bands-orange001",
-      "name": "Orange Resistance Bands",
-      "description": "Durable resistance bands for strength and mobility training.",
-      "price": 14.99,
-      "category": 7,
-      "rating": 4.6,
-      "image_url": "media/orange-bands.jpg",
-      "image": "orange-bands.jpg"
-    }
-  },
-  {
-    "model": "products.product",
     "pk": 105,
     "fields": {
       "sku": "vitamin-orange001",
@@ -1985,20 +1915,6 @@
     "rating": 4.9,
     "image_url": "media/running-shoes2.jpg",
     "image": "running-shoes2.jpg"
-  }
-},
-{
-  "model": "products.product",
-  "pk": 138,
-  "fields": {
-    "sku": "shoes-run005",
-    "name": "Runningshoes – Classic Edition",
-    "description": "Versatile classic running shoes suitable for daily jogs and fitness training.",
-    "price": 55.00,
-    "category": 1,
-    "rating": 4.4,
-    "image_url": "media/runningshoes.jpg",
-    "image": "runningshoes.jpg"
   }
 },
 {
