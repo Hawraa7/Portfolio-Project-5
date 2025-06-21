@@ -1,0 +1,13 @@
+# Ignore local static and media folders — we use AWS S3
+static/
+media/
+
+# Ignore compiled Python files and caches
+__pycache__/
+*.pyc
+
+# Ignore local dev files
+*.sqlite3
+*.log
+.env
+.env.*
