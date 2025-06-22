@@ -35,32 +35,56 @@
     "model": "products.category",
     "pk": 5,
     "fields": {
-      "name": "training-machines",
-      "friendly_name": "Training Machines"
+      "name": "equipment",
+      "friendly_name": "Equipment"
     }
   },
   {
     "model": "products.category",
     "pk": 6,
     "fields": {
-      "name": "yoga-classes",
-      "friendly_name": "Yoga Classes"
+      "name": "cardio-machines",
+      "friendly_name": "Cardio Machines"
     }
   },
   {
     "model": "products.category",
     "pk": 7,
     "fields": {
-      "name": "yoga-accessories",
-      "friendly_name": "Yoga Accessories"
+      "name": "power-machines",
+      "friendly_name": "Power Machines"
     }
   },
   {
     "model": "products.category",
     "pk": 8,
     "fields": {
+      "name": "free-weights",
+      "friendly_name": "Free Weights"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 9,
+    "fields": {
+      "name": "classes",
+      "friendly_name": "Classes"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 10,
+    "fields": {
       "name": "special-offers",
       "friendly_name": "Special Offers"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 11,
+    "fields": {
+      "name": "yoga-accessories",
+      "friendly_name": "Yoga Accessories"
     }
   }
 ]
