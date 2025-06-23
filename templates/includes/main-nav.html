@@ -10,7 +10,7 @@
         <!-- All Products -->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
@@ -24,7 +24,7 @@
         <!-- Apparel -->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-dark mr-5" href="#" id="apparel-link"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Apparel
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="apparel-link">
@@ -37,21 +37,22 @@
         <!-- Equipment -->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-dark mr-5" href="#" id="equipment-link"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Equipment
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="equipment-link">
                 <a href="{% url 'products' %}?category=cardio-machines" class="dropdown-item">Cardio Machines</a>
                 <a href="{% url 'products' %}?category=power-machines" class="dropdown-item">Power Machines</a>
                 <a href="{% url 'products' %}?category=free-weights" class="dropdown-item">Free Weights</a>
-                <a href="{% url 'products' %}?category=cardio-machines,power-machines,free-weights" class="dropdown-item">All Equipment</a>
+                <a href="{% url 'products' %}?category=cardio-machines,power-machines,free-weights"
+                    class="dropdown-item">All Equipment</a>
             </div>
         </li>
 
         <!-- Supplements -->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-dark mr-5" href="#" id="supplements-link"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Supplements
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="supplements-link">
@@ -64,29 +65,37 @@
         <!-- Special Offers -->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-dark mr-5" href="#" id="specials-link"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
                 <a href="{% url 'products' %}?category=special-offers" class="dropdown-item">Featured Deals</a>
                 <a href="{% url 'products' %}?category=yoga-accessories" class="dropdown-item">Yoga Accessories</a>
-                <a href="{% url 'products' %}?category=special-offers,yoga-accessories" class="dropdown-item">All Offers</a>
+                <a href="{% url 'products' %}?category=special-offers,yoga-accessories" class="dropdown-item">All
+                    Offers</a>
             </div>
         </li>
 
         <!-- Classes -->
+        <!-- Classes -->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-dark mr-5" href="#" id="classes-link"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Classes
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="classes-link">
-                <a class="dropdown-item" href="{% url 'class_list' %}">All Classes</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=classes">
+                    All Classes
+                </a>
+                <a class="dropdown-item" href="{% url 'class_list' %}">
+                    Class Schedule
+                </a>
                 <a class="dropdown-item" href="{% url 'my_bookings' %}">My Bookings</a>
                 {% if request.user.is_staff %}
-                    <a class="dropdown-item" href="{% url 'create_class' %}">Create Class</a>
+                <a class="dropdown-item" href="{% url 'create_class' %}">Create Class</a>
                 {% endif %}
             </div>
         </li>
+
     </ul>
 </div>

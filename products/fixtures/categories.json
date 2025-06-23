@@ -67,21 +67,13 @@
     "model": "products.category",
     "pk": 9,
     "fields": {
-      "name": "classes",
-      "friendly_name": "Classes"
-    }
-  },
-  {
-    "model": "products.category",
-    "pk": 10,
-    "fields": {
       "name": "special-offers",
       "friendly_name": "Special Offers"
     }
   },
   {
     "model": "products.category",
-    "pk": 11,
+    "pk": 10,
     "fields": {
       "name": "yoga-accessories",
       "friendly_name": "Yoga Accessories"

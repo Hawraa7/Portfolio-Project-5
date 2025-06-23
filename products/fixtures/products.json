@@ -63,7 +63,7 @@
       "name": "Fitness Resistance Bands Basic",
       "description": "Durable and versatile resistance bands perfect for strength training and flexibility exercises.",
       "price": 19.99,
-      "category": 7,
+      "category": 9,
       "rating": 4.6,
       "image_url": "media/bands.jpg",
       "image": "bands.jpg"
@@ -77,7 +77,7 @@
       "name": "Fitness Resistance Band Set 1",
       "description": "Durable resistance bands set perfect for strength training and flexibility exercises.",
       "price": 21.99,
-      "category": 7,
+      "category": 9,
       "rating": 4.7,
       "image_url": "media/bands1.jpg",
       "image": "bands1.jpg"
@@ -91,7 +91,7 @@
       "name": "Fitness Resistance Band Set 2",
       "description": "High-quality resistance bands designed for versatile workouts and muscle toning.",
       "price": 22.99,
-      "category": 7,
+      "category": 9,
       "rating": 4.8,
       "image_url": "media/bands2.jpg",
       "image": "bands2.jpg"
@@ -119,7 +119,7 @@
       "name": "Exercise Bicycle",
       "description": "Indoor exercise bicycle designed for cardio workouts and endurance training.",
       "price": 299.99,
-      "category": 5,
+      "category": 6,
       "rating": 4.7,
       "image_url": "media/bicycle.jpg",
       "image": "bicycle.jpg"
@@ -133,7 +133,7 @@
       "name": "Black Resistance Bands",
       "description": "Strong and durable black resistance bands suitable for all levels of fitness training.",
       "price": 22.99,
-      "category": 7,
+      "category": 9,
       "rating": 4.7,
       "image_url": "media/black-bands.jpg",
       "image": "black-bands.jpg"
@@ -147,7 +147,7 @@
       "name": "Black Yoga Blocks",
       "description": "High-density black yoga blocks to support stability and improve yoga poses.",
       "price": 15.99,
-      "category": 8,
+      "category": 10,
       "rating": 4.6,
       "image_url": "media/black-blocks.jpg",
       "image": "black-blocks.jpg"
@@ -161,7 +161,7 @@
       "name": "Black Yoga Mat",
       "description": "Premium black yoga mat providing excellent grip and cushioning for all yoga levels.",
       "price": 39.99,
-      "category": 7,
+      "category": 10,
       "rating": 4.8,
       "image_url": "media/black-mat.jpg",
       "image": "black-mat.jpg"
@@ -287,7 +287,7 @@
       "name": "Yoga Blocks Set 1",
       "description": "High-density yoga blocks to assist with stretching and balance.",
       "price": 15.99,
-      "category": 8,
+      "category": 10,
       "rating": 4.6,
       "image_url": "media/blocks.jpg",
       "image": "blocks.jpg"
@@ -301,7 +301,7 @@
       "name": "Yoga Blocks Set 2",
       "description": "Durable yoga blocks for enhanced stability and support.",
       "price": 16.99,
-      "category": 8,
+      "category": 10,
       "rating": 4.7,
       "image_url": "media/blocks1.jpg",
       "image": "blocks1.jpg"
@@ -315,7 +315,7 @@
       "name": "Yoga Blocks Set 3",
       "description": "Lightweight yoga blocks ideal for all skill levels.",
       "price": 14.99,
-      "category": 8,
+      "category": 10,
       "rating": 4.5,
       "image_url": "media/blocks2.jpg",
       "image": "blocks2.jpg"
@@ -329,7 +329,7 @@
       "name": "Yoga Blocks Set 4",
       "description": "Ergonomic yoga blocks designed for comfort and durability.",
       "price": 17.99,
-      "category": 8,
+      "category": 10,
       "rating": 4.8,
       "image_url": "media/blocks3.jpg",
       "image": "blocks3.jpg"
@@ -343,7 +343,7 @@
       "name": "Yoga Blocks Set 5",
       "description": "Premium yoga blocks for enhanced workout support.",
       "price": 19.99,
-      "category": 8,
+      "category": 10,
       "rating": 4.9,
       "image_url": "media/blocks4.jpg",
       "image": "blocks4.jpg"
@@ -357,7 +357,7 @@
       "name": "Blue Resistance Bands",
       "description": "Durable blue resistance bands perfect for strength training and flexibility.",
       "price": 20.99,
-      "category": 7,
+      "category": 9,
       "rating": 4.6,
       "image_url": "media/blue-bands.jpg",
       "image": "blue-bands.jpg"
@@ -371,7 +371,7 @@
       "name": "Blue Resistance Bands Set 1",
       "description": "Complete set of blue resistance bands for versatile workouts.",
       "price": 22.99,
-      "category": 7,
+      "category": 9,
       "rating": 4.7,
       "image_url": "media/blue-bands1.jpg",
       "image": "blue-bands1.jpg"
@@ -385,7 +385,7 @@
       "name": "Blue Yoga Blocks",
       "description": "High-density blue yoga blocks to improve your stability and flexibility.",
       "price": 17.99,
-      "category": 8,
+      "category": 10,
       "rating": 4.8,
       "image_url": "media/blue-blocks.jpg",
       "image": "blue-blocks.jpg"
@@ -399,7 +399,7 @@
       "name": "Blue Dumbbells",
       "description": "Ergonomic blue dumbbells ideal for strength training exercises.",
       "price": 34.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.7,
       "image_url": "media/blue-dumbells.jpg",
       "image": "blue-dumbells.jpg"
@@ -707,7 +707,7 @@
       "name": "Standard Dumbbells",
       "description": "Durable dumbbells ideal for strength training and muscle toning.",
       "price": 29.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.5,
       "image_url": "media/dumbells.jpg",
       "image": "dumbells.jpg"
@@ -721,7 +721,7 @@
       "name": "Dumbbells Set 1",
       "description": "Adjustable dumbbells for versatile strength workouts.",
       "price": 39.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.6,
       "image_url": "media/dumbells1.jpg",
       "image": "dumbells1.jpg"
@@ -735,7 +735,7 @@
       "name": "Dumbbells Set 2",
       "description": "Compact dumbbells for home or gym use.",
       "price": 34.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.4,
       "image_url": "media/dumbells2.jpg",
       "image": "dumbells2.jpg"
@@ -749,7 +749,7 @@
       "name": "Dumbbells Set 3",
       "description": "Ergonomic dumbbells designed for comfort and control.",
       "price": 37.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.7,
       "image_url": "media/dumbells3.jpg",
       "image": "dumbells3.jpg"
@@ -763,7 +763,7 @@
       "name": "Dumbbells Set 4",
       "description": "Heavy-duty dumbbells for advanced training routines.",
       "price": 44.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.8,
       "image_url": "media/dumbells4.jpg",
       "image": "dumbells4.jpg"
@@ -777,7 +777,7 @@
       "name": "Dumbbells Set 5",
       "description": "Lightweight dumbbells suitable for beginners and rehab exercises.",
       "price": 26.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.3,
       "image_url": "media/dumbells5.jpg",
       "image": "dumbells5.jpg"
@@ -791,7 +791,7 @@
       "name": "Dumbbells Set 6",
       "description": "Multi-weight dumbbells designed for strength and endurance training.",
       "price": 41.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.6,
       "image_url": "media/dumbells6.jpg",
       "image": "dumbells6.jpg"
@@ -805,7 +805,7 @@
       "name": "Dumbbells Set 7",
       "description": "Premium dumbbells crafted for serious athletes.",
       "price": 49.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.9,
       "image_url": "media/dumbells7.jpg",
       "image": "dumbells7.jpg"
@@ -819,7 +819,7 @@
     "name": "Elliptical Trainer",
     "description": "Smooth and efficient elliptical trainer for low-impact cardio workouts.",
     "price": 499.99,
-    "category": 5,
+    "category": 7,
     "rating": 4.7,
     "image_url": "media/ellepticel.jpg",
     "image": "ellepticel.jpg"
@@ -847,7 +847,7 @@
       "name": "Gray Exercise Mat",
       "description": "Comfortable, non-slip exercise mat ideal for yoga, stretching, and floor workouts.",
       "price": 19.99,
-      "category": 7,
+      "category": 10,
       "rating": 4.5,
       "image_url": "media/gray-mat.jpg",
       "image": "gray-mat.jpg"
@@ -861,7 +861,7 @@
       "name": "Gray Exercise Mat 1",
       "description": "Durable and cushioned gray mat for comfortable workout sessions.",
       "price": 22.99,
-      "category": 7,
+      "category": 10,
       "rating": 4.6,
       "image_url": "media/gray-mat1.jpg",
       "image": "gray-mat1.jpg"
@@ -889,7 +889,7 @@
       "name": "Green Resistance Bands",
       "description": "Set of durable resistance bands for strength training and rehabilitation exercises.",
       "price": 15.99,
-      "category": 7,
+      "category": 9,
       "rating": 4.5,
       "image_url": "media/green-bands.jpg",
       "image": "green-bands.jpg"
@@ -903,7 +903,7 @@
       "name": "Green Yoga Blocks",
       "description": "Lightweight yoga blocks to support stability and balance in your practice.",
       "price": 12.99,
-      "category": 8,
+      "category": 10,
       "rating": 4.4,
       "image_url": "media/green-blocks.jpg",
       "image": "green-blocks.jpg"
@@ -917,7 +917,7 @@
       "name": "Green Exercise Mat",
       "description": "Eco-friendly, cushioned mat perfect for all your workout needs.",
       "price": 21.99,
-      "category": 7,
+      "category": 10,
       "rating": 4.6,
       "image_url": "media/green-mat.jpg",
       "image": "green-mat.jpg"
@@ -959,7 +959,7 @@
       "name": "Ab Crunch Machine",
       "description": "Target your core with this adjustable abdominal training machine.",
       "price": 249.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.4,
       "image_url": "media/machines.jpg",
       "image": "machines.jpg"
@@ -973,7 +973,7 @@
       "name": "Weight Stack Machine",
       "description": "Full-body cable weight machine with customizable resistance.",
       "price": 799.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.6,
       "image_url": "media/machines1.jpg",
       "image": "machines1.jpg"
@@ -987,7 +987,7 @@
       "name": "Treadmill Pro 1000",
       "description": "Advanced treadmill with multiple incline and speed settings.",
       "price": 599.99,
-      "category": 5,
+      "category": 6,
       "rating": 4.7,
       "image_url": "media/machines2.jpg",
       "image": "machines2.jpg"
@@ -1001,7 +1001,7 @@
       "name": "Smart Treadmill X",
       "description": "Bluetooth-enabled treadmill with interactive training features.",
       "price": 749.99,
-      "category": 5,
+      "category": 6,
       "rating": 4.8,
       "image_url": "media/machines3.jpg",
       "image": "machines3.jpg"
@@ -1015,7 +1015,7 @@
       "name": "Foldable Treadmill",
       "description": "Compact treadmill ideal for home workouts and small spaces.",
       "price": 429.99,
-      "category": 5,
+      "category": 6,
       "rating": 4.5,
       "image_url": "media/machines4.jpg",
       "image": "machines4.jpg"
@@ -1029,7 +1029,7 @@
       "name": "Endurance Treadmill",
       "description": "Durable treadmill built for intense cardio and distance training.",
       "price": 689.99,
-      "category": 5,
+      "category": 6,
       "rating": 4.6,
       "image_url": "media/machines5.jpg",
       "image": "machines5.jpg"
@@ -1043,7 +1043,7 @@
       "name": "Performance Treadmill",
       "description": "Gym-grade treadmill offering high performance and long lifespan.",
       "price": 899.99,
-      "category": 5,
+      "category": 6,
       "rating": 4.9,
       "image_url": "media/machines6.jpg",
       "image": "machines6.jpg"
@@ -1057,7 +1057,7 @@
       "name": "Core Twister Machine",
       "description": "Twisting motion ab machine designed to tone obliques and core.",
       "price": 199.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.3,
       "image_url": "media/machines7.jpg",
       "image": "machines7.jpg"
@@ -1071,7 +1071,7 @@
       "name": "Power Rack with Weights",
       "description": "Heavy-duty power rack perfect for squats, bench press, and more.",
       "price": 999.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.8,
       "image_url": "media/machines8.jpg",
       "image": "machines8.jpg"
@@ -1085,7 +1085,7 @@
       "name": "Ultra-Speed Treadmill",
       "description": "High-speed treadmill with shock absorption and heart rate monitor.",
       "price": 799.99,
-      "category": 5,
+      "category": 6,
       "rating": 4.7,
       "image_url": "media/machines9.jpg",
       "image": "machines9.jpg"
@@ -1099,7 +1099,7 @@
       "name": "Elliptical Cross Trainer",
       "description": "Smooth elliptical machine for joint-friendly, full-body cardio.",
       "price": 649.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.6,
       "image_url": "media/machines10.jpg",
       "image": "machines10.jpg"
@@ -1113,7 +1113,7 @@
       "name": "Multi-Gym Weight Machine",
       "description": "Compact multi-station gym system for a complete workout.",
       "price": 1099.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.9,
       "image_url": "media/machines11.jpg",
       "image": "machines11.jpg"
@@ -1127,7 +1127,7 @@
       "name": "Stationary Exercise Bike",
       "description": "Indoor cycling bike with adjustable resistance and ergonomic seat.",
       "price": 449.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.5,
       "image_url": "media/machines12.jpg",
       "image": "machines12.jpg"
@@ -1141,7 +1141,7 @@
       "name": "Studio Treadmill",
       "description": "Modern treadmill with virtual running programs and app sync.",
       "price": 849.99,
-      "category": 5,
+      "category": 6,
       "rating": 4.8,
       "image_url": "media/machines13.jpg",
       "image": "machines13.jpg"
@@ -1155,7 +1155,7 @@
       "name": "Commercial Grade Treadmill",
       "description": "High-capacity treadmill ideal for gyms and intensive use.",
       "price": 999.99,
-      "category": 5,
+      "category": 6,
       "rating": 4.9,
       "image_url": "media/machines14.jpg",
       "image": "machines14.jpg"
@@ -1197,7 +1197,7 @@
       "name": "Basic Workout Mat",
       "description": "Durable and lightweight exercise mat, perfect for stretching and floor workouts.",
       "price": 19.99,
-      "category": 7,
+      "category": 10,
       "rating": 4.4,
       "image_url": "media/mat.jpg",
       "image": "mat.jpg"
@@ -1211,7 +1211,7 @@
       "name": "Matrix Treadmill",
       "description": "Premium-grade treadmill with advanced tracking and incline features.",
       "price": 1299.99,
-      "category": 5,
+      "category": 6,
       "rating": 4.8,
       "image_url": "media/matrix-treadmill.jpg",
       "image": "matrix-treadmill.jpg"
@@ -1488,10 +1488,10 @@
     "pk": 107,
     "fields": {
       "sku": "app-pilates001",
-      "name": "Pilates App Subscription",
+      "name": "Pilates workout",
       "description": "On-demand pilates workouts and guided routines to improve strength and flexibility.",
       "price": 9.99,
-      "category": 5,
+      "category": 7,
       "rating": 4.6,
       "image_url": "media/pilates.jpg",
       "image": "pilates.jpg"
@@ -1505,7 +1505,7 @@
       "name": "Pink Yoga Blocks",
       "description": "Supportive foam yoga blocks for balance and deeper stretches.",
       "price": 11.99,
-      "category": 8,
+      "category": 10,
       "rating": 4.6,
       "image_url": "media/pink-blocks.jpg",
       "image": "pink-blocks.jpg"
@@ -1519,7 +1519,7 @@
       "name": "Pink Yoga Mat",
       "description": "Comfortable and non-slip mat perfect for yoga or general workouts.",
       "price": 19.99,
-      "category": 7,
+      "category": 10,
       "rating": 4.7,
       "image_url": "media/pink-mat.jpg",
       "image": "pink-mat.jpg"
@@ -1743,7 +1743,7 @@
       "name": "Purple Resistance Bands",
       "description": "Durable resistance bands for strength training and stretching.",
       "price": 10.99,
-      "category": 7,
+      "category": 9,
       "rating": 4.6,
       "image_url": "media/purple-bands.jpg",
       "image": "purple-bands.jpg"
@@ -1757,7 +1757,7 @@
       "name": "Heavy-Duty Purple Bands",
       "description": "Extra strength resistance bands for intense home workouts.",
       "price": 11.99,
-      "category": 7,
+      "category": 9,
       "rating": 4.5,
       "image_url": "media/purple-bands1.jpg",
       "image": "purple-bands1.jpg"
@@ -1771,7 +1771,7 @@
       "name": "Purple Dumbbells (Pair)",
       "description": "Compact, non-slip dumbbells perfect for toning and home workouts.",
       "price": 18.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.7,
       "image_url": "media/purple-dumbells.jpg",
       "image": "purple-dumbells.jpg"
@@ -1785,7 +1785,7 @@
       "name": "Purple Workout Set",
       "description": "Comfortable and flexible activewear set designed for fitness and yoga.",
       "price": 46.99,
-      "category": 3,
+      "category": 2,
       "rating": 4.6,
       "image_url": "media/purple-set.jpg",
       "image": "purple-set.jpg"
@@ -1813,7 +1813,7 @@
       "name": "Purple Yoga Mat",
       "description": "Soft, non-slip yoga mat for pilates, stretching, and floor workouts.",
       "price": 20.99,
-      "category": 7,
+      "category": 10,
       "rating": 4.8,
       "image_url": "media/purple-yoga-mat.jpg",
       "image": "purple-yoga-mat.jpg"
@@ -1827,7 +1827,7 @@
       "name": "Red Resistance Bands",
       "description": "High-quality red resistance bands perfect for strength training, rehabilitation, and stretching exercises.",
       "price": 12.49,
-      "category": 7,
+      "category": 9,
       "rating": 4.7,
       "image_url": "media/red-bands.jpg",
       "image": "red-bands.jpg"
@@ -1841,7 +1841,7 @@
     "name": "Red Yoga Mat",
     "description": "Durable non-slip red yoga mat designed for pilates, floor workouts, and stretching routines.",
     "price": 19.99,
-    "category": 7,
+    "category": 10,
     "rating": 4.6,
     "image_url": "media/red-mat.jpg",
     "image": "red-mat.jpg"
@@ -1855,7 +1855,7 @@
     "name": "Red Yoga Mat",
     "description": "Extra thick red yoga mat for maximum comfort and joint support during intense workouts.",
     "price": 24.99,
-    "category": 7,
+    "category": 10,
     "rating": 4.8,
     "image_url": "media/red-mat1.jpg",
     "image": "red-mat1.jpg"
@@ -2103,25 +2103,11 @@
     "model": "products.product",
     "pk": 152,
     "fields": {
-      "sku": "tennis001",
-      "name": "Pro Tennis Racket",
-      "description": "Lightweight and balanced tennis racket for intermediate and advanced players.",
-      "price": 79.99,
-      "category": 5,
-      "rating": 4.8,
-      "image_url": "media/tennis.jpg",
-      "image": "tennis.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 153,
-    "fields": {
       "sku": "training-kit001",
       "name": "Training Equipment Set",
       "description": "Essential equipment for weight training",
       "price": 59.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.7,
       "image_url": "media/training.jpg",
       "image": "training.jpg"
@@ -2129,13 +2115,13 @@
   },
   {
     "model": "products.product",
-    "pk": 154,
+    "pk": 153,
     "fields": {
       "sku": "treadmill001",
       "name": "Foldable Home Treadmill",
       "description": "Compact, foldable treadmill with incline adjustment and LCD display for home cardio workouts.",
       "price": 349.00,
-      "category": 5,
+      "category": 6,
       "rating": 4.9,
       "image_url": "media/treadmill.jpg",
       "image": "treadmill.jpg"
@@ -2143,7 +2129,7 @@
   },
   {
     "model": "products.product",
-    "pk": 155,
+    "pk": 154,
     "fields": {
       "sku": "vegan-choc001",
       "name": "Vegan Chocolate Protein Bar",
@@ -2157,7 +2143,7 @@
   },
   {
     "model": "products.product",
-    "pk": 156,
+    "pk": 155,
     "fields": {
       "sku": "vegan-protein001",
       "name": "Vegan Protein Powder",
@@ -2171,7 +2157,7 @@
   },
   {
     "model": "products.product",
-    "pk": 157,
+    "pk": 156,
     "fields": {
       "sku": "vitamin-d3001",
       "name": "Vitamin D3 Supplement",
@@ -2185,7 +2171,7 @@
   },
   {
     "model": "products.product",
-    "pk": 158,
+    "pk": 157,
     "fields": {
       "sku": "vitamins-multi001",
       "name": "Daily Multivitamins",
@@ -2199,7 +2185,7 @@
   },
   {
     "model": "products.product",
-    "pk": 159,
+    "pk": 158,
     "fields": {
       "sku": "vitamins-multi002",
       "name": "Women’s Multivitamins",
@@ -2213,7 +2199,7 @@
   },
   {
     "model": "products.product",
-    "pk": 160,
+    "pk": 159,
     "fields": {
       "sku": "walk-shoes-women001",
       "name": "Women’s Walking Shoes",
@@ -2227,7 +2213,7 @@
   },
   {
     "model": "products.product",
-    "pk": 161,
+    "pk": 160,
     "fields": {
       "sku": "white-set-men001",
       "name": "Men’s White Training Set",
@@ -2241,7 +2227,7 @@
   },
   {
     "model": "products.product",
-    "pk": 162,
+    "pk": 161,
     "fields": {
       "sku": "white-shoes-men001",
       "name": "Men’s White Training Shoes",
@@ -2255,7 +2241,7 @@
   },
   {
     "model": "products.product",
-    "pk": 163,
+    "pk": 162,
     "fields": {
       "sku": "white-shoes-men002",
       "name": "Men’s White Cross Trainers",
@@ -2269,7 +2255,7 @@
   },
   {
     "model": "products.product",
-    "pk": 164,
+    "pk": 163,
     "fields": {
       "sku": "white-shoes-women001",
       "name": "Women’s White Training Shoes",
@@ -2283,7 +2269,7 @@
   },
   {
     "model": "products.product",
-    "pk": 165,
+    "pk": 164,
     "fields": {
       "sku": "women-activewear001",
       "name": "Women’s Activewear Set",
@@ -2297,13 +2283,13 @@
   },
   {
     "model": "products.product",
-    "pk": 166,
+    "pk": 165,
     "fields": {
       "sku": "workout-weight001",
       "name": "Weight Training Workout Gear",
       "description": "High-performance gear for weight training sessions, including gloves and sweatbands.",
       "price": 39.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.7,
       "image_url": "media/workout.jpg",
       "image": "workout.jpg"
@@ -2311,13 +2297,13 @@
   },
   {
     "model": "products.product",
-    "pk": 167,
+    "pk": 166,
     "fields": {
       "sku": "workout-weight002",
       "name": "Advanced Weight Training Gear",
       "description": "Durable gear optimized for intense weight training and gym sessions.",
       "price": 44.99,
-      "category": 5,
+      "category": 8,
       "rating": 4.8,
       "image_url": "media/workout1.jpg",
       "image": "workout1.jpg"
@@ -2325,13 +2311,13 @@
   },
   {
     "model": "products.product",
-    "pk": 168,
+    "pk": 167,
     "fields": {
       "sku": "yellow-bands001",
       "name": "Yellow Resistance Bands",
       "description": "Light resistance bands ideal for yoga, stretching, and light strength training.",
       "price": 12.99,
-      "category": 7,
+      "category": 9,
       "rating": 4.6,
       "image_url": "media/yellow-bands.jpg",
       "image": "yellow-bands.jpg"
@@ -2339,7 +2325,7 @@
   },
   {
     "model": "products.product",
-    "pk": 169,
+    "pk": 168,
     "fields": {
       "sku": "yellow-set-women001",
       "name": "Women’s Yellow Yoga Set",
@@ -2353,125 +2339,13 @@
   },
   {
     "model": "products.product",
-    "pk": 170,
-    "fields": {
-      "sku": "yoga-class001",
-      "name": "Yoga Class Session 1",
-      "description": "Guided yoga session focusing on flexibility and relaxation techniques.",
-      "price": 15.00,
-      "category": 6,
-      "rating": 4.8,
-      "image_url": "media/yoga-class.jpg",
-      "image": "yoga-class.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 171,
-    "fields": {
-      "sku": "yoga-class002",
-      "name": "Yoga Class Session 2",
-      "description": "Intermediate flow yoga class emphasizing core strength and balance.",
-      "price": 15.00,
-      "category": 6,
-      "rating": 4.7,
-      "image_url": "media/yoga-class1.jpg",
-      "image": "yoga-class1.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 172,
-    "fields": {
-      "sku": "yoga-class003",
-      "name": "Yoga Class Session 3",
-      "description": "Power yoga session for increased endurance and flexibility.",
-      "price": 15.00,
-      "category": 6,
-      "rating": 4.7,
-      "image_url": "media/yoga-class2.jpg",
-      "image": "yoga-class2.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 173,
-    "fields": {
-      "sku": "yoga-class004",
-      "name": "Yoga Class Session 4",
-      "description": "Restorative yoga focusing on muscle recovery and deep stretching.",
-      "price": 15.00,
-      "category": 6,
-      "rating": 4.8,
-      "image_url": "media/yoga-class3.jpg",
-      "image": "yoga-class3.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 174,
-    "fields": {
-      "sku": "yoga-class005",
-      "name": "Yoga Class Session 5",
-      "description": "Gentle yoga for beginners, emphasizing breath control and mindfulness.",
-      "price": 15.00,
-      "category": 6,
-      "rating": 4.9,
-      "image_url": "media/yoga-class4.jpg",
-      "image": "yoga-class4.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 175,
-    "fields": {
-      "sku": "yoga-class006",
-      "name": "Yoga Class Session 6",
-      "description": "Vinyasa flow to enhance strength and fluidity in movements.",
-      "price": 15.00,
-      "category": 6,
-      "rating": 4.7,
-      "image_url": "media/yoga-class5.jpg",
-      "image": "yoga-class5.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 176,
-    "fields": {
-      "sku": "yoga-class007",
-      "name": "Yoga Class Session 7",
-      "description": "Advanced yoga session focusing on balance and advanced postures.",
-      "price": 15.00,
-      "category": 6,
-      "rating": 4.8,
-      "image_url": "media/yoga-class6.jpg",
-      "image": "yoga-class6.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 177,
-    "fields": {
-      "sku": "yoga-class008",
-      "name": "Yoga Class Session 8",
-      "description": "Yoga class emphasizing meditation and breathing techniques.",
-      "price": 15.00,
-      "category": 6,
-      "rating": 4.7,
-      "image_url": "media/yoga-class7.jpg",
-      "image": "yoga-class7.jpg"
-    }
-  },
-  {
-    "model": "products.product",
-    "pk": 178,
+    "pk": 169,
     "fields": {
       "sku": "yoga-mat001",
       "name": "Eco-Friendly Yoga Mat",
       "description": "Durable, non-slip eco-friendly yoga mat designed for all types of yoga and Pilates.",
       "price": 35.99,
-      "category": 7,
+      "category": 10,
       "rating": 4.8,
       "image_url": "media/yoga-mat.jpg",
       "image": "yoga-mat.jpg"
@@ -2479,13 +2353,13 @@
   },
   {
     "model": "products.product",
-    "pk": 179,
+    "pk": 170,
     "fields": {
       "sku": "yoga-mat002",
       "name": "Extra Thick Yoga Mat",
       "description": "Extra cushioned yoga mat providing superior comfort and support for floor exercises.",
       "price": 42.99,
-      "category": 7,
+      "category": 10,
       "rating": 4.7,
       "image_url": "media/yoga-mat1.jpg",
       "image": "yoga-mat1.jpg"
