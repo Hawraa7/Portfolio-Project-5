@@ -34,12 +34,14 @@ def my_bookings(request):
 
 def class_list(request):
     classes = FitnessClass.objects.all()
-    user_bookings = []
+
+    # Get list of class IDs that the user has booked
+    booked_class_ids = []
     if request.user.is_authenticated:
-        user_bookings = Booking.objects.filter(user=request.user).values_list('fitness_class_id', flat=True)
+        booked_class_ids = Booking.objects.filter(user=request.user).values_list('fitness_class_id', flat=True)
     return render(request, 'classes/class_list.html', {
         'classes': classes,
-        'user_bookings': user_bookings,
+        'booked_class_ids': booked_class_ids,
     })
 
 
@@ -55,6 +57,35 @@ def class_detail(request, class_id):
         'spots_left': spots_left,
         'stripe_public_key': settings.STRIPE_PUBLIC_KEY,
     })
+
+
+@csrf_exempt
+def create_subscription_checkout_session(request, class_id):
+    if request.method == "POST":
+        class_id = request.POST.get("class_id")
+        user = request.user
+
+        try:
+            checkout_session = stripe.checkout.Session.create(
+                success_url = f'http://127.0.0.1:8000/classes/subscription_success/?class_id={class_id}',
+                cancel_url=f'http://127.0.0.1:8000/classes/subscription_cancel/?class_id={class_id}',
+                mode="subscription",
+                line_items=[
+                    {
+                        "price": 'price_1Rd94oPwYr2TRIKdsLwzMge0',
+                        "quantity": 1,
+                    }
+                ],
+                metadata={
+                    "user_id": user.id,
+                    "class_id": class_id,
+                    "payment_type": "subscription",
+                },
+            )
+            return redirect(checkout_session.url)
+        except Exception as e:
+            return HttpResponse(f"Error creating subscription session: {str(e)}", status=500)
+
 
 def payment_success(request):
     # Extract info from GET params or session (you can customize this)
@@ -83,12 +114,7 @@ def payment_success(request):
     return redirect('my_bookings')
 
 
-from django.shortcuts import get_object_or_404, redirect
-from django.contrib.auth.decorators import login_required
-from django.contrib import messages
-from django.http import JsonResponse
-from .models import FitnessClass, Booking
-import stripe
+
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -157,7 +183,7 @@ def create_subscription_session(request):
             mode='subscription',
             customer_email=request.user.email,
             line_items=[{
-                'price': 'price_12345',  # Replace with your Stripe subscription price ID
+                'price': 'price_1Rd94oPwYr2TRIKdsLwzMge0',  # Replace with your Stripe subscription price ID
                 'quantity': 1,
             }],
             metadata={

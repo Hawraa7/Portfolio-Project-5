@@ -9,17 +9,32 @@
                 <a href="{% url 'class_detail' class.id %}">{{ class.title }}</a><br>
                 <small>{{ class.date|date:"M d, Y" }} at {{ class.time|time:"H:i" }}</small>
             </div>
-            {% if user.is_authenticated %}
-                {% if class.id in user_bookings %}
-                    <span class="badge bg-success">Booked</span>
-                {% elif class.bookings.count < class.max_participants %}
-                    <a href="{% url 'class_detail' class.id %}" class="btn btn-sm btn-primary">Book Now</a>
+
+            <div>
+                {% if user.is_authenticated %}
+                    {# Booking status #}
+                    {% if class.id in user_bookings %}
+                        <span class="badge bg-success me-2">Booked</span>
+                    {% elif class.bookings.count < class.max_participants %}
+                        <a href="{% url 'class_detail' class.id %}" class="btn btn-sm btn-primary me-2">Book Now</a>
+                    {% else %}
+                        <span class="badge bg-secondary me-2">Full</span>
+                    {% endif %}
+
+                    {# Subscription button #}
+                    {% if class.id in user_subscriptions %}
+                        <span class="badge bg-info">Subscribed Monthly</span>
+                    {% else %}
+                        <form action="{% url 'create_subscription_checkout_session' class.id %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-sm btn-warning">Subscribe Monthly</button>
+                        </form>
+                    {% endif %}
+
                 {% else %}
-                    <span class="badge bg-secondary">Full</span>
+                    <a href="{% url 'account_login' %}" class="btn btn-sm btn-outline-primary">Log in to Book or Subscribe</a>
                 {% endif %}
-            {% else %}
-                <a href="{% url 'account_login' %}" class="btn btn-sm btn-outline-primary">Log in to Book</a>
-            {% endif %}
+            </div>
         </li>
         {% empty %}
         <li class="list-group-item">No classes available.</li>
@@ -27,4 +42,3 @@
     </ul>
 </div>
 {% endblock %}
-

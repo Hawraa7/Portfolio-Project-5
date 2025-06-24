@@ -18,5 +18,8 @@ urlpatterns = [
     path('subscription_cancel/', views.subscription_cancel, name='subscription_cancel'),
 
     path('webhook/', views.stripe_webhook, name='stripe_webhook'),
+    path('create-subscription-checkout-session/<int:class_id>/', views.create_subscription_checkout_session, name='create_subscription_checkout_session'),
+
 ]
+
 
