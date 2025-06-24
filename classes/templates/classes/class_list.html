@@ -1,43 +1,30 @@
 {% extends "base.html" %}
-{% load static %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
-{% endblock %}
-
 {% block content %}
-<div class="classes-container mt-5">
-    <h2 class="classes-title">Fitness Class Schedule</h2>
-    <hr class="classes-separator">
-    
-    {% for class in classes %}
-        <div class="class-card">
-            <div class="class-info">
-                <h4 class="class-title">{{ class.title }}</h4>
-                <p class="class-instructor">Instructor: {{ class.instructor }}</p>
-                <p class="class-datetime">Date: {{ class.date|date:"M d, Y" }} | Time: {{ class.time|time:"H:i" }}</p>
-                <p class="class-description">{{ class.description }}</p>
-                <p class="class-spots">
-                    <strong>{{ class.bookings.count }}/{{ class.max_participants }}</strong> spots filled
-                </p>
-
-                <a href="{% url 'class_detail' class.id %}" class="btn class-btn btn-view-details">View Details</a>
-
-                {% if user.is_authenticated %}
-                    {% if class.id in user_bookings %}
-                        <a href="{% url 'cancel_booking' class.id %}" class="btn class-btn btn-cancel-booking">Cancel Booking</a>
-                    {% elif class.bookings.count < class.max_participants %}
-                        <a href="{% url 'book_class' class.id %}" class="btn class-btn btn-book-now">Book Now</a>
-                    {% else %}
-                        <button class="btn class-btn btn-fully-booked" disabled>Fully Booked</button>
-                    {% endif %}
-                {% else %}
-                    <a href="{% url 'account_login' %}" class="btn class-btn btn-login-to-book">Log in to book</a>
-                {% endif %}
+<div class="container mt-5">
+    <h1>Fitness Classes</h1>
+    <ul class="list-group">
+        {% for class in classes %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <a href="{% url 'class_detail' class.id %}">{{ class.title }}</a><br>
+                <small>{{ class.date|date:"M d, Y" }} at {{ class.time|time:"H:i" }}</small>
             </div>
-        </div>
-    {% empty %}
-        <p class="no-classes-message">No classes scheduled.</p>
-    {% endfor %}
+            {% if user.is_authenticated %}
+                {% if class.id in user_bookings %}
+                    <span class="badge bg-success">Booked</span>
+                {% elif class.bookings.count < class.max_participants %}
+                    <a href="{% url 'class_detail' class.id %}" class="btn btn-sm btn-primary">Book Now</a>
+                {% else %}
+                    <span class="badge bg-secondary">Full</span>
+                {% endif %}
+            {% else %}
+                <a href="{% url 'account_login' %}" class="btn btn-sm btn-outline-primary">Log in to Book</a>
+            {% endif %}
+        </li>
+        {% empty %}
+        <li class="list-group-item">No classes available.</li>
+        {% endfor %}
+    </ul>
 </div>
 {% endblock %}
+

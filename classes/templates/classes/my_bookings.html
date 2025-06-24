@@ -1,31 +1,19 @@
 {% extends "base.html" %}
-{% load static %}
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
-{% endblock %}
 {% block content %}
-<div class="bookings-container container mt-5">
-    <h2 class="bookings-title">My Bookings</h2>
-    <hr class="bookings-separator">
+<div class="container mt-5">
+    <h2>My Bookings</h2>
     {% if bookings %}
-        <ul class="bookings-list list-group">
+        <ul class="list-group">
             {% for booking in bookings %}
-            <li class="booking-item list-group-item d-flex justify-content-between align-items-center">
-                <div class="booking-info">
-                    <strong class="booking-class-title">{{ booking.fitness_class.title }}</strong><br>
-                    <span class="booking-class-datetime">
-                        {{ booking.fitness_class.date|date:"M d, Y" }} at {{ booking.fitness_class.time|time:"H:i" }}
-                    </span><br>
-                    <span class="booking-class-instructor">Instructor: {{ booking.fitness_class.instructor }}</span>
-                </div>
-                <div class="booking-actions">
-                    <a href="{% url 'cancel_booking' booking.fitness_class.id %}" class="btn btn-danger btn-sm btn-cancel-booking">Cancel</a>
-                </div>
-            </li>
+                <li class="list-group-item">
+                    {{ booking.fitness_class.title }} - {{ booking.fitness_class.date }} at {{ booking.fitness_class.time }}
+                    <a href="{% url 'cancel_booking' booking.fitness_class.id %}" class="btn btn-danger btn-sm float-right">Cancel</a>
+                </li>
             {% endfor %}
         </ul>
     {% else %}
-        <p class="no-bookings-message">You have no bookings yet.</p>
+        <p>You have no bookings yet.</p>
     {% endif %}
 </div>
 {% endblock %}
+

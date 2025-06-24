@@ -8,23 +8,34 @@
 <div class="class-detail-container container mt-5">
     <h2 class="class-detail-title">{{ class.title }}</h2>
 
-    <p class="class-detail-instructor"><strong>Instructor:</strong> {{ class.instructor }}</p>
-    <p class="class-detail-date"><strong>Date:</strong> {{ class.date|date:"M d, Y" }}</p>
-    <p class="class-detail-time"><strong>Time:</strong> {{ class.time|time:"H:i" }}</p>
-    <p class="class-detail-description">{{ class.description }}</p>
-    <p class="class-detail-spots-left"><strong>Spots left:</strong> {{ spots_left }}</p>
+    <p><strong>Instructor:</strong> {{ class.instructor }}</p>
+    <p><strong>Date:</strong> {{ class.date|date:"M d, Y" }}</p>
+    <p><strong>Time:</strong> {{ class.time|time:"H:i" }}</p>
+    <p>{{ class.description }}</p>
+    <p><strong>Spots left:</strong> {{ spots_left }}</p>
 
-    <div class="class-detail-actions mt-3">
+    <div class="mt-3">
         {% if user.is_authenticated %}
             {% if booked %}
-                <a href="{% url 'cancel_booking' class.id %}" class="btn btn-danger btn-cancel-booking">Cancel Booking</a>
+                <a href="{% url 'cancel_booking' class.id %}" class="btn btn-danger">Cancel Booking</a>
             {% elif spots_left > 0 %}
-                <a href="{% url 'book_class' class.id %}" class="btn btn-success btn-book-class">Book This Class</a>
+                <!-- One-time payment booking form -->
+                <form action="{% url 'create_checkout_session' %}" method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="class_id" value="{{ class.id }}">
+                    <button type="submit" class="btn btn-success">Book & Pay for This Class ($15)</button>
+                </form>
+
+                <!-- Subscription button -->
+                <form action="{% url 'create_subscription_session' %}" method="POST" style="display:inline; margin-left:10px;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Subscribe Monthly</button>
+                </form>
             {% else %}
-                <button class="btn btn-secondary btn-fully-booked" disabled>Fully Booked</button>
+                <button class="btn btn-secondary" disabled>Fully Booked</button>
             {% endif %}
         {% else %}
-            <a href="{% url 'account_login' %}" class="btn btn-primary btn-login-to-book">Log in to book</a>
+            <a href="{% url 'account_login' %}" class="btn btn-primary">Log in to book</a>
         {% endif %}
     </div>
 </div>
