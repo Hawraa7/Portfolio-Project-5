@@ -27,8 +27,9 @@ def create_class(request):
 stripe.api_key = settings.STRIPE_SECRET_KEY
 @login_required
 def my_bookings(request):
-    bookings = Booking.objects.filter(user=request.user).select_related('fitness_class')
+    bookings = Booking.objects.filter(user=request.user).select_related('fitness_class').order_by('fitness_class__date')
     return render(request, 'classes/my_bookings.html', {'bookings': bookings})
+
 
 
 
