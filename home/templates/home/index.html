@@ -1,6 +1,13 @@
 {% extends "base.html" %}
-
 {% load static %}
+
+{% block meta_description %}
+Welcome to Zouzou's Fitness — your ultimate portal for fitness classes, quality products, and wellness tips.
+{% endblock %}
+
+{% block title %}
+Zouzou's Fitness - Home of Fitness & Wellness
+{% endblock %}
 
 {% block page_header %}
 <div class="container header-container py-3">
@@ -19,8 +26,10 @@
                     Welcome to Zouzou's Fitness
                 </h1>
                 <p class="lead my-4 text-white">
-                    Join our fitness subscription to unlock exclusive workouts, nutrition plans, and personalized
-                    coaching.
+                    <strong>
+                        Join our fitness subscription to unlock exclusive workouts, nutrition plans, and personalized
+                        coaching.
+                    </strong>
                 </p>
                 <div class="my-5">
                     <a href="{% url 'products' %}" class="btn btn-success btn-lg rounded-0 text-uppercase py-3 get-started-button">

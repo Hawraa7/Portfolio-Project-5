@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block meta_description %}
+Join our fitness class: {{ class.name }}. Improve your health with expert trainers at Zouzou's Fitness.
+{% endblock %}
+
+{% block title %}
+{{ class.name }} - Zouzou's Fitness
+{% endblock %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
 {% endblock %}
