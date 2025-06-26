@@ -156,63 +156,66 @@
 
     {% endblock %}
 
+    <!-- Footer -->
+    <footer class="container-wrapper bg-dark text-light pt-5 pb-4">
+        <div class="container quotes-container content-container">
+            <section class="footer">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <h3 class="text-uppercase">Stay in touch:</h3>
+                        <hr class="underline-short">
+                    </div>
 
-
-    <!-- Footer Start -->
-    <footer class="bg-dark text-light py-5 mt-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <h5 class="text-uppercase">Resources</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="https://www.nhs.uk/conditions/nhs-fitness-studio/" class="text-light"
-                                target="_blank">NHS Fitness Studio</a></li>
-                        <li><a href="https://tdeecalculator.net/" class="text-light" target="_blank">TDEE Calculator</a>
-                        </li>
-                        <li><a href="https://www.sleepfoundation.org/" class="text-light" target="_blank">Sleep
-                                Foundation</a></li>
-                    </ul>
                 </div>
 
-                <!-- Contact & Social -->
-                <div class="col-md-4 text-center mb-3">
-                    <h5 class="text-uppercase">Follow Us</h5>
-                    <div class="mb-4"></div>
-                    <ul class="list-inline">
-                        <li class="list-inline-item mx-3">
-                            <a href="https://www.facebook.com" target="_blank" rel="noopener"
-                                class="text-light social-icon" aria-label="Facebook">
-                                <i class="fab fa-facebook-f fa-2x"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item mx-3">
-                            <a href="https://www.instagram.com" target="_blank" rel="noopener"
-                                class="text-light social-icon" aria-label="Instagram">
-                                <i class="fab fa-instagram fa-2x"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item mx-3">
-                            <a href="https://www.twitter.com" target="_blank" rel="noopener"
-                                class="text-light social-icon" aria-label="Twitter">
-                                <i class="fab fa-twitter fa-2x"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item mx-3">
-                            <a href="https://www.youtube.com" target="_blank" rel="noopener"
-                                class="text-light social-icon" aria-label="YouTube">
-                                <i class="fab fa-youtube fa-2x"></i>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="row">
+                    <!-- Social -->
+                    <div class="col-md-4 mb-4">
+                        <h5 class="text-uppercase">Social</h5>
+                        <p>Keep up to date with all our latest offers</p>
+                        <a href="https://www.facebook.com/profile.php?id=61577566270559" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="col-md-4 mb-4">
+                        <h5 class="text-uppercase">Subscribe!</h5>
+                        <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
+                        <!-- Mailchimp signup form here -->
+                    </div>
+
+                    <!-- Resources -->
+                    <div class="col-md-4 mb-4">
+                        <h5 class="text-uppercase">Resources</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="https://www.nhs.uk/conditions/nhs-fitness-studio/" class="text-light"
+                                    target="_blank">
+                                    NHS Fitness Studio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://tdeecalculator.net/" class="text-light" target="_blank">
+                                    TDEE Calculator
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.sleepfoundation.org/" class="text-light" target="_blank">
+                                    Sleep Foundation
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
-            </div>
-            <div class="text-center mt-4 mb-3">
-                <small>&copy; {{ year }} Zouzou's Fitness. All rights reserved.</small>
-            </div>
+                <div class="text-center mt-4">
+                    <small>&copy; {% now "Y" %} Zouzou's Fitness. All rights reserved.</small>
+                </div>
+            </section>
         </div>
     </footer>
-    <!-- Footer End -->
+    <!-- /.footer -->
+
+
 
 </body>
 

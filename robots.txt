@@ -4,4 +4,4 @@ Disallow: /account/
 Disallow: /checkout/
 Disallow: /bag/
 Disallow: /profiles/
-Sitemap: https://project-portfolio5-82d29c509b78.herokuapp.com//sitemap.xml
+Sitemap: https://project-portfolio5-82d29c509b78.herokuapp.com/sitemap.xml
