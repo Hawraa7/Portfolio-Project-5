@@ -303,3 +303,6 @@ input[name='q']::placeholder {
     }
 }
 
+#mc_embed_signup form {
+    padding: 0;
+}
