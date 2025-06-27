@@ -1,28 +1,17 @@
 {% extends "base.html" %}
-{% load crispy_forms_tags %}
 {% load static %}
 
-{% block extra_css %}
+{% block extra_head %}
 <link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
 {% endblock %}
 
 {% block content %}
-<div class="create-class-container container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <h2 class="create-class-title mb-4 text-center">Create a New Fitness Class</h2>
-
-            <div class="create-class-card card p-4">
-                <form method="post" class="create-class-form">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <div class="form-buttons text-end mt-3">
-                        <button type="submit" class="btn btn-primary btn-create-class">Create Class</button>
-                        <a href="{% url 'class_list' %}" class="btn btn-secondary btn-cancel-class ms-2">Cancel</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+  <h2>Create a New Fitness Class</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Class</button>
+  </form>
+  <a href="{% url 'class_list' %}">Back to class list</a>
 {% endblock %}
+

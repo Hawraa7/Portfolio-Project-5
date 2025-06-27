@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
+{% endblock %}
+
+{% block content %}
+<h2>Confirm Booking: {{ class.title }}</h2>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Confirm Booking</button>
+</form>
+<a href="{% url 'class_list' %}">Back to Classes</a>
+{% endblock %}
+
+

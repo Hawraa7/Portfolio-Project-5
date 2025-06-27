@@ -1,44 +1,23 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
+{% endblock %}
+
 {% block content %}
-<div class="container mt-5">
-    <h1>Fitness Classes</h1>
-    <ul class="list-group">
-        {% for class in classes %}
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-                <a href="{% url 'class_detail' class.id %}">{{ class.title }}</a><br>
-                <small>{{ class.date|date:"M d, Y" }} at {{ class.time|time:"H:i" }}</small>
-            </div>
-
-            <div>
-                {% if user.is_authenticated %}
-                    {# Booking status #}
-                    {% if class.id in user_bookings %}
-                        <span class="badge bg-success me-2">Booked</span>
-                    {% elif class.bookings.count < class.max_participants %}
-                        <a href="{% url 'class_detail' class.id %}" class="btn btn-sm btn-primary me-2">Book Now</a>
-                    {% else %}
-                        <span class="badge bg-secondary me-2">Full</span>
-                    {% endif %}
-
-                    {# Subscription button #}
-                    {% if class.id in user_subscriptions %}
-                        <span class="badge bg-info">Subscribed Monthly</span>
-                    {% else %}
-                        <form action="{% url 'create_subscription_checkout_session' class.id %}" method="POST" style="display:inline;">
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-sm btn-warning">Subscribe Monthly</button>
-                        </form>
-                    {% endif %}
-
-                {% else %}
-                    <a href="{% url 'account_login' %}" class="btn btn-sm btn-outline-primary">Log in to Book or Subscribe</a>
-                {% endif %}
-            </div>
-        </li>
-        {% empty %}
-        <li class="list-group-item">No classes available.</li>
-        {% endfor %}
-    </ul>
-</div>
+<h1>All Fitness Classes</h1>
+<ul>
+  {% for class in classes %}
+    <li>
+      <a href="{% url 'class_detail' class.pk %}">{{ class.title }}</a> -
+      {{ class.date }} {{ class.time }}
+    </li>
+  {% empty %}
+    <li>No classes available.</li>
+  {% endfor %}
+</ul>
+{% if request.user.is_staff %}
+  <a href="{% url 'create_class' %}">+ Create New Class</a>
+{% endif %}
 {% endblock %}
