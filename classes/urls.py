@@ -10,7 +10,7 @@ urlpatterns = [
     path('cancel-booking/<int:booking_id>/', views.cancel_booking, name='cancel_booking'),
     path('create/', views.create_class, name='create_class'),
     path('create-checkout-session/', views.start_checkout_session, name='start_checkout_session'),
-    path('stripe-webhook/', views.stripe_webhook, name='stripe_webhook'),
+    path('webhook/', views.stripe_webhook, name='stripe_webhook'),
 ]
 
 

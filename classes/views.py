@@ -86,7 +86,8 @@ def cancel_booking(request, booking_id):
     if request.method == 'POST':
         booking.delete()
         messages.success(request, "Booking cancelled successfully.")
-    return redirect('classes/class_list.html') 
+    return redirect('fitness_class_list')
+
 
 
 @login_required
@@ -131,7 +132,7 @@ def stripe_webhook(request):
 
     try:
         event = stripe.Webhook.construct_event(
-            payload, sig_header, settings.STRIPE_WEBHOOK_SECRET
+            payload, sig_header, settings.STRIPE_WH_SECRET
         )
     except (ValueError, stripe.error.SignatureVerificationError):
         return HttpResponse(status=400)
