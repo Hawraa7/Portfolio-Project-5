@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}My Class Bookings{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">My Bookings</h1>
+
+    {% if bookings %}
+        <div class="row">
+            {% for booking in bookings %}
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ booking.fitness_class.name }}</h5>
+                            <p class="card-text">
+                                <strong>Instructor:</strong> {{ booking.fitness_class.instructor }}<br>
+                                <strong>Date:</strong> {{ booking.fitness_class.date }}<br>
+                                <strong>Time:</strong> {{ booking.fitness_class.time }}<br>
+                                <strong>Price:</strong> ${{ booking.fitness_class.price }}<br>
+                                <strong>Booked On:</strong> {{ booking.created_at|date:"M d, Y" }}
+                            </p>
+
+                            <form method="post" action="{% url 'cancel_booking' booking.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger btn-sm">Cancel Booking</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>You haven't booked any classes yet.</p>
+        <a href="{% url 'fitness_class_list' %}" class="btn btn-primary">Browse Classes</a>
+    {% endif %}
+</div>
+{% endblock %}

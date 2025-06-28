@@ -84,10 +84,10 @@
                 Classes
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="classes-link">
-                <a class="dropdown-item" href="{% url 'class_list' %}">
+                <a class="dropdown-item" href="{% url 'fitness_class_list' %}">
                     Class Schedule
                 </a>
-                <a class="dropdown-item" href="{% url 'book_class' }">My Bookings</a>
+                <a class="dropdown-item" href="{% url 'book_fitness_class' }">My Bookings</a>
                 {% if request.user.is_staff %}
                 <a class="dropdown-item" href="{% url 'create_class' %}">Create Class</a>
                 {% endif %}

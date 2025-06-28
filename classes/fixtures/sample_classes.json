@@ -5,7 +5,8 @@
         "fields": {
             "title": "Morning Yoga Flow",
             "instructor": "Jessica Lin",
-            "date": "2025-06-24T07:00:00Z",
+            "date": "2025-07-10",
+            "time": "07:00:00",
             "description": "Start your day with gentle stretches and mindful breathing. Ideal for all levels.",
             "max_participants": 20,
             "price": "15.00"
@@ -17,7 +18,8 @@
         "fields": {
             "title": "Strength & Conditioning",
             "instructor": "Mark Rivera",
-            "date": "2025-06-25T18:00:00Z",
+            "date": "2025-07-11",
+            "time": "18:00:00",
             "description": "A full-body workout combining resistance and cardio to improve strength and endurance.",
             "max_participants": 15,
             "price": "20.00"
@@ -29,7 +31,8 @@
         "fields": {
             "title": "Zumba Dance Party",
             "instructor": "Lena Gómez",
-            "date": "2025-06-26T17:30:00Z",
+            "date": "2025-07-12",
+            "time": "17:30:00",
             "description": "Burn calories with this high-energy dance workout set to Latin and world rhythms.",
             "max_participants": 30,
             "price": "12.00"
@@ -41,7 +44,8 @@
         "fields": {
             "title": "Powerlifting Basics",
             "instructor": "Kyle Thornton",
-            "date": "2025-06-27T16:00:00Z",
+            "date": "2025-07-13",
+            "time": "16:00:00",
             "description": "Learn proper form for squat, bench, and deadlift. Perfect for beginners.",
             "max_participants": 10,
             "price": "18.00"
@@ -53,7 +57,8 @@
         "fields": {
             "title": "Indoor Cycling Express",
             "instructor": "Mia Sanders",
-            "date": "2025-06-28T12:30:00Z",
+            "date": "2025-07-14",
+            "time": "12:30:00",
             "description": "A fast-paced 30-minute ride to improve cardiovascular endurance.",
             "max_participants": 25,
             "price": "10.00"
@@ -65,7 +70,8 @@
         "fields": {
             "title": "Restorative Yin Yoga",
             "instructor": "Devon Liu",
-            "date": "2025-06-29T19:00:00Z",
+            "date": "2025-07-15",
+            "time": "19:00:00",
             "description": "Deep relaxation with long-held passive poses. Suitable for recovery and stress relief.",
             "max_participants": 15,
             "price": "15.00"
@@ -77,7 +83,8 @@
         "fields": {
             "title": "Functional Core Training",
             "instructor": "Sarah Okafor",
-            "date": "2025-06-30T08:00:00Z",
+            "date": "2025-07-16",
+            "time": "08:00:00",
             "description": "Strengthen your abs, obliques, and back with bodyweight and resistance tools.",
             "max_participants": 20,
             "price": "16.00"
@@ -89,7 +96,8 @@
         "fields": {
             "title": "Kickboxing Conditioning",
             "instructor": "Jamal White",
-            "date": "2025-07-01T18:30:00Z",
+            "date": "2025-07-17",
+            "time": "18:30:00",
             "description": "A cardio-heavy class with punches, kicks, and combos to boost power and stamina.",
             "max_participants": 18,
             "price": "17.00"
@@ -101,7 +109,8 @@
         "fields": {
             "title": "HIIT & Mobility Fusion",
             "instructor": "Chloe Barnes",
-            "date": "2025-07-02T17:00:00Z",
+            "date": "2025-07-18",
+            "time": "17:00:00",
             "description": "Combines high-intensity intervals with mobility work for a balanced workout.",
             "max_participants": 20,
             "price": "19.00"
@@ -113,7 +122,8 @@
         "fields": {
             "title": "Mindful Movement & Meditation",
             "instructor": "Daniel Kim",
-            "date": "2025-07-03T20:00:00Z",
+            "date": "2025-07-19",
+            "time": "20:00:00",
             "description": "Gentle movement followed by guided meditation. Ideal for winding down.",
             "max_participants": 12,
             "price": "14.00"
@@ -125,7 +135,8 @@
         "fields": {
             "title": "Pilates Core Strength",
             "instructor": "Emma Watson",
-            "date": "2025-07-04T09:00:00Z",
+            "date": "2025-07-20",
+            "time": "09:00:00",
             "description": "Focus on strengthening the core muscles through controlled Pilates exercises.",
             "max_participants": 18,
             "price": "16.00"
@@ -137,7 +148,8 @@
         "fields": {
             "title": "Boxing Fundamentals",
             "instructor": "Carlos Ramirez",
-            "date": "2025-07-05T18:00:00Z",
+            "date": "2025-07-21",
+            "time": "18:00:00",
             "description": "Learn the basics of boxing technique, footwork, and defensive skills.",
             "max_participants": 15,
             "price": "18.00"
@@ -149,7 +161,8 @@
         "fields": {
             "title": "TRX Suspension Training",
             "instructor": "Nina Patel",
-            "date": "2025-07-06T17:00:00Z",
+            "date": "2025-07-22",
+            "time": "17:00:00",
             "description": "Use suspension straps for a total-body strength and stability workout.",
             "max_participants": 20,
             "price": "20.00"
@@ -161,7 +174,8 @@
         "fields": {
             "title": "Barre Sculpt",
             "instructor": "Sophie Lee",
-            "date": "2025-07-07T07:30:00Z",
+            "date": "2025-07-23",
+            "time": "07:30:00",
             "description": "A low-impact workout combining ballet, Pilates, and yoga techniques to tone muscles.",
             "max_participants": 22,
             "price": "15.00"
@@ -173,7 +187,8 @@
         "fields": {
             "title": "Circuit Training Blast",
             "instructor": "Jake Turner",
-            "date": "2025-07-08T19:00:00Z",
+            "date": "2025-07-24",
+            "time": "19:00:00",
             "description": "High-intensity circuit training to improve strength and cardiovascular fitness.",
             "max_participants": 25,
             "price": "20.00"
@@ -185,7 +200,8 @@
         "fields": {
             "title": "Aqua Fitness",
             "instructor": "Linda Morgan",
-            "date": "2025-07-09T11:00:00Z",
+            "date": "2025-07-25",
+            "time": "11:00:00",
             "description": "Low-impact water-based exercises ideal for joint health and overall fitness.",
             "max_participants": 20,
             "price": "14.00"
@@ -197,7 +213,8 @@
         "fields": {
             "title": "Bootcamp Challenge",
             "instructor": "Mike Johnson",
-            "date": "2025-07-10T06:30:00Z",
+            "date": "2025-07-26",
+            "time": "06:30:00",
             "description": "An intense outdoor bootcamp designed to build endurance, strength, and agility.",
             "max_participants": 30,
             "price": "22.00"
@@ -209,7 +226,8 @@
         "fields": {
             "title": "Tai Chi for Beginners",
             "instructor": "Mei Chen",
-            "date": "2025-07-11T14:00:00Z",
+            "date": "2025-07-27",
+            "time": "14:00:00",
             "description": "Learn the slow, flowing movements of Tai Chi to improve balance and relaxation.",
             "max_participants": 18,
             "price": "13.00"
@@ -221,7 +239,8 @@
         "fields": {
             "title": "Advanced HIIT",
             "instructor": "Alex Garcia",
-            "date": "2025-07-12T16:30:00Z",
+            "date": "2025-07-28",
+            "time": "16:30:00",
             "description": "A challenging high-intensity interval training session for experienced participants.",
             "max_participants": 15,
             "price": "20.00"
@@ -233,7 +252,8 @@
         "fields": {
             "title": "Prenatal Yoga",
             "instructor": "Rachel Adams",
-            "date": "2025-07-13T10:00:00Z",
+            "date": "2025-07-29",
+            "time": "10:00:00",
             "description": "Gentle yoga classes tailored for expecting mothers to increase comfort and flexibility.",
             "max_participants": 12,
             "price": "14.00"

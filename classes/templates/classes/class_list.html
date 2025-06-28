@@ -1,23 +1,53 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
 {% endblock %}
 
+{% block title %}All Fitness Classes{% endblock %}
+
 {% block content %}
-<h1>All Fitness Classes</h1>
-<ul>
-  {% for class in classes %}
-    <li>
-      <a href="{% url 'class_detail' class.pk %}">{{ class.title }}</a> -
-      {{ class.date }} {{ class.time }}
-    </li>
-  {% empty %}
-    <li>No classes available.</li>
-  {% endfor %}
-</ul>
-{% if request.user.is_staff %}
-  <a href="{% url 'create_class' %}">+ Create New Class</a>
-{% endif %}
+<div class="container mt-5">
+    <h1 class="mb-4">All Fitness Classes</h1>
+
+    <ul class="class-list list-unstyled">
+        {% for class_obj in classes %}
+            <li class="mb-3 p-3 border rounded">
+                <strong>
+                    <a href="{% url 'fitness_class_detail' class_obj.pk %}">
+                        {{ class_obj.title }}
+                    </a>
+                </strong> — {{ class_obj.date }} at {{ class_obj.time }}
+                <br>
+                <small>Instructor: {{ class_obj.instructor }} | Spots left: {{ class_obj.spots_left }}</small>
+
+                <div class="mt-2">
+                    {% if user.is_authenticated %}
+                        {% if class_obj.bookings.count < class_obj.max_participants %}
+                            {% if class_obj.id not in user_bookings %}
+                                <form method="post" action="{% url 'book_class' class_obj.pk %}" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-sm btn-success">Book Now</button>
+                                </form>
+                            {% else %}
+                                <span class="text-muted">(Already Booked)</span>
+                            {% endif %}
+                        {% else %}
+                            <span class="text-danger">(Fully Booked)</span>
+                        {% endif %}
+                    {% else %}
+                        <a href="{% url 'account_login' %}" class="btn btn-sm btn-outline-primary">Log in to book</a>
+                    {% endif %}
+                </div>
+            </li>
+        {% empty %}
+            <li>No classes available.</li>
+        {% endfor %}
+    </ul>
+
+    {% if user.is_authenticated and user.is_staff %}
+        <a class="btn btn-primary mt-3" href="{% url 'create_class' %}">+ Create New Class</a>
+    {% endif %}
+</div>
 {% endblock %}

@@ -1,21 +1,52 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends 'base.html' %}
 
-{% block extra_head %}
-<link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
-{% endblock %}
+{% block title %}Book a Class{% endblock %}
 
 {% block content %}
-<h2>{{ class.title }}</h2>
-<p>{{ class.description }}</p>
-<p><strong>Instructor:</strong> {{ class.instructor }}</p>
-<p><strong>Time:</strong> {{ class.date }} {{ class.time }}</p>
-<p><strong>Price:</strong> ${{ class.price }}</p>
+<div class="container mt-5">
+    <h1 class="mb-4">Book a Class: {{ class_obj.name }}</h1>
 
-{% if user.is_authenticated %}
-  <a href="{% url 'book_class' class.pk %}">Book This Class</a>
-{% else %}
-  <p><a href="{% url 'account_login' %}">Log in</a> to book this class.</p>
-{% endif %}
+    <!-- Class Info -->
+    <div class="mb-4">
+        <p><strong>Instructor:</strong> {{ class_obj.instructor }}</p>
+        <p><strong>Date:</strong> {{ class_obj.date }}</p>
+        <p><strong>Time:</strong> {{ class_obj.time }}</p>
+        <p><strong>Spots Left:</strong> {{ spots_left }}</p>
+        <p><strong>Price:</strong> ${{ class_obj.price }}</p>
+    </div>
+
+    <!-- Booking Form -->
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+        {% if form.errors %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for field, errors in form.errors.items %}
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% for field in form %}
+        <div class="mb-3">
+            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+            {{ field }}
+        </div>
+        {% endfor %}
+
+        
+    </form>
+
+    <hr>
+
+    <!-- Link to Bookings -->
+    <div class="d-flex justify-content-between align-items-center">
+        <p><a href="{% url 'my_bookings' %}" class="btn btn-link">View My Bookings</a></p>
+    </div>
+</div>
 {% endblock %}
+
 
