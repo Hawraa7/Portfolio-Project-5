@@ -8,18 +8,38 @@ from .forms import FitnessClassForm
 from django.contrib.admin.views.decorators import staff_member_required
 import stripe
 from django.conf import settings
-
+from django.utils import timezone
+import datetime
 
 @staff_member_required
 def create_class(request):
     if request.method == 'POST':
         form = FitnessClassForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('fitness_class_list')
+            class_date = form.cleaned_data['date']
+            class_time = form.cleaned_data['time']
+            class_price = form.cleaned_data['price']
+            max_participants = form.cleaned_data['max_participants']
+
+            # Combine and make timezone-aware
+            class_datetime = datetime.datetime.combine(class_date, class_time)
+            class_datetime = timezone.make_aware(class_datetime, timezone.get_current_timezone())
+
+            # Validation checks
+            if class_datetime < timezone.now():
+                form.add_error(None, "You cannot create a class scheduled in the past.")
+            elif class_price < 0:
+                form.add_error('price', "Price cannot be negative.")
+            elif max_participants < 1:
+                form.add_error('max_participants', "There must be at least 1 spot.")
+            else:
+                form.save()
+                return redirect('fitness_class_list')
     else:
         form = FitnessClassForm()
+
     return render(request, 'classes/create_class.html', {'form': form})
+
 
 
 def fitness_class_list(request):

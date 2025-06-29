@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block meta_description %}
-Buy {{ product.name }} - high-quality fitness equipment, apparel, shoes, vitamins, supplements and special offers, yoga accessories, cardio machines, power machines, free weights, dumbells at Zouzou's Fitness.
+Buy {{ product.name }} - high-quality fitness equipment, apparel, shoes, vitamins, supplements and special offers, yoga
+accessories, cardio machines, power machines, free weights, dumbells at Zouzou's Fitness.
 {% endblock %}
 
 {% block title %}
@@ -53,25 +54,22 @@ Buy {{ product.name }} - high-quality fitness equipment, apparel, shoes, vitamin
                 <small class="text-muted">No Rating</small>
                 {% endif %}
                 {% if request.user.is_superuser %}
-                    <small class="ml-3">
-                        <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                    </small>
+                <small class="ml-3">
+                    <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                </small>
                 {% endif %}
                 <p class="mt-3">{{ product.description }}</p>
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
-                        {% with product.has_sizes as s %}
-                        {% if s %}
+                        {% if product.has_sizes %}
                         <div class="col-12">
                             <p><strong>Size:</strong></p>
-                            <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-                                <option value="xs">XS</option>
-                                <option value="s">S</option>
-                                <option value="m" selected>M</option>
-                                <option value="l">L</option>
-                                <option value="xl">XL</option>
+                            <select class="form-control rounded-0 w-50" name="product_size" id="id_product_size">
+                                {% for size in sizes %}
+                                <option value="{{ size }}">{{ size }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                         {% endif %}
@@ -110,7 +108,6 @@ Buy {{ product.name }} - high-quality fitness equipment, apparel, shoes, vitamin
                             <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                        {% endwith %}
                     </div>
                 </form>
             </div>

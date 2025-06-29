@@ -8,46 +8,60 @@
 {% block title %}All Fitness Classes{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1 class="mb-4">All Fitness Classes</h1>
+<div class="container py-5">
+    <h1 class="mb-4 text-center">All Fitness Classes</h1>
 
-    <ul class="class-list list-unstyled">
+    <div class="row g-4">
         {% for class_obj in classes %}
-            <li class="mb-3 p-3 border rounded">
-                <strong>
-                    <a href="{% url 'fitness_class_detail' class_obj.pk %}">
-                        {{ class_obj.title }}
-                    </a>
-                </strong> — {{ class_obj.date }} at {{ class_obj.time }}
-                <br>
-                <small>Instructor: {{ class_obj.instructor }} | Spots left: {{ class_obj.spots_left }}</small>
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm rounded-4">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <h5 class="card-title">
+                            <a href="{% url 'fitness_class_detail' class_obj.pk %}" class="text-decoration-none">
+                                {{ class_obj.title }}
+                            </a>
+                        </h5>
+                        <p class="card-text mb-1">
+                            <strong>Date:</strong> {{ class_obj.date }}<br>
+                            <strong>Time:</strong> {{ class_obj.time }}<br>
+                            <strong>Instructor:</strong> {{ class_obj.instructor }}<br>
+                            <strong>Spots Left:</strong> {{ class_obj.spots_left }}
+                        </p>
+                    </div>
 
-                <div class="mt-2">
-                    {% if user.is_authenticated %}
-                        {% if class_obj.bookings.count < class_obj.max_participants %}
-                            {% if class_obj.id not in user_bookings %}
-                                <form method="post" action="{% url 'book_class' class_obj.pk %}" style="display:inline;">
-                                    {% csrf_token %}
-                                    <button type="submit" class="btn btn-sm btn-success">Book Now</button>
-                                </form>
+                    <div class="mt-3">
+                        {% if user.is_authenticated %}
+                            {% if class_obj.bookings.count < class_obj.max_participants %}
+                                {% if class_obj.id not in user_bookings %}
+                                    <form method="post" action="{% url 'book_class' class_obj.pk %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-success btn-sm w-100">Book Now</button>
+                                    </form>
+                                {% else %}
+                                    <div class="text-muted text-center small">(Already Booked)</div>
+                                {% endif %}
                             {% else %}
-                                <span class="text-muted">(Already Booked)</span>
+                                <div class="text-danger text-center small">(Fully Booked)</div>
                             {% endif %}
                         {% else %}
-                            <span class="text-danger">(Fully Booked)</span>
+                            <a href="{% url 'account_login' %}" class="btn btn-outline-primary btn-sm w-100">Log in to Book</a>
                         {% endif %}
-                    {% else %}
-                        <a href="{% url 'account_login' %}" class="btn btn-sm btn-outline-primary">Log in to book</a>
-                    {% endif %}
+                    </div>
                 </div>
-            </li>
+            </div>
+        </div>
         {% empty %}
-            <li>No classes available.</li>
+        <div class="col-12">
+            <div class="alert alert-info text-center">No classes available.</div>
+        </div>
         {% endfor %}
-    </ul>
+    </div>
 
     {% if user.is_authenticated and user.is_staff %}
-        <a class="btn btn-primary mt-3" href="{% url 'create_class' %}">+ Create New Class</a>
+    <div class="text-center mt-4">
+        <a class="btn btn-primary" href="{% url 'create_class' %}">+ Create New Class</a>
+    </div>
     {% endif %}
 </div>
 {% endblock %}

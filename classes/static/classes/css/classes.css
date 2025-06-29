@@ -1,223 +1,139 @@
-/* styles.css for classes app */
-
 /* classes/css/classes.css */
 
-h2 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #2c3e50;
-  margin-bottom: 1rem;
+/* General container padding for better breathing room */
+body {
+  /* only if you have a fixed header/navbar */
+  padding-top: 70px; 
+  background-color: #fffffff;
 }
 
-form {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 500px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  margin-bottom: 1.5rem;
+.container {
+  padding-top: 30px;
 }
-
-form p {
-  margin-bottom: 1rem;
-}
-
-form label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-  color: #34495e;
-}
-
-form input, 
-form select, 
-form textarea {
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-  box-sizing: border-box;
-}
-
-form input:focus, 
-form select:focus, 
-form textarea:focus {
-  border-color: #2980b9;
-  outline: none;
-  box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
-}
-
-button[type="submit"] {
-  background-color: #2980b9;
-  color: white;
-  padding: 10px 20px;
-  font-weight: 600;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-  background-color: #1c5980;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-/* Confirm Booking page styling */
-
-h2 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #2c3e50;
-  margin-bottom: 1rem;
-}
-
-form {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 400px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  margin-bottom: 1.5rem;
-}
-
-button[type="submit"] {
-  background-color: #27ae60;
-  color: white;
-  padding: 10px 20px;
-  font-weight: 600;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-  background-color: #1e8449;
-}
-
-a {
-  color: #2980b9;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Classes list page styling */
 
 h1 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #34495e;
-  margin-bottom: 1.5rem;
-  text-align: center;
+  margin-top: 10px  !important;
+  margin-bottom: 20px;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-  max-width: 600px;
-  margin: 0 auto 2rem auto;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fafafa;
+
+/* Card tweaks */
+.card {
+  border: none;
+  transition: box-shadow 0.3s ease;
 }
 
-ul li {
-  padding: 12px 20px;
-  border-bottom: 1px solid #eee;
-  font-size: 1.1rem;
-  color: #2c3e50;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-ul li:last-child {
-  border-bottom: none;
+/* Rounded corners */
+.rounded-4 {
+  border-radius: 1rem !important;
 }
 
-ul li a {
-  color: #2980b9;
-  text-decoration: none;
+/* Form input fixes */
+form .form-control {
+  border-radius: 0.375rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form .form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* Label styling */
+.form-label {
   font-weight: 600;
-  transition: color 0.3s ease;
+  color: #333;
 }
 
-ul li a:hover {
-  color: #1c5980;
-  text-decoration: underline;
+/* Buttons */
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  font-weight: 600;
 }
 
-ul li span {
+.btn-success:hover, .btn-success:focus {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.btn-outline-secondary {
+  font-weight: 600;
+}
+
+.btn-outline-danger {
+  font-weight: 600;
+}
+
+/* Alerts */
+.alert-danger {
   font-size: 0.9rem;
-  color: #7f8c8d;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
 }
 
-a[href$="create_class"] {
-  display: inline-block;
-  margin: 0 auto;
-  padding: 10px 20px;
-  background-color: #27ae60;
-  color: white;
-  font-weight: 700;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  text-align: center;
+/* Spacing utility fixes */
+.mb-4 {
+  margin-bottom: 1.5rem !important;
 }
 
-a[href$="create_class"]:hover {
-  background-color: #1e8449;
-  text-decoration: none;
-}
-/* Class detail page styling */
-
-h2 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #2c3e50;
-  margin-bottom: 0.5rem;
-  text-align: center;
+.mt-4 {
+  margin-top: 1.5rem !important;
 }
 
-p {
-  font-size: 1.1rem;
-  color: #34495e;
-  margin: 0.4rem 0;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+/* Fix footer/footer-like section in create_class form */
+.d-flex.justify-content-between.align-items-center {
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
 }
 
-p strong {
-  color: #2980b9;
+/* Booking cards grid */
+.row.g-4 > .col-md-6, 
+.row.g-4 > .col-lg-4 {
+  display: flex;
+  flex-direction: column;
 }
 
-a {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 10px 22px;
-  background-color: #27ae60;
-  color: white;
-  font-weight: 700;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  text-align: center;
+.card.h-100 {
+  flex-grow: 1;
 }
 
-a:hover {
-  background-color: #1e8449;
+/* Text muted for already booked */
+.text-muted.small {
+  font-size: 0.8rem;
 }
 
-p a {
-  color: #2980b9;
-  font-weight: 600;
+/* Fully booked warning */
+.text-danger.small {
+  font-size: 0.8rem;
 }
 
-p a:hover {
-  text-decoration: underline;
+/* Form validation */
+.needs-validation .form-control:invalid {
+  border-color: #dc3545;
+  padding-right: 2.25rem;
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.needs-validation .form-control:invalid:focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Responsive fixes for smaller screens */
+@media (max-width: 576px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .btn-sm {
+    font-size: 0.9rem;
+    padding: 0.375rem 0.75rem;
+  }
 }

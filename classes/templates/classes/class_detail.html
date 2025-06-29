@@ -1,26 +1,34 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
+{% endblock %}
 
 {% block title %}Book a Class{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1 class="mb-4">Book a Class: {{ class_obj.title }}</h1>
+<div class="container py-5">
+    <h1 class="mb-4 text-center">Book a Class: {{ class_obj.title }}</h1>
 
     <!-- Class Info -->
-    <div class="mb-4">
-        <p><strong>Instructor:</strong> {{ class_obj.instructor }}</p>
-        <p><strong>Date:</strong> {{ class_obj.date }}</p>
-        <p><strong>Time:</strong> {{ class_obj.time }}</p>
-        <p><strong>Spots Left:</strong> {{ spots_left }}</p>
-        <p><strong>Price:</strong> ${{ class_obj.price }}</p>
+    <div class="card mb-4 shadow-sm rounded-4">
+        <div class="card-body">
+            <p class="mb-2"><strong>Instructor:</strong> {{ class_obj.instructor }}</p>
+            <p class="mb-2"><strong>Date:</strong> {{ class_obj.date }}</p>
+            <p class="mb-2"><strong>Time:</strong> {{ class_obj.time }}</p>
+            <p class="mb-2"><strong>Spots Left:</strong> {{ spots_left }}</p>
+            <p class="mb-0"><strong>Price:</strong> ${{ class_obj.price }}</p>
+        </div>
     </div>
 
     <!-- Booking Form -->
-    <form method="post" class="needs-validation" novalidate>
+    <form method="post" class="needs-validation bg-light p-4 rounded-4 shadow-sm" novalidate>
         {% csrf_token %}
+
         {% if form.errors %}
         <div class="alert alert-danger">
-            <ul>
+            <ul class="mb-0">
                 {% for field, errors in form.errors.items %}
                     {% for error in errors %}
                         <li>{{ error }}</li>
@@ -37,16 +45,10 @@
         </div>
         {% endfor %}
 
-        
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <a href="{% url 'my_bookings' %}" class="btn btn-outline-secondary">View My Bookings</a>
+        </div>
     </form>
-
-    <hr>
-
-    <!-- Link to Bookings -->
-    <div class="d-flex justify-content-between align-items-center">
-        <p><a href="{% url 'my_bookings' %}" class="btn btn-link">View My Bookings</a></p>
-    </div>
 </div>
 {% endblock %}
-
 

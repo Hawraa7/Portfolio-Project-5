@@ -62,18 +62,26 @@ def all_products(request):
     }
 
     return render(request, 'products/products.html', context)
-
-
 def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
 
+    if product.has_sizes:
+        if product.category and product.category.name.lower() == 'shoes' or 'shoe' in product.name.lower():
+            sizes = [str(i) for i in range(36, 48)]  # shoe sizes 36-47
+        else:
+            sizes = ['XS', 'S', 'M', 'L', 'XL']  # general sizes
+    else:
+        sizes = []
+
     context = {
         'product': product,
+        'sizes': sizes,
     }
 
     return render(request, 'products/product_detail.html', context)
+
 
 
 @login_required
