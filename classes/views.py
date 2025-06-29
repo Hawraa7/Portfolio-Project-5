@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from .models import FitnessClass, Booking
 from django import forms
+from .forms import FitnessClassForm
 from django.contrib.admin.views.decorators import staff_member_required
 import stripe
 from django.conf import settings
@@ -15,7 +16,7 @@ def create_class(request):
         form = FitnessClassForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('class_list')
+            return redirect('fitness_class_list')
     else:
         form = FitnessClassForm()
     return render(request, 'classes/create_class.html', {'form': form})

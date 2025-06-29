@@ -26,6 +26,4 @@ class FitnessClassForm(forms.ModelForm):
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = []  # Usually booking needs no extra fields, just user and class linked programmatically
-
-    # If you want to add any extra validation or logic, override clean() or add custom fields here
+        fields = [] 
