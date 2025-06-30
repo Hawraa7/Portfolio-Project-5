@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block meta_description %}
+Create a new fitness class with details such as instructor, date, time, and capacity. Manage your fitness offerings easily.
+{% endblock %}
+
+{% block title %}Create Class{% endblock %}
+
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
 {% endblock %}
 
 {% block content %}
-<div class="container my-5">
+<div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-8 col-lg-6">
       <div class="card shadow rounded-4">

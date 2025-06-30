@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block meta_description %}
+Browse and book all available fitness classes. Join expert-led sessions and stay fit with flexible scheduling and easy online booking.
+{% endblock %}
+
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
 {% endblock %}
@@ -8,16 +12,15 @@
 {% block title %}All Fitness Classes{% endblock %}
 
 {% block content %}
-<div class="container py-5">
+<div class="container mt-5">
     <h1 class="mb-4 text-center">All Fitness Classes</h1>
-
     <div class="row g-4">
         {% for class_obj in classes %}
         <div class="col-md-6 col-lg-4">
             <div class="card h-100 shadow-sm rounded-4">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div>
-                        <h5 class="card-title">
+                        <h5 class="card-title mt-5">
                             <a href="{% url 'fitness_class_detail' class_obj.pk %}" class="text-decoration-none">
                                 {{ class_obj.title }}
                             </a>

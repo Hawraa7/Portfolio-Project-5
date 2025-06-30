@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block meta_description%}
+Browse a wide range of fitness products at Zouzou's Fitness, including workout gear, supplements, apparel, and accessories. Filter by category, price, or rating.">
+{% endblock %}
+
+{% block title %}
+{{ product.name }} - Zouzou's Fitness
+{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">

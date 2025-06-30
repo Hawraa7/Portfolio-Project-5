@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block meta_description %}
+Thank you for your order at Zouzou's Fitness! View your order details, shipping information, and billing summary. A confirmation email has been sent to you.">
+{% endblock %}
+
+{% block title %}
+Success Checkout - Zouzou's Fitness
+{% endblock %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}

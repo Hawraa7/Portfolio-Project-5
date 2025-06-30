@@ -2,13 +2,12 @@
 
 /* General container padding for better breathing room */
 body {
-  /* only if you have a fixed header/navbar */
-  padding-top: 70px; 
-  background-color: #fffffff;
+  padding-top: 120px; 
+  background-color: #ffffff;
 }
 
 .container {
-  padding-top: 30px;
+  padding-top: 0px;
 }
 
 h1 {

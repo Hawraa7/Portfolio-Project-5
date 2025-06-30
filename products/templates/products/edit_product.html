@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block meta_description %}
+Edit product details for your fitness inventory. Manage titles, prices, categories, and images easily at Zouzou's Fitness.
+{% enblock %}
+
+{% block title %}
+{{ product.name }} - Zouzou's Fitness
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">

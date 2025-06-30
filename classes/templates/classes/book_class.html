@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block meta_description %}
+Book your spot for {{ class_obj.title }} with {{ class_obj.instructor }} on {{ class_obj.date }}. Limited availability. Reserve now!
+{% endblock %}
+
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
 {% endblock %}
@@ -8,7 +12,7 @@
 {% block title %}Book a Class{% endblock %}
 
 {% block content %}
-<div class="container py-5">
+<div class="container mt-5">
     <h1 class="mb-4 text-center">Book a Class: {{ class_obj.title }}</h1>
 
     <!-- Class Details -->
