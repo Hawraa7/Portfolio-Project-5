@@ -165,29 +165,6 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    # Send order confirmation email
-
-    subject = f"Zouzou's Fitness - Order Confirmation {order_number}"
-    message = f"""
-            Hello {order.user.username if request.user.is_authenticated else order.full_name},
-
-            Thank you for your purchase! Your order {order_number} has been successfully processed.
-
-            Order Details:
-            - Total: ${order.order_total}
-            - Items: {order.original_bag}
-
-           We appreciate your business!
-
-           Zouzou's Fitness
-        """
-    send_mail(
-            subject,
-            message,
-            settings.DEFAULT_FROM_EMAIL,
-            [order.email],
-            fail_silently=False,
-)
     # Display a success message
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
