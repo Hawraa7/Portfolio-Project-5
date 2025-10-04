@@ -48,50 +48,71 @@ class StripeWH_Handler:
             pid = intent.id
             bag = intent.metadata.bag
             save_info = intent.metadata.save_info
-            billing_details = intent.charges.data[0].billing_details
-            send_mail(
-                'Test 3 from Zouzou’s Fitness',
-                'If you’re reading this, Gmail App Passwords work 🎉',
-                settings.DEFAULT_FROM_EMAIL,
-                ['hawraahijazi1996@gmail.com']
-            )
-            shipping_details = intent.shipping
-            send_mail(
-                'Test 4 from Zouzou’s Fitness',
-                'If you’re reading this, Gmail App Passwords work 🎉',
-                settings.DEFAULT_FROM_EMAIL,
-                ['hawraahijazi1996@gmail.com']
-            )
-            grand_total = round(intent.charges.data[0].amount / 100, 2)
-            send_mail(
-                'Test 2 from Zouzou’s Fitness',
-                'If you’re reading this, Gmail App Passwords work 🎉',
-                settings.DEFAULT_FROM_EMAIL,
-                ['hawraahijazi1996@gmail.com']
-            )
-            # Clean empty shipping fields
-            for field, value in shipping_details.address.items():
-                if value == "":
-                    shipping_details.address[field] = None
+            # billing_details = intent.charges.data[0].billing_details
+            # send_mail(
+            #     'Test 3 from Zouzou’s Fitness',
+            #     'If you’re reading this, Gmail App Passwords work 🎉',
+            #     settings.DEFAULT_FROM_EMAIL,
+            #     ['hawraahijazi1996@gmail.com']
+            # )
+            # shipping_details = intent.shipping
+            # send_mail(
+            #     'Test 4 from Zouzou’s Fitness',
+            #     'If you’re reading this, Gmail App Passwords work 🎉',
+            #     settings.DEFAULT_FROM_EMAIL,
+            #     ['hawraahijazi1996@gmail.com']
+            # )
+            # grand_total = round(intent.charges.data[0].amount / 100, 2)
+            # send_mail(
+            #     'Test 2 from Zouzou’s Fitness',
+            #     'If you’re reading this, Gmail App Passwords work 🎉',
+            #     settings.DEFAULT_FROM_EMAIL,
+            #     ['hawraahijazi1996@gmail.com']
+            # )
+            # # Clean empty shipping fields
+            # for field, value in shipping_details.address.items():
+            #     if value == "":
+            #         shipping_details.address[field] = None
 
-            profile = None
-            username = getattr(intent.metadata, 'username', None)
-            if username and username != 'AnonymousUser':
-                profile = UserProfile.objects.filter(user__username=username).first()
-                if profile and save_info:
-                    profile.default_phone_number = shipping_details.phone or ''
-                    profile.default_country = shipping_details.address.country or ''
-                    profile.default_postcode = shipping_details.address.postal_code or ''
-                    profile.default_town_or_city = shipping_details.address.city or ''
-                    profile.default_street_address1 = shipping_details.address.line1 or ''
-                    profile.default_street_address2 = shipping_details.address.line2 or ''
-                    profile.default_county = shipping_details.address.state or ''
-                    profile.save()
+            # profile = None
+            # username = getattr(intent.metadata, 'username', None)
+            # if username and username != 'AnonymousUser':
+            #     profile = UserProfile.objects.filter(user__username=username).first()
+            #     if profile and save_info:
+            #         profile.default_phone_number = shipping_details.phone or ''
+            #         profile.default_country = shipping_details.address.country or ''
+            #         profile.default_postcode = shipping_details.address.postal_code or ''
+            #         profile.default_town_or_city = shipping_details.address.city or ''
+            #         profile.default_street_address1 = shipping_details.address.line1 or ''
+            #         profile.default_street_address2 = shipping_details.address.line2 or ''
+            #         profile.default_county = shipping_details.address.state or ''
+            #         profile.save()
 
             order = None
             order_exists = False
             for attempt in range(10):
                 try:
+                    billing_details = intent.charges.data[0].billing_details
+                    shipping_details = intent.shipping
+                    grand_total = round(intent.charges.data[0].amount / 100, 2)
+                    # Clean empty shipping fields
+                    for field, value in shipping_details.address.items():
+                        if value == "":
+                            shipping_details.address[field] = None
+
+                    profile = None
+                    username = getattr(intent.metadata, 'username', None)
+                    if username and username != 'AnonymousUser':
+                        profile = UserProfile.objects.filter(user__username=username).first()
+                        if profile and save_info:
+                            profile.default_phone_number = shipping_details.phone or ''
+                            profile.default_country = shipping_details.address.country or ''
+                            profile.default_postcode = shipping_details.address.postal_code or ''
+                            profile.default_town_or_city = shipping_details.address.city or ''
+                            profile.default_street_address1 = shipping_details.address.line1 or ''
+                            profile.default_street_address2 = shipping_details.address.line2 or ''
+                            profile.default_county = shipping_details.address.state or ''
+                            profile.save()
                     order = Order.objects.get(
                         full_name__iexact=shipping_details.name,
                         email__iexact=billing_details.email,
