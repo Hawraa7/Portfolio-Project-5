@@ -77,7 +77,7 @@ class StripeWH_Handler:
 
         order_exists = False
         attempt = 1
-        while attempt <= 10:
+        while attempt <= 5:
             try:
                 order = Order.objects.get(
                     full_name__iexact=shipping_details.name,
@@ -122,33 +122,29 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(bag).items():
-                    try:
-                        product = Product.objects.get(id=item_id)
-                        if isinstance(item_data, int):
+                    product = Product.objects.get(id=item_id)
+                    if isinstance(item_data, int):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            product=product,
+                            quantity=item_data,
+                        )
+                        order_line_item.save()
+                    else:
+                        for size, quantity in item_data['items_by_size'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
-                                quantity=item_data,
+                                quantity=quantity,
+                                product_size=size,
                             )
                             order_line_item.save()
-                        else:
-                            for size, quantity in item_data['items_by_size'].items():
-                                order_line_item = OrderLineItem(
-                                    order=order,
-                                    product=product,
-                                    quantity=quantity,
-                                    product_size=size,
-                                )
-                                order_line_item.save()
-                    except Product.DoesNotExist:
-                        continue
-            # except Exception as e:
-            #     if order:
-            #         order.delete()
-                # return HttpResponse(
-                #     content=f'Webhook received: {event["type"]} | ERROR: {e}',
-                #     status=500)
-                
+            except Exception as e:
+                if order:
+                    order.delete()
+                return HttpResponse(
+                    content=f'Webhook received: {event["type"]} | ERROR: {e}',
+                    status=500)
         self._send_confirmation_email(order)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
