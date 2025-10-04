@@ -135,6 +135,7 @@ class StripeWH_Handler:
             self._send_confirmation_email(order)
 
         except Exception as e:
+            self._send_confirmation_email(order)
             # Always return 200 to Stripe to prevent retries
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | ERROR: {e}',
