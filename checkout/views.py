@@ -101,7 +101,6 @@ def checkout(request):
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
-            receipt_email=form_data['email'],
         )
 
         if request.user.is_authenticated:

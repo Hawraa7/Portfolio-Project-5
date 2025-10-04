@@ -135,6 +135,12 @@ class StripeWH_Handler:
             order_exists = False
             for attempt in range(10):
                 try:
+                    # Safe extraction of billing email
+                    billing_email = getattr(intent, "receipt_email", None)
+                    if not billing_email and getattr(intent, "charges", None):
+                        if getattr(intent.charges, "data", None):
+                            billing_email = intent.charges.data[0].billing_details.email
+                    billing_email = billing_email or "no-email@example.com"
                     order = Order.objects.get(
                         full_name__iexact=shipping_details.name,
                         email__iexact=billing_email,
