@@ -19,27 +19,20 @@ class StripeWH_Handler:
 
     def _send_confirmation_email(self, order):
         """Send the user a confirmation email"""
-        try:
-            cust_email = order.email
-            if not cust_email:
-                return
-            subject = render_to_string(
-                'checkout/confirmation_emails/confirmation_email_subject.txt',
-                {'order': order})
-            body = render_to_string(
-                'checkout/confirmation_emails/confirmation_email_body.txt',
-                {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-            
-            send_mail(
-                subject,
-                body,
-                settings.DEFAULT_FROM_EMAIL,
-                [cust_email]
-            )
-        except Exception as e:
-            # Log the error
-            print(f"Error sending confirmation email: {e}")
+        cust_email = order.email
+        subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {'order': order})
+        body = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
         
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [cust_email]
+        )        
 
     def handle_event(self, event):
         """
@@ -139,10 +132,15 @@ class StripeWH_Handler:
                     except Product.DoesNotExist:
                         continue  # skip missing products
 
+            send_mail(
+                'Test from Zouzou’s Fitness',
+                'If you’re reading this, Gmail App Passwords work 🎉',
+                settings.DEFAULT_FROM_EMAIL,
+                [order.email]
+            )
             self._send_confirmation_email(order)
 
         except Exception as e:
-            self._send_confirmation_email(order)
             # Always return 200 to Stripe to prevent retries
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | ERROR: {e}',
