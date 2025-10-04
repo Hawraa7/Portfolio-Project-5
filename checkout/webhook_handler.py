@@ -57,11 +57,13 @@ class StripeWH_Handler:
             )
 
             # Safe extraction of billing email
-            billing_email = getattr(intent, "receipt_email", None)
-            if not billing_email and getattr(intent, "charges", None):
-                if getattr(intent.charges, "data", None):
-                    billing_email = intent.charges.data[0].billing_details.email
-            billing_email = billing_email or "no-email@example.com"
+            # billing_email = getattr(intent, "receipt_email", None)
+            # if not billing_email and getattr(intent, "charges", None):
+            #     if getattr(intent.charges, "data", None):
+            #         billing_email = intent.charges.data[0].billing_details.email
+            # billing_email = billing_email or "no-email@example.com"
+            billing_email = getattr(intent.metadata, 'email', None) or "no-email@example.com"
+
 
             # Debug email after billing extraction
             send_mail(

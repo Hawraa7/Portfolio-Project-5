@@ -25,8 +25,8 @@ def cache_checkout_data(request):
                 'bag': json.dumps(request.session.get('bag', {})),
                 'save_info': request.POST.get('save_info'),
                 'username': request.user,
+                'email': request.POST.get('email'),
             },
-            receipt_email=request.POST.get('email')  # <-- now Stripe will see it
         )
 
         return HttpResponse(status=200)
