@@ -132,16 +132,16 @@ class StripeWH_Handler:
                     except Product.DoesNotExist:
                         continue  # skip missing products
 
+            self._send_confirmation_email(order)
+
+        except Exception as e:
+            # Always return 200 to Stripe to prevent retries
             send_mail(
                 'Test from Zouzou’s Fitness',
                 'If you’re reading this, Gmail App Passwords work 🎉',
                 settings.DEFAULT_FROM_EMAIL,
                 ['hawraahijazi1996@gmail.com']
             )
-            self._send_confirmation_email(order)
-
-        except Exception as e:
-            # Always return 200 to Stripe to prevent retries
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | ERROR: {e}',
                 status=200
