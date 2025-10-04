@@ -64,12 +64,12 @@ class StripeWH_Handler:
             billing_email = billing_email or "no-email@example.com"
 
             # Debug email after billing extraction
-            send_mail(
-                'Test 3 from Zouzou’s Fitness',
-                f'Billing email resolved: {billing_email}',
-                settings.DEFAULT_FROM_EMAIL,
-                ['hawraahijazi1996@gmail.com']
-            )
+            # send_mail(
+            #     'Test 3 from Zouzou’s Fitness',
+            #     f'Billing email resolved: {billing_email}',
+            #     settings.DEFAULT_FROM_EMAIL,
+            #     ['hawraahijazi1996@gmail.com']
+            # )
 
             # Safe extraction of shipping details
             shipping_details = getattr(intent, "shipping", None)
@@ -86,12 +86,12 @@ class StripeWH_Handler:
                 shipping_details.address.state = ""
 
             # Debug email after shipping extraction
-            send_mail(
-                'Test 4 from Zouzou’s Fitness',
-                f'Shipping details resolved: {shipping_details}',
-                settings.DEFAULT_FROM_EMAIL,
-                ['hawraahijazi1996@gmail.com']
-            )
+            # send_mail(
+            #     'Test 4 from Zouzou’s Fitness',
+            #     f'Shipping details resolved: {shipping_details}',
+            #     settings.DEFAULT_FROM_EMAIL,
+            #     ['hawraahijazi1996@gmail.com']
+            # )
 
             # Safe extraction of grand total
             if getattr(intent, "charges", None) and getattr(intent.charges, "data", None):
@@ -103,12 +103,12 @@ class StripeWH_Handler:
                 grand_total = round(getattr(intent, "amount", 0) / 100, 2)
 
             # Debug email after grand total extraction
-            send_mail(
-                'Test 2 from Zouzou’s Fitness',
-                f'Grand total resolved: {grand_total}',
-                settings.DEFAULT_FROM_EMAIL,
-                ['hawraahijazi1996@gmail.com']
-            )
+            # send_mail(
+            #     'Test 2 from Zouzou’s Fitness',
+            #     f'Grand total resolved: {grand_total}',
+            #     settings.DEFAULT_FROM_EMAIL,
+            #     ['hawraahijazi1996@gmail.com']
+            # )
 
             # Clean empty shipping fields
             for field, value in shipping_details.address.__dict__.items():
@@ -193,12 +193,12 @@ class StripeWH_Handler:
                         continue
 
             # Debug email before sending confirmation
-            send_mail(
-                'Test 1 from Zouzou’s Fitness',
-                'Order and items created successfully. Sending confirmation email.',
-                settings.DEFAULT_FROM_EMAIL,
-                ['hawraahijazi1996@gmail.com']
-            )
+            # send_mail(
+            #     'Test 1 from Zouzou’s Fitness',
+            #     'Order and items created successfully. Sending confirmation email.',
+            #     settings.DEFAULT_FROM_EMAIL,
+            #     ['hawraahijazi1996@gmail.com']
+            # )
 
             self._send_confirmation_email(order)
 
