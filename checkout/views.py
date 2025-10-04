@@ -19,11 +19,16 @@ def cache_checkout_data(request):
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
-        stripe.PaymentIntent.modify(pid, metadata={
-            'bag': json.dumps(request.session.get('bag', {})),
-            'save_info': request.POST.get('save_info'),
-            'username': request.user,
-        })
+        stripe.PaymentIntent.modify(
+            pid,
+            metadata={
+                'bag': json.dumps(request.session.get('bag', {})),
+                'save_info': request.POST.get('save_info'),
+                'username': request.user,
+            },
+            receipt_email=request.POST.get('email')  # <-- now Stripe will see it
+        )
+
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, 'Sorry, your payment cannot be \
@@ -98,17 +103,10 @@ def checkout(request):
         total = current_bag['grand_total']
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
-        try:
-            intent = stripe.PaymentIntent.create(
-                amount=stripe_total,
-                currency=settings.STRIPE_CURRENCY,
-                receipt_email=form_data['email'],
-            )
-        except:
-            intent = stripe.PaymentIntent.create(
-                amount=stripe_total,
-                currency=settings.STRIPE_CURRENCY,
-            )
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+        )
 
         if request.user.is_authenticated:
             try:
