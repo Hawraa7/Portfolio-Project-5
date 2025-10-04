@@ -46,13 +46,29 @@ class StripeWH_Handler:
         try:
             intent = event.data.object
             pid = intent.id
+            send_mail(
+                'Test 4 from Zouzou’s Fitness',
+                'If you’re reading this, Gmail App Passwords work 🎉',
+                settings.DEFAULT_FROM_EMAIL,
+                ['hawraahijazi1996@gmail.com']
+            )
             bag = intent.metadata.bag
             save_info = intent.metadata.save_info
-
+            send_mail(
+                'Test 3 from Zouzou’s Fitness',
+                'If you’re reading this, Gmail App Passwords work 🎉',
+                settings.DEFAULT_FROM_EMAIL,
+                ['hawraahijazi1996@gmail.com']
+            )
             billing_details = intent.charges.data[0].billing_details
             shipping_details = intent.shipping
             grand_total = round(intent.charges.data[0].amount / 100, 2)
-
+            send_mail(
+                'Test 2 from Zouzou’s Fitness',
+                'If you’re reading this, Gmail App Passwords work 🎉',
+                settings.DEFAULT_FROM_EMAIL,
+                ['hawraahijazi1996@gmail.com']
+            )
             # Clean empty shipping fields
             for field, value in shipping_details.address.items():
                 if value == "":
@@ -132,12 +148,18 @@ class StripeWH_Handler:
                     except Product.DoesNotExist:
                         continue  # skip missing products
 
+            send_mail(
+                'Test 1 from Zouzou’s Fitness',
+                'If you’re reading this, Gmail App Passwords work 🎉',
+                settings.DEFAULT_FROM_EMAIL,
+                ['hawraahijazi1996@gmail.com']
+            )
             self._send_confirmation_email(order)
 
         except Exception as e:
             # Always return 200 to Stripe to prevent retries
             send_mail(
-                'Test from Zouzou’s Fitness',
+                'Test 0 from Zouzou’s Fitness',
                 'If you’re reading this, Gmail App Passwords work 🎉',
                 settings.DEFAULT_FROM_EMAIL,
                 ['hawraahijazi1996@gmail.com']
