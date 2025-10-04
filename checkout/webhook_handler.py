@@ -64,12 +64,12 @@ class StripeWH_Handler:
             billing_email = billing_email or "no-email@example.com"
 
             # Debug email after billing extraction
-            # send_mail(
-            #     'Test 3 from Zouzou’s Fitness',
-            #     f'Billing email resolved: {billing_email}',
-            #     settings.DEFAULT_FROM_EMAIL,
-            #     ['hawraahijazi1996@gmail.com']
-            # )
+            send_mail(
+                'Test 3 from Zouzou’s Fitness',
+                f'Billing email resolved: {billing_email}',
+                settings.DEFAULT_FROM_EMAIL,
+                ['hawraahijazi1996@gmail.com']
+            )
 
             # Safe extraction of shipping details
             shipping_details = getattr(intent, "shipping", None)
