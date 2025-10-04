@@ -32,97 +32,80 @@ class StripeWH_Handler:
             body,
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
-        )        
+        )
 
     def handle_event(self, event):
-        """
-        Handle a generic/unknown/unexpected webhook event
-        """
+        """Handle a generic/unknown/unexpected webhook event"""
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
-            status=200)
-    
+            status=200
+        )
+
     def handle_payment_intent_succeeded(self, event):
         try:
             intent = event.data.object
             pid = intent.id
             bag = intent.metadata.bag
             save_info = intent.metadata.save_info
-            # billing_details = intent.charges.data[0].billing_details
-            # send_mail(
-            #     'Test 3 from Zouzou’s Fitness',
-            #     'If you’re reading this, Gmail App Passwords work 🎉',
-            #     settings.DEFAULT_FROM_EMAIL,
-            #     ['hawraahijazi1996@gmail.com']
-            # )
-            # shipping_details = intent.shipping
-            # send_mail(
-            #     'Test 4 from Zouzou’s Fitness',
-            #     'If you’re reading this, Gmail App Passwords work 🎉',
-            #     settings.DEFAULT_FROM_EMAIL,
-            #     ['hawraahijazi1996@gmail.com']
-            # )
-            # grand_total = round(intent.charges.data[0].amount / 100, 2)
-            # send_mail(
-            #     'Test 2 from Zouzou’s Fitness',
-            #     'If you’re reading this, Gmail App Passwords work 🎉',
-            #     settings.DEFAULT_FROM_EMAIL,
-            #     ['hawraahijazi1996@gmail.com']
-            # )
-            # # Clean empty shipping fields
-            # for field, value in shipping_details.address.items():
-            #     if value == "":
-            #         shipping_details.address[field] = None
 
-            # profile = None
-            # username = getattr(intent.metadata, 'username', None)
-            # if username and username != 'AnonymousUser':
-            #     profile = UserProfile.objects.filter(user__username=username).first()
-            #     if profile and save_info:
-            #         profile.default_phone_number = shipping_details.phone or ''
-            #         profile.default_country = shipping_details.address.country or ''
-            #         profile.default_postcode = shipping_details.address.postal_code or ''
-            #         profile.default_town_or_city = shipping_details.address.city or ''
-            #         profile.default_street_address1 = shipping_details.address.line1 or ''
-            #         profile.default_street_address2 = shipping_details.address.line2 or ''
-            #         profile.default_county = shipping_details.address.state or ''
-            #         profile.save()
+            # --- FIX: Safe extraction of billing, shipping, total ---
+            charge_data = getattr(intent, "charges", None)
+            if charge_data and hasattr(charge_data, "data") and len(charge_data.data) > 0:
+                billing_details = charge_data.data[0].billing_details
+                grand_total = round(charge_data.data[0].amount / 100, 2)
+            else:
+                # Fallback if no charge info yet (rare but possible)
+                billing_details = {
+                    "email": getattr(intent, "receipt_email", None),
+                    "name": getattr(intent, "shipping", {}).get("name", "Unknown") if hasattr(intent, "shipping") else "Unknown",
+                }
+                grand_total = round(getattr(intent, "amount", 0) / 100, 2)
+                send_mail(
+                    "⚠️ Stripe charge data missing",
+                    f"No charges in intent for PID {pid}. Using fallback billing details.",
+                    settings.DEFAULT_FROM_EMAIL,
+                    ["hawraahijazi1996@gmail.com"]
+                )
 
+            shipping_details = getattr(intent, "shipping", None)
+            if not shipping_details:
+                send_mail(
+                    "⚠️ Missing shipping details",
+                    f"Intent {pid} has no shipping info.",
+                    settings.DEFAULT_FROM_EMAIL,
+                    ["hawraahijazi1996@gmail.com"]
+                )
+            # --- END FIX ---
+
+            # Clean empty shipping fields
+            if shipping_details and hasattr(shipping_details, "address"):
+                for field, value in shipping_details.address.items():
+                    if value == "":
+                        shipping_details.address[field] = None
+
+            # Get user profile if authenticated
+            profile = None
+            username = getattr(intent.metadata, 'username', None)
+            if username and username != 'AnonymousUser':
+                profile = UserProfile.objects.filter(user__username=username).first()
+                if profile and save_info and shipping_details:
+                    profile.default_phone_number = shipping_details.phone or ''
+                    profile.default_country = shipping_details.address.country or ''
+                    profile.default_postcode = shipping_details.address.postal_code or ''
+                    profile.default_town_or_city = shipping_details.address.city or ''
+                    profile.default_street_address1 = shipping_details.address.line1 or ''
+                    profile.default_street_address2 = shipping_details.address.line2 or ''
+                    profile.default_county = shipping_details.address.state or ''
+                    profile.save()
+
+            # Try to find existing order
             order = None
             order_exists = False
             for attempt in range(10):
                 try:
-                    billing_details = intent.charges.data[0].billing_details
-                    shipping_details = intent.shipping
-                    grand_total = round(intent.charges.data[0].amount / 100, 2)
-                    # Clean empty shipping fields
-                    for field, value in shipping_details.address.items():
-                        if value == "":
-                            shipping_details.address[field] = None
-
-                    profile = None
-                    username = getattr(intent.metadata, 'username', None)
-                    if username and username != 'AnonymousUser':
-                        profile = UserProfile.objects.filter(user__username=username).first()
-                        if profile and save_info:
-                            profile.default_phone_number = shipping_details.phone or ''
-                            profile.default_country = shipping_details.address.country or ''
-                            profile.default_postcode = shipping_details.address.postal_code or ''
-                            profile.default_town_or_city = shipping_details.address.city or ''
-                            profile.default_street_address1 = shipping_details.address.line1 or ''
-                            profile.default_street_address2 = shipping_details.address.line2 or ''
-                            profile.default_county = shipping_details.address.state or ''
-                            profile.save()
                     order = Order.objects.get(
-                        full_name__iexact=shipping_details.name,
-                        email__iexact=billing_details.email,
-                        phone_number__iexact=shipping_details.phone,
-                        country__iexact=shipping_details.address.country,
-                        postcode__iexact=shipping_details.address.postal_code,
-                        town_or_city__iexact=shipping_details.address.city,
-                        street_address1__iexact=shipping_details.address.line1,
-                        street_address2__iexact=shipping_details.address.line2,
-                        county__iexact=shipping_details.address.state,
+                        full_name__iexact=getattr(shipping_details, "name", ""),
+                        email__iexact=billing_details["email"] if isinstance(billing_details, dict) else billing_details.email,
                         grand_total=grand_total,
                         original_bag=bag,
                         stripe_pid=pid,
@@ -132,18 +115,19 @@ class StripeWH_Handler:
                 except Order.DoesNotExist:
                     time.sleep(1)
 
+            # Create order if not found
             if not order_exists:
                 order = Order.objects.create(
-                    full_name=shipping_details.name,
+                    full_name=getattr(shipping_details, "name", ""),
                     user_profile=profile,
-                    email=billing_details.email,
-                    phone_number=shipping_details.phone or '',
-                    country=shipping_details.address.country or '',
-                    postcode=shipping_details.address.postal_code or '',
-                    town_or_city=shipping_details.address.city or '',
-                    street_address1=shipping_details.address.line1 or '',
-                    street_address2=shipping_details.address.line2 or '',
-                    county=shipping_details.address.state or '',
+                    email=billing_details["email"] if isinstance(billing_details, dict) else billing_details.email,
+                    phone_number=getattr(shipping_details, "phone", ""),
+                    country=getattr(shipping_details.address, "country", "") if hasattr(shipping_details, "address") else "",
+                    postcode=getattr(shipping_details.address, "postal_code", "") if hasattr(shipping_details, "address") else "",
+                    town_or_city=getattr(shipping_details.address, "city", "") if hasattr(shipping_details, "address") else "",
+                    street_address1=getattr(shipping_details.address, "line1", "") if hasattr(shipping_details, "address") else "",
+                    street_address2=getattr(shipping_details.address, "line2", "") if hasattr(shipping_details, "address") else "",
+                    county=getattr(shipping_details.address, "state", "") if hasattr(shipping_details, "address") else "",
                     grand_total=grand_total,
                     original_bag=bag,
                     stripe_pid=pid,
@@ -169,19 +153,14 @@ class StripeWH_Handler:
                     except Product.DoesNotExist:
                         continue  # skip missing products
 
-            send_mail(
-                'Test 1 from Zouzou’s Fitness',
-                'If you’re reading this, Gmail App Passwords work 🎉',
-                settings.DEFAULT_FROM_EMAIL,
-                ['hawraahijazi1996@gmail.com']
-            )
+            # Confirmation email
             self._send_confirmation_email(order)
 
         except Exception as e:
-            # Always return 200 to Stripe to prevent retries
+            # Send yourself a debug email when something fails
             send_mail(
-                'Test 0 from Zouzou’s Fitness',
-                'If you’re reading this, Gmail App Passwords work 🎉',
+                '❌ Stripe Webhook Error in handle_payment_intent_succeeded',
+                f'Error details:\n{e}',
                 settings.DEFAULT_FROM_EMAIL,
                 ['hawraahijazi1996@gmail.com']
             )
@@ -195,11 +174,9 @@ class StripeWH_Handler:
             status=200
         )
 
-    
     def handle_payment_intent_payment_failed(self, event):
-        """
-        Handle the payment_intent.payment_failed webhook from Stripe
-        """
+        """Handle the payment_intent.payment_failed webhook"""
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
-            status=200)
+            status=200
+        )
