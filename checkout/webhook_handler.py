@@ -136,7 +136,7 @@ class StripeWH_Handler:
                 'Test from Zouzou’s Fitness',
                 'If you’re reading this, Gmail App Passwords work 🎉',
                 settings.DEFAULT_FROM_EMAIL,
-                [order.email]
+                ['hawraahijazi1996@gmail.com']
             )
             self._send_confirmation_email(order)
 
