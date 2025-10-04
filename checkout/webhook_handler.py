@@ -32,54 +32,90 @@ class StripeWH_Handler:
             body,
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
-        )        
+        )
 
     def handle_event(self, event):
-        """
-        Handle a generic/unknown/unexpected webhook event
-        """
+        """Handle a generic/unknown/unexpected webhook event"""
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
-    
+
     def handle_payment_intent_succeeded(self, event):
+        """Handle payment_intent.succeeded webhook"""
         try:
             intent = event.data.object
             pid = intent.id
-            bag = intent.metadata.bag
-            save_info = intent.metadata.save_info
+            bag = getattr(intent.metadata, "bag", "{}")
+            save_info = getattr(intent.metadata, "save_info", False)
+
+            # Debug email: show the full intent object
             send_mail(
                 'Test 5 from Zouzou’s Fitness',
                 f'If you’re reading this, Gmail App Passwords work 🎉 {intent}',
                 settings.DEFAULT_FROM_EMAIL,
                 ['hawraahijazi1996@gmail.com']
             )
-            billing_details = intent.charges.data[0].billing_details
+
+            # Safe extraction of billing email
+            billing_email = getattr(intent, "receipt_email", None)
+            if not billing_email and getattr(intent, "charges", None):
+                if getattr(intent.charges, "data", None):
+                    billing_email = intent.charges.data[0].billing_details.email
+            billing_email = billing_email or "no-email@example.com"
+
+            # Debug email after billing extraction
             send_mail(
                 'Test 3 from Zouzou’s Fitness',
-                'If you’re reading this, Gmail App Passwords work 🎉',
+                f'Billing email resolved: {billing_email}',
                 settings.DEFAULT_FROM_EMAIL,
                 ['hawraahijazi1996@gmail.com']
             )
-            shipping_details = intent.shipping
+
+            # Safe extraction of shipping details
+            shipping_details = getattr(intent, "shipping", None)
+            if not shipping_details:
+                shipping_details = type("Shipping", (), {})()
+                shipping_details.name = ""
+                shipping_details.phone = ""
+                shipping_details.address = type("Address", (), {})()
+                shipping_details.address.country = ""
+                shipping_details.address.postal_code = ""
+                shipping_details.address.city = ""
+                shipping_details.address.line1 = ""
+                shipping_details.address.line2 = ""
+                shipping_details.address.state = ""
+
+            # Debug email after shipping extraction
             send_mail(
                 'Test 4 from Zouzou’s Fitness',
-                'If you’re reading this, Gmail App Passwords work 🎉',
+                f'Shipping details resolved: {shipping_details}',
                 settings.DEFAULT_FROM_EMAIL,
                 ['hawraahijazi1996@gmail.com']
             )
-            grand_total = round(intent.charges.data[0].amount / 100, 2)
+
+            # Safe extraction of grand total
+            if getattr(intent, "charges", None) and getattr(intent.charges, "data", None):
+                if intent.charges.data:
+                    grand_total = round(intent.charges.data[0].amount / 100, 2)
+                else:
+                    grand_total = round(getattr(intent, "amount", 0) / 100, 2)
+            else:
+                grand_total = round(getattr(intent, "amount", 0) / 100, 2)
+
+            # Debug email after grand total extraction
             send_mail(
                 'Test 2 from Zouzou’s Fitness',
-                'If you’re reading this, Gmail App Passwords work 🎉',
+                f'Grand total resolved: {grand_total}',
                 settings.DEFAULT_FROM_EMAIL,
                 ['hawraahijazi1996@gmail.com']
             )
-            # Clean empty shipping fields
-            for field, value in shipping_details.address.items():
-                if value == "":
-                    shipping_details.address[field] = None
 
+            # Clean empty shipping fields
+            for field, value in shipping_details.address.__dict__.items():
+                if value == "":
+                    setattr(shipping_details.address, field, None)
+
+            # Update user profile if username present
             profile = None
             username = getattr(intent.metadata, 'username', None)
             if username and username != 'AnonymousUser':
@@ -94,13 +130,14 @@ class StripeWH_Handler:
                     profile.default_county = shipping_details.address.state or ''
                     profile.save()
 
+            # Look for existing order
             order = None
             order_exists = False
             for attempt in range(10):
                 try:
                     order = Order.objects.get(
                         full_name__iexact=shipping_details.name,
-                        email__iexact=billing_details.email,
+                        email__iexact=billing_email,
                         phone_number__iexact=shipping_details.phone,
                         country__iexact=shipping_details.address.country,
                         postcode__iexact=shipping_details.address.postal_code,
@@ -117,11 +154,12 @@ class StripeWH_Handler:
                 except Order.DoesNotExist:
                     time.sleep(1)
 
+            # Create order if not exists
             if not order_exists:
                 order = Order.objects.create(
                     full_name=shipping_details.name,
                     user_profile=profile,
-                    email=billing_details.email,
+                    email=billing_email,
                     phone_number=shipping_details.phone or '',
                     country=shipping_details.address.country or '',
                     postcode=shipping_details.address.postal_code or '',
@@ -152,21 +190,23 @@ class StripeWH_Handler:
                                     product_size=size
                                 )
                     except Product.DoesNotExist:
-                        continue  # skip missing products
+                        continue
 
+            # Debug email before sending confirmation
             send_mail(
                 'Test 1 from Zouzou’s Fitness',
-                'If you’re reading this, Gmail App Passwords work 🎉',
+                'Order and items created successfully. Sending confirmation email.',
                 settings.DEFAULT_FROM_EMAIL,
                 ['hawraahijazi1996@gmail.com']
             )
+
             self._send_confirmation_email(order)
 
         except Exception as e:
-            # Always return 200 to Stripe to prevent retries
+            # Debug email if anything fails
             send_mail(
                 'Test 0 from Zouzou’s Fitness',
-                'If you’re reading this, Gmail App Passwords work 🎉',
+                f'Error occurred in webhook: {e}',
                 settings.DEFAULT_FROM_EMAIL,
                 ['hawraahijazi1996@gmail.com']
             )
@@ -180,11 +220,8 @@ class StripeWH_Handler:
             status=200
         )
 
-    
     def handle_payment_intent_payment_failed(self, event):
-        """
-        Handle the payment_intent.payment_failed webhook from Stripe
-        """
+        """Handle payment_intent.payment_failed webhook from Stripe"""
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200)
