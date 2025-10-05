@@ -9,7 +9,7 @@ from profiles.models import UserProfile
 
 import json
 import time
-
+import stripe
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
@@ -62,7 +62,11 @@ class StripeWH_Handler:
             #     if getattr(intent.charges, "data", None):
             #         billing_email = intent.charges.data[0].billing_details.email
             # billing_email = billing_email or "no-email@example.com"
-            billing_email = getattr(intent.metadata, 'email', None) or "no-email@example.com"
+            #billing_email = getattr(intent.metadata, 'email', None) or "no-email@example.com"
+            pm_id = intent.payment_method
+
+            payment_method = stripe.PaymentMethod.retrieve(pm_id)
+            billing_email = payment_method.billing_details.email or "no-email@example.com"
 
 
             # Debug email after billing extraction
