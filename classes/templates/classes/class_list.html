@@ -5,6 +5,10 @@
 Browse and book all available fitness classes. Join expert-led sessions and stay fit with flexible scheduling and easy online booking.
 {% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
+{% endblock %}
+
 {% block title %}All Fitness Classes{% endblock %}
 
 {% block content %}
@@ -63,14 +67,4 @@ Browse and book all available fitness classes. Join expert-led sessions and stay
     </div>
     {% endif %}
 </div>
-<style>
-    .create-class-title {
-        text-shadow:
-            -2px -2px 3px rgba(0, 0, 0, 0.8),
-            2px -2px 3px rgba(0, 0, 0, 0.8),
-            -2px 2px 3px rgba(0, 0, 0, 0.8),
-            2px 2px 3px rgba(0, 0, 0, 0.8);
-        letter-spacing: 1px;
-    }
-</style>
 {% endblock %}
