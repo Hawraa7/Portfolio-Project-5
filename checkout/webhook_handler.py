@@ -57,25 +57,9 @@ class StripeWH_Handler:
             )
 
             # Safe extraction of billing email
-            # billing_email = getattr(intent, "receipt_email", None)
-            # if not billing_email and getattr(intent, "charges", None):
-            #     if getattr(intent.charges, "data", None):
-            #         billing_email = intent.charges.data[0].billing_details.email
-            # billing_email = billing_email or "no-email@example.com"
-            #billing_email = getattr(intent.metadata, 'email', None) or "no-email@example.com"
             pm_id = intent.payment_method
-
             payment_method = stripe.PaymentMethod.retrieve(pm_id)
             billing_email = payment_method.billing_details.email or "no-email@example.com"
-
-
-            # Debug email after billing extraction
-            send_mail(
-                'Test 3 from Zouzou’s Fitness',
-                f'Billing email resolved: {billing_email}',
-                settings.DEFAULT_FROM_EMAIL,
-                ['hawraahijazi1996@gmail.com']
-            )
 
             # Safe extraction of shipping details
             shipping_details = getattr(intent, "shipping", None)
@@ -91,14 +75,6 @@ class StripeWH_Handler:
                 shipping_details.address.line2 = ""
                 shipping_details.address.state = ""
 
-            # Debug email after shipping extraction
-            # send_mail(
-            #     'Test 4 from Zouzou’s Fitness',
-            #     f'Shipping details resolved: {shipping_details}',
-            #     settings.DEFAULT_FROM_EMAIL,
-            #     ['hawraahijazi1996@gmail.com']
-            # )
-
             # Safe extraction of grand total
             if getattr(intent, "charges", None) and getattr(intent.charges, "data", None):
                 if intent.charges.data:
@@ -107,14 +83,6 @@ class StripeWH_Handler:
                     grand_total = round(getattr(intent, "amount", 0) / 100, 2)
             else:
                 grand_total = round(getattr(intent, "amount", 0) / 100, 2)
-
-            # Debug email after grand total extraction
-            # send_mail(
-            #     'Test 2 from Zouzou’s Fitness',
-            #     f'Grand total resolved: {grand_total}',
-            #     settings.DEFAULT_FROM_EMAIL,
-            #     ['hawraahijazi1996@gmail.com']
-            # )
 
             # Clean empty shipping fields
             for field, value in shipping_details.address.__dict__.items():
@@ -198,24 +166,9 @@ class StripeWH_Handler:
                     except Product.DoesNotExist:
                         continue
 
-            # Debug email before sending confirmation
-            # send_mail(
-            #     'Test 1 from Zouzou’s Fitness',
-            #     'Order and items created successfully. Sending confirmation email.',
-            #     settings.DEFAULT_FROM_EMAIL,
-            #     ['hawraahijazi1996@gmail.com']
-            # )
-
             self._send_confirmation_email(order)
 
         except Exception as e:
-            # Debug email if anything fails
-            send_mail(
-                'Test 0 from Zouzou’s Fitness',
-                f'Error occurred in webhook: {e}',
-                settings.DEFAULT_FROM_EMAIL,
-                ['hawraahijazi1996@gmail.com']
-            )
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | ERROR: {e}',
                 status=200
