@@ -5,15 +5,15 @@
 Book your spot for {{ class_obj.title }} with instructor {{ class_obj.instructor }} on {{ class_obj.date }} at {{ class_obj.time }}. Limited spots available, price ${{ class_obj.price }}.
 {% endblock %}
 
-{% block extra_head %}
+{% block extra_css %}
 <link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
 {% endblock %}
 
 {% block title %}Class Detail{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1 class="mb-4 text-center">Book a Class: {{ class_obj.title }}</h1>
+<div class="container mt-5 mb-5">
+    <h1 class="mb-4 text-center text-white create-class-title">Book a Class: {{ class_obj.title }}</h1>
 
     <!-- Class Info -->
     <div class="card mb-4 shadow-sm rounded-4">

@@ -5,15 +5,15 @@
 View and manage your fitness class bookings. Cancel existing bookings or browse available classes to join.
 {% endblock %}
 
-{% block extra_head %}
+{% block extra_css %}
 <link rel="stylesheet" href="{% static 'classes/css/classes.css' %}">
 {% endblock %}
 
 {% block title %}My Class Bookings{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1 class="mb-4 text-center">My Bookings</h1>
+<div class="container mt-5 mb-5">
+    <h1 class="mb-4 text-center text-white create-class-title">My Bookings</h1>
 
     {% if bookings %}
     <div class="row g-4">
@@ -41,7 +41,7 @@ View and manage your fitness class bookings. Cancel existing bookings or browse 
     </div>
     {% else %}
     <div class="text-center mt-5">
-        <p class="lead">You haven't booked any classes yet.</p>
+        <p class="lead text-white create-class-title">You haven't booked any classes yet.</p>
         <a href="{% url 'fitness_class_list' %}" class="btn btn-primary mt-2">Browse Classes</a>
     </div>
     {% endif %}
