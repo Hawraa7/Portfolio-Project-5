@@ -58,4 +58,15 @@ Book your spot for {{ class_obj.title }} with {{ class_obj.instructor }} on {{ c
         <a href="{% url 'my_bookings' %}" class="btn btn-link">View My Bookings</a>
     </div>
 </div>
+<style>
+        /* change font of title*/
+    .create-class-title{
+    text-shadow:
+        -2px -2px 3px rgba(0, 0, 0, 0.8),
+        2px -2px 3px rgba(0, 0, 0, 0.8),
+        -2px 2px 3px rgba(0, 0, 0, 0.8),
+        2px 2px 3px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
+    }
+</style>
 {% endblock %}
