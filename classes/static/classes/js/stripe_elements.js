@@ -2,7 +2,17 @@
    Stripe payment flow for class bookings
    Based on: https://stripe.com/docs/payments/accept-a-payment
 */
+$(document).ready(function() {
 
+    // These lines now run AFTER the HTML elements with the keys have loaded
+    var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
+    var clientSecret = $('#id_client_secret').text().slice(1, -1);
+    
+    // Check for development errors
+    if (!stripePublicKey || !clientSecret || stripePublicKey.length < 5) {
+        console.error("Stripe keys not correctly loaded. Check element IDs and slicing.");
+        return; 
+    }
 
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
