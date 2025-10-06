@@ -29,7 +29,7 @@ Securely book your spot for {{ class_obj.title }} with {{ class_obj.instructor }
    <div class="row">
        <!-- Class Summary -->
        <div class="col-12 col-lg-6 order-lg-last mb-5">
-           <h3 class="text-muted text-center text-white create-class-title">Class Summary</h3>
+           <h4 class="text-muted text-center text-white">Class Summary</h3>
            <div class="card shadow-sm rounded-4">
                <div class="card-body">
                    <h5 class="card-title text-center">{{ class_obj.title }}</h5>
@@ -50,7 +50,7 @@ Securely book your spot for {{ class_obj.title }} with {{ class_obj.instructor }
 
        <!-- Stripe Payment Section -->
        <div class="col-12 col-lg-6">
-           <h3 class="text-muted text-center mb-4 text-white create-class-title">Payment Details</h3>
+           <h4 class="text-muted text-center mb-4 text-white ">Payment Details</h4>
            <form method="post" id="payment-form" class="bg-light p-4 rounded-4 shadow-sm">
                {% csrf_token %}
                <fieldset class="px-3">
@@ -67,7 +67,9 @@ Securely book your spot for {{ class_obj.title }} with {{ class_obj.instructor }
                    </div>
               
                    <!-- Stripe Card Element (Stripe injects Visa/Mastercard input here) -->
-                   <div id="card-element" class="form-control py-2 mb-3 rounded-3" style="height:auto;"></div>
+                   <!-- <div id="card-element" class="form-control py-2 mb-3 rounded-3" style="height:auto;"></div> -->
+                   <div id="card-element" class="mb-3 rounded-3" style="border:1px solid #ced4da; padding:10px;"></div>
+
               
                    <!-- Display form errors -->
                    <div id="card-errors" class="text-danger mb-3" role="alert"></div>
@@ -106,10 +108,9 @@ Securely book your spot for {{ class_obj.title }} with {{ class_obj.instructor }
 
 {% block postloadjs %}
 {{ block.super }}
-<!-- ✅ Load Stripe.js before your custom script -->
-<script src="https://js.stripe.com/v3/"></script>
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
 {{ client_secret|json_script:"id_client_secret" }}
+
 <script>
    var myBookingsUrl = "{% url 'my_bookings' %}?success=true";
 </script>
