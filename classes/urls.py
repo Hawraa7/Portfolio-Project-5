@@ -11,6 +11,7 @@ urlpatterns = [
     path('create/', views.create_class, name='create_class'),
     path('create-checkout-session/', views.start_checkout_session, name='start_checkout_session'),
     path('webhook/', views.stripe_webhook, name='stripe_webhook'),
+    path('cache_class_payment_data/', views.cache_class_payment_data, name='cache_class_payment_data'),
 ]
 
 
