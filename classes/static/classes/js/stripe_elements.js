@@ -5,8 +5,11 @@
 $(document).ready(function() {
 
     // 1. Initialize variables from hidden HTML elements
-    var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
-    var clientSecret = $('#id_client_secret').text().slice(1, -1);
+    //var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
+    //var clientSecret = $('#id_client_secret').text().slice(1, -1);
+    var stripePublicKey = JSON.parse(document.getElementById('id_stripe_public_key').textContent);
+    var clientSecret = JSON.parse(document.getElementById('id_client_secret').textContent);
+
     
     // CRITICAL: Check for key existence and EXIT EARLY if missing
     if (!stripePublicKey || !clientSecret || stripePublicKey.length < 5) {
