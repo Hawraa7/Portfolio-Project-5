@@ -210,7 +210,7 @@ import json
 
 
 @csrf_exempt
-def stripe_webhook2(request):
+def stripe_webhook(request):
     payload = request.body
     sig_header = request.META.get('HTTP_STRIPE_SIGNATURE')
     event = None
@@ -243,7 +243,7 @@ def stripe_webhook2(request):
     return HttpResponse(status=200)
 
 @csrf_exempt
-def stripe_webhook(request):
+def stripe_webhook2(request):
     payload = request.body
     sig_header = request.META.get('HTTP_STRIPE_SIGNATURE')
     print("Received webhook")
