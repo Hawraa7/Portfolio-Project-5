@@ -210,7 +210,7 @@ import json
 
 
 @csrf_exempt
-def stripe_webhook(request):
+def stripe_webhook2(request):
     payload = request.body
     sig_header = request.META.get('HTTP_STRIPE_SIGNATURE')
     event = None
@@ -240,6 +240,28 @@ def stripe_webhook(request):
         except Exception as e:
             print("Webhook error:", e)
 
+    return HttpResponse(status=200)
+
+@csrf_exempt
+def stripe_webhook(request):
+    payload = request.body
+    sig_header = request.META.get('HTTP_STRIPE_SIGNATURE')
+    print("Received webhook")
+    print("Signature:", sig_header)
+    print("Payload:", payload[:200])  # first 200 bytes
+
+    try:
+        event = stripe.Webhook.construct_event(
+            payload, sig_header, settings.STRIPE_WH_SECRET
+        )
+    except ValueError:
+        print("Invalid payload")
+        return HttpResponse(status=400)
+    except stripe.error.SignatureVerificationError:
+        print("Invalid signature")
+        return HttpResponse(status=400)
+
+    print("Webhook verified:", event['type'])
     return HttpResponse(status=200)
 
 
