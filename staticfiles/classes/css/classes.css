@@ -1,0 +1,138 @@
+/* classes/css/classes.css */
+
+/* General container padding for better breathing room */
+body {
+  padding-top: 120px; 
+  background-color: #ffffff;
+}
+
+.container {
+  padding-top: 0px;
+}
+
+h1 {
+  margin-top: 10px  !important;
+  margin-bottom: 20px;
+}
+
+
+/* Card tweaks */
+.card {
+  border: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Rounded corners */
+.rounded-4 {
+  border-radius: 1rem !important;
+}
+
+/* Form input fixes */
+form .form-control {
+  border-radius: 0.375rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form .form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* Label styling */
+.form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Buttons */
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  font-weight: 600;
+}
+
+.btn-success:hover, .btn-success:focus {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.btn-outline-secondary {
+  font-weight: 600;
+}
+
+.btn-outline-danger {
+  font-weight: 600;
+}
+
+/* Alerts */
+.alert-danger {
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+}
+
+/* Spacing utility fixes */
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+
+/* Fix footer/footer-like section in create_class form */
+.d-flex.justify-content-between.align-items-center {
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+/* Booking cards grid */
+.row.g-4 > .col-md-6, 
+.row.g-4 > .col-lg-4 {
+  display: flex;
+  flex-direction: column;
+}
+
+.card.h-100 {
+  flex-grow: 1;
+}
+
+/* Text muted for already booked */
+.text-muted.small {
+  font-size: 0.8rem;
+}
+
+/* Fully booked warning */
+.text-danger.small {
+  font-size: 0.8rem;
+}
+
+/* Form validation */
+.needs-validation .form-control:invalid {
+  border-color: #dc3545;
+  padding-right: 2.25rem;
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.needs-validation .form-control:invalid:focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Responsive fixes for smaller screens */
+@media (max-width: 576px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .btn-sm {
+    font-size: 0.9rem;
+    padding: 0.375rem 0.75rem;
+  }
+}
