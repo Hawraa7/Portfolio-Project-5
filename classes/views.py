@@ -138,27 +138,27 @@ def book_fitness_class(request, class_id):
    return render(request, 'classes/book_class.html', context)
 
 
-
-
-@login_required
 @login_required
 def my_bookings(request):
-   bookings = Booking.objects.filter(user=request.user).select_related('fitness_class')
+    bookings = Booking.objects.filter(user=request.user).select_related('fitness_class')
 
+    # Check GET parameter for recently booked class
+    class_id = request.GET.get('class_id')
+    if class_id:
+        try:
+            class_obj = FitnessClass.objects.get(id=class_id)
+            if Booking.objects.filter(user=request.user, fitness_class=class_obj).exists():
+                messages.success(request, f'You have successfully booked "{class_obj.title}"! 🎉')
+            else:
+                messages.warning(
+                    request,
+                    f'Payment received for "{class_obj.title}", but booking not yet confirmed. Please refresh after a few seconds.'
+                )
+        except FitnessClass.DoesNotExist:
+            pass
 
-   # Display success message if class info is in session
-   class_title = request.session.pop('booking_class_title', None)
-   class_id = request.session.pop('booking_class_id', None)
-   if class_title and class_id:
-       if 'bag' in request.session:
-           del request.session['bag']
-       messages.success(
-           request,
-           f'You have successfully booked "{class_title}". '
-       )
+    return render(request, 'classes/my_bookings.html', {'bookings': bookings})
 
-
-   return render(request, 'classes/my_bookings.html', {'bookings': bookings})
 
 
 
@@ -181,9 +181,10 @@ def start_checkout_session(request):
 
 
    stripe.api_key = settings.STRIPE_SECRET_KEY
+   
+   success_url = request.build_absolute_uri(f'/classes/my-bookings/?class_id={class_obj.id}')
 
-
-   success_url = request.build_absolute_uri(f'/classes/{class_id}/?booking=success')
+   #success_url = request.build_absolute_uri(f'/classes/{class_id}/?booking=success')
 
 
    session = stripe.checkout.Session.create(
