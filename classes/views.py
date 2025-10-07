@@ -223,7 +223,7 @@ def stripe_webhook(request):
         return HttpResponse(status=400)
 
     # Listen for checkout session completion
-    if event['type'] == 'checkout.session.completed':
+    if event['type'] == 'payment_intent.succeeded':
         session_obj = event['data']['object']
         user_id = session_obj['metadata']['user_id']
         class_id = session_obj['metadata']['class_id']

@@ -48,14 +48,6 @@ class StripeWH_Handler:
             bag = getattr(intent.metadata, "bag", "{}")
             save_info = getattr(intent.metadata, "save_info", False)
 
-            # Debug email: show the full intent object
-            send_mail(
-                'Test 5 from Zouzou’s Fitness',
-                f'If you’re reading this, Gmail App Passwords work 🎉 {intent}',
-                settings.DEFAULT_FROM_EMAIL,
-                ['hawraahijazi1996@gmail.com']
-            )
-
             # Safe extraction of billing email
             pm_id = intent.payment_method
             payment_method = stripe.PaymentMethod.retrieve(pm_id)
