@@ -175,39 +175,33 @@ def cancel_booking(request, booking_id):
 
 
 @login_required
-def start_checkout_session(request):
-   class_id = request.session.get('class_id')
-   class_obj = get_object_or_404(FitnessClass, id=class_id)
+def start_checkout_session(request, class_id):
+    class_obj = get_object_or_404(FitnessClass, id=class_id)
+    stripe.api_key = settings.STRIPE_SECRET_KEY
 
+    success_url = request.build_absolute_uri(f'/classes/my-bookings/?class_id={class_obj.id}')
 
-   stripe.api_key = settings.STRIPE_SECRET_KEY
-   
-   success_url = request.build_absolute_uri(f'/classes/my-bookings/?class_id={class_obj.id}')
+    session = stripe.checkout.Session.create(
+        payment_method_types=['card'],
+        line_items=[{
+            'price_data': {
+                'currency': 'usd',
+                'unit_amount': int(class_obj.price * 100),
+                'product_data': {'name': class_obj.title},
+            },
+            'quantity': 1,
+        }],
+        mode='payment',
+        success_url=success_url,
+        cancel_url=request.build_absolute_uri(f'/classes/{class_id}/'),
+        metadata={
+            'user_id': request.user.id,
+            'class_id': class_obj.id
+        }
+    )
 
-   #success_url = request.build_absolute_uri(f'/classes/{class_id}/?booking=success')
+    return redirect(session.url, code=303)
 
-
-   session = stripe.checkout.Session.create(
-       payment_method_types=['card'],
-       line_items=[{
-           'price_data': {
-               'currency': 'usd',
-               'unit_amount': int(class_obj.price * 100),
-               'product_data': {'name': class_obj.title},
-           },
-           'quantity': 1,
-       }],
-       mode='payment',
-       success_url=success_url,
-       cancel_url=request.build_absolute_uri(f'/classes/{class_id}/'),
-       metadata={
-           'user_id': request.user.id,
-           'class_id': class_id
-       }
-   )
-
-
-   return redirect(session.url, code=303)
 
 
 from django.views.decorators.csrf import csrf_exempt
@@ -217,42 +211,37 @@ import json
 
 @csrf_exempt
 def stripe_webhook(request):
-   payload = request.body
-   sig_header = request.META.get('HTTP_STRIPE_SIGNATURE')
-   event = None
+    payload = request.body
+    sig_header = request.META.get('HTTP_STRIPE_SIGNATURE')
+    event = None
 
+    try:
+        event = stripe.Webhook.construct_event(
+            payload, sig_header, settings.STRIPE_WH_SECRET
+        )
+    except (ValueError, stripe.error.SignatureVerificationError):
+        return HttpResponse(status=400)
 
-   try:
-       event = stripe.Webhook.construct_event(
-           payload, sig_header, settings.STRIPE_WH_SECRET
-       )
-   except (ValueError, stripe.error.SignatureVerificationError):
-       return HttpResponse(status=400)
+    # Listen for checkout session completion
+    if event['type'] == 'checkout.session.completed':
+        session_obj = event['data']['object']
+        user_id = session_obj['metadata']['user_id']
+        class_id = session_obj['metadata']['class_id']
 
+        from django.contrib.auth.models import User
+        try:
+            user = User.objects.get(id=user_id)
+            class_obj = FitnessClass.objects.get(id=class_id)
 
-   if event['type'] == 'payment_intent.succeeded':
-       intent = event['data']['object']
-       user_id = intent['metadata']['user_id']
-       class_id = intent['metadata']['class_id']
+            # Prevent overbooking & duplicates
+            if class_obj.bookings.count() < class_obj.max_participants and \
+               not Booking.objects.filter(user=user, fitness_class=class_obj).exists():
+                Booking.objects.create(user=user, fitness_class=class_obj)
+        except Exception as e:
+            print("Webhook error:", e)
 
+    return HttpResponse(status=200)
 
-
-
-       from django.contrib.auth.models import User
-       try:
-           user = User.objects.get(id=user_id)
-           class_obj = FitnessClass.objects.get(id=class_id)
-
-
-           # Prevent overbooking & duplicates
-           if class_obj.bookings.count() < class_obj.max_participants and \
-              not Booking.objects.filter(user=user, fitness_class=class_obj).exists():
-               Booking.objects.create(user=user, fitness_class=class_obj)
-       except Exception:
-           pass
-
-
-   return HttpResponse(status=200)
 
 
 @login_required
