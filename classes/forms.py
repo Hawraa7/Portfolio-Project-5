@@ -1,16 +1,17 @@
 from django import forms
 from .models import FitnessClass, Booking
 
+
 class FitnessClassForm(forms.ModelForm):
     class Meta:
         model = FitnessClass
         fields = [
-            'title', 
-            'description', 
-            'instructor', 
-            'date', 
-            'time', 
-            'max_participants', 
+            'title',
+            'description',
+            'instructor',
+            'date',
+            'time',
+            'max_participants',
             'price'
         ]
         widgets = {
@@ -23,7 +24,8 @@ class FitnessClassForm(forms.ModelForm):
             'price': forms.NumberInput(attrs={'class': 'form-control', 'min': 0, 'step': '0.01'}),
         }
 
+
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = [] 
+        fields = []

@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
+from django.http import HttpResponse
 from .models import FitnessClass, Booking
 from django import forms
 from .forms import FitnessClassForm
@@ -10,6 +11,7 @@ import stripe
 from django.conf import settings
 from django.utils import timezone
 import datetime
+import json
 
 
 @staff_member_required
@@ -22,13 +24,11 @@ def create_class(request):
            class_price = form.cleaned_data['price']
            max_participants = form.cleaned_data['max_participants']
 
-
            # Combine and make timezone-aware
            class_datetime = datetime.datetime.combine(class_date, class_time)
            class_datetime = timezone.make_aware(class_datetime, timezone.get_current_timezone())
 
-
-           # Validation checks
+# Validation checks
            if class_datetime < timezone.now():
                form.add_error(None, "You cannot create a class scheduled in the past.")
            elif class_price < 0:
@@ -41,17 +41,11 @@ def create_class(request):
    else:
        form = FitnessClassForm()
 
-
    return render(request, 'classes/create_class.html', {'form': form})
-
-
-
-
 
 
 def fitness_class_list(request):
    classes = FitnessClass.objects.all().order_by('date', 'time')
-
 
    if request.user.is_authenticated:
        user_bookings = Booking.objects.filter(user=request.user).values_list('fitness_class_id', flat=True)
@@ -67,17 +61,13 @@ def fitness_class_list(request):
    return render(request, 'classes/class_list.html', context)
 
 
-
-
 def fitness_class_detail(request, class_id):
    class_obj = get_object_or_404(FitnessClass, id=class_id)
    spots_left = class_obj.max_participants - class_obj.bookings.count()
 
-
    # Check for booking success in GET params and add message
    if request.GET.get('booking') == 'success':
        messages.success(request, "Your booking and payment were successful! 🎉")
-
 
    context = {
        'class_obj': class_obj,
@@ -86,13 +76,10 @@ def fitness_class_detail(request, class_id):
    return render(request, 'classes/class_detail.html', context)
 
 
-
-
 @login_required
 def book_fitness_class(request, class_id):
    class_obj = get_object_or_404(FitnessClass, id=class_id)
    spots_left = class_obj.max_participants - class_obj.bookings.count()
-
 
    if class_obj.bookings.count() >= class_obj.max_participants:
        messages.error(request, "Sorry, this class is fully booked.")
@@ -100,16 +87,13 @@ def book_fitness_class(request, class_id):
            del request.session['bag']
        return redirect('fitness_class_detail', class_id=class_id)
 
-
    if Booking.objects.filter(user=request.user, fitness_class=class_obj).exists():
        if 'bag' in request.session:
            del request.session['bag']
        messages.info(request, "You’ve already booked this class.")
        return redirect('fitness_class_detail', class_id=class_id)
 
-
    stripe.api_key = settings.STRIPE_SECRET_KEY
-
 
    # Create a PaymentIntent instead of a Checkout Session
    intent = stripe.PaymentIntent.create(
@@ -121,11 +105,9 @@ def book_fitness_class(request, class_id):
        },
    )
 
-
    # Store class info in session to display success message after payment
    request.session['booking_class_title'] = class_obj.title
    request.session['booking_class_id'] = class_obj.id
-
 
    context = {
        'class_obj': class_obj,
@@ -133,7 +115,6 @@ def book_fitness_class(request, class_id):
        'stripe_public_key': settings.STRIPE_PUBLIC_KEY,
        'client_secret': intent.client_secret,
    }
-
 
    return render(request, 'classes/book_class.html', context)
 
@@ -160,9 +141,6 @@ def my_bookings(request):
     return render(request, 'classes/my_bookings.html', {'bookings': bookings})
 
 
-
-
-
 @login_required
 def cancel_booking(request, booking_id):
    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
@@ -170,8 +148,6 @@ def cancel_booking(request, booking_id):
        booking.delete()
        messages.success(request, "Booking cancelled successfully.")
    return redirect('fitness_class_list')
-
-
 
 
 @login_required
@@ -201,12 +177,6 @@ def start_checkout_session(request, class_id):
     )
 
     return redirect(session.url, code=303)
-
-
-
-from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponse
-import json
 
 
 @csrf_exempt
@@ -242,6 +212,7 @@ def stripe_webhook(request):
 
     return HttpResponse(status=200)
 
+
 @csrf_exempt
 def stripe_webhook2(request):
     payload = request.body
@@ -263,7 +234,6 @@ def stripe_webhook2(request):
 
     print("Webhook verified:", event['type'])
     return HttpResponse(status=200)
-
 
 
 @login_required

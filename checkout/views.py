@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse,
+from django.shortcuts get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -127,7 +128,6 @@ def checkout(request):
         else:
             order_form = OrderForm()
 
-        
         if not stripe_public_key:
             messages.warning(request, 'Stripe public key is missing. \
                 Did you forget to set it in your environment?')
