@@ -4,47 +4,120 @@ from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
 
+
 from checkout.models import Order
+
+
 
 
 @login_required
 def profile(request):
-    """ Display the user's profile. """
-    profile = get_object_or_404(UserProfile, user=request.user)
+   """ Display the user's profile. """
+   profile = get_object_or_404(UserProfile, user=request.user)
+   subscription = getattr(request.user, 'subscription', None)
 
-    if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=profile)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Profile updated successfully')
-        else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
-    else:
-        form = UserProfileForm(instance=profile)
-    orders = profile.orders.all()
 
-    template = 'profiles/profile.html'
-    context = {
-        'form': form,
-        'orders': orders,
-        'on_profile_page': True
-    }
+   if request.method == 'POST':
+       form = UserProfileForm(request.POST, instance=profile)
+       if form.is_valid():
+           form.save()
+           messages.success(request, 'Profile updated successfully')
+       else:
+           messages.error(request, 'Update failed. Please ensure the form is valid.')
+   else:
+       form = UserProfileForm(instance=profile)
+  
+   # Get filtered promotions and vouchers
+   valid_promotions = subscription.promotions.filter(validity=True) if subscription else []
+   valid_vouchers = subscription.vouchers.filter(validity=True) if subscription else []
+   orders = profile.orders.all()
 
-    return render(request, template, context)
+
+   template = 'profiles/profile.html'
+   context = {
+       'form': form,
+       'orders': orders,
+       'on_profile_page': True,
+       'subscription': subscription,
+       'valid_promotions': valid_promotions,
+       'valid_vouchers': valid_vouchers,
+   }
+
+
+   return render(request, template, context)
+
+
+
+
+@login_required
+def toggle_promotion(request):
+   """
+   Activate/deactivate a promotion for the user's subscription.
+   Only one promotion can be active per category.
+   """
+   if request.method == "POST":
+       data = json.loads(request.body)
+       promo_id = data.get("promo_id")
+       subscription = get_object_or_404(Subscription, user=request.user)
+       promo = get_object_or_404(Promotion, id=promo_id, validity=True)
+
+
+       if promo.active:
+           # Deactivate promotion
+           promo.active = False
+           promo.save()
+           return JsonResponse({"status": "deactivated"})
+       else:
+           # Deactivate any other active promotion in the same category
+           subscription.promotions.filter(category=promo.category, active=True).update(active=False)
+           # Activate this promotion
+           promo.active = True
+           promo.save()
+           return JsonResponse({"status": "activated"})
+
+
+   return JsonResponse({"error": "Invalid request"}, status=400)
+
+
+
+
+@login_required
+def toggle_voucher(request):
+   """
+   Activate/deactivate a voucher for the user's subscription.
+   No restrictions on multiple vouchers.
+   """
+   if request.method == "POST":
+       data = json.loads(request.body)
+       voucher_id = data.get("voucher_id")
+       subscription = get_object_or_404(Subscription, user=request.user)
+       voucher = get_object_or_404(Voucher, id=voucher_id, validity=True)
+
+
+       voucher.active = not voucher.active
+       voucher.save()
+       return JsonResponse({"status": "activated" if voucher.active else "deactivated"})
+
+
+   return JsonResponse({"error": "Invalid request"}, status=400)
 
 
 def order_history(request, order_number):
-    order = get_object_or_404(Order, order_number=order_number)
+   order = get_object_or_404(Order, order_number=order_number)
 
-    messages.info(request, (
-        f'This is a past confirmation for order number {order_number}. '
-        'A confirmation email was sent on the order date.'
-    ))
 
-    template = 'checkout/checkout_success.html'
-    context = {
-        'order': order,
-        'from_profile': True,
-    }
+   messages.info(request, (
+       f'This is a past confirmation for order number {order_number}. '
+       'A confirmation email was sent on the order date.'
+   ))
 
-    return render(request, template, context)
+
+   template = 'checkout/checkout_success.html'
+   context = {
+       'order': order,
+       'from_profile': True,
+   }
+
+
+   return render(request, template, context)
+

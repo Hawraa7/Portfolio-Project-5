@@ -1,89 +1,313 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block meta_description %}
-Manage your personal fitness profile, track orders, and update your details at Zouzou's Fitness.
+Manage your personal fitness profile, track orders, loyalty points, and promotions at Zouzou's Fitness.
 {% endblock %}
+
 
 {% block title %}
 Your Profile - Zouzou's Fitness
 {% endblock %}
 
+
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
+
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+<div class="container header-container">
+   <div class="row">
+       <div class="col"></div>
+   </div>
+</div>
 {% endblock %}
+
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">My Profile</h2>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <p class="text-muted">Default Delivery Information</p>
-                <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
-                </form>
-            </div>
-            <div class="col-12 col-lg-6">
-                <p class="text-muted">Order History</p>
-                <div class="order-history table-responsive">
-                    <table class="table table-sm table-borderless">
-                        <thead>
-                            <tr>
-                                <th>Order Number</th>
-                                <th>Date</th>
-                                <th>Items</th>
-                                <th>OrderTotal</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for order in orders %}
-                                <tr>
-                                    <td>
-                                        <a href="{% url 'order_history' order.order_number %}"
-                                        title="{{ order.order_number }}">
-                                            {{ order.order_number|truncatechars:6 }}
-                                        </a>
-                                    </td>
-                                    <td>{{ order.date }}</td>
-                                    <td>
-                                        <ul class="list-unstyled">
-                                            {% for item in order.lineitems.all %}
-                                                <li class="small">
-                                                    {% if item.product.has_sizes %}
-                                                        Size {{ item.product.size|upper }}
-                                                    {% endif %}{{ item.product.name }} x{{ item.quantity }}
-                                                </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
-                                    <td>${{ order.grand_total }}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+<div class="overlay"></div>
+<div class="container mb-5">
+   <div class="row">
+       <div class="col">
+           <hr>
+           <h2 class="logo-font mb-4">My Profile</h2>
+           <hr>
+       </div>
+   </div>
+
+
+   <!-- Two-column layout -->
+        <!-- Loyalty Program Section (Now Below) -->
+   {% if request.user.subscription %}
+   <div class="row">
+       <div class="col-12 col-lg-6">
+           <h4 class="mb-3 d-flex align-items-center">
+               Loyalty Program
+               <span id="membership-stars" class="ml-3" style="font-size: 1.5rem; letter-spacing: 4px; color: #ccc;">
+                   ★★★★★
+               </span>
+               <span id="membership-label" class="ml-2 font-weight-bold text-muted" style="font-size: 1.1rem;"></span>               
+           </h4>
+      
+           {% if subscription %}
+               <p><strong>Subscription Number:</strong> {{ subscription.number }}</p>
+               <p><strong>Points Available:</strong> {{ subscription.points }}</p>
+               <p><strong>Wallet Balance:</strong> ${{ subscription.wallet|floatformat:2 }}</p>
+      
+               {% comment %}Valid Promotions{% endcomment %}
+               {% if valid_promotions %}
+                   <h6 class="mt-3">Valid Promotions:</h6>
+                   <ul class="list-group">
+                       {% for promo in valid_promotions %}
+                           <li class="list-group-item d-flex justify-content-between align-items-center">
+                               {{ promo.category.name }} Discount - {{ promo.percentage }}%
+                               <div>
+                                   {% if promo.active %}
+                                       <button class="btn btn-sm btn-outline-danger toggle-promo" data-promo-id="{{ promo.id }}">Deactivate</button>
+                                   {% else %}
+                                       <button class="btn btn-sm btn-outline-success toggle-promo" data-promo-id="{{ promo.id }}">Activate</button>
+                                   {% endif %}
+                               </div>
+                           </li>
+                       {% endfor %}
+                   </ul>
+               {% else %}
+                   <p class="text-muted">No valid promotions at this moment.</p>
+               {% endif %}
+      
+               {% comment %}Valid Vouchers{% endcomment %}
+               {% if valid_vouchers %}
+                   <h6 class="mt-3">Valid Vouchers:</h6>
+                   <ul class="list-group">
+                       {% for voucher in valid_vouchers %}
+                           <li class="list-group-item d-flex justify-content-between align-items-center">
+                               Voucher €{{ voucher.value }} (Min: €{{ voucher.minimum_purchase }})
+                               <div>
+                                   {% if voucher.active %}
+                                       <button class="btn btn-sm btn-outline-danger toggle-voucher" data-voucher-id="{{ voucher.id }}">Deactivate</button>
+                                   {% else %}
+                                       <button class="btn btn-sm btn-outline-success toggle-voucher" data-voucher-id="{{ voucher.id }}">Activate</button>
+                                   {% endif %}
+                               </div>
+                           </li>
+                       {% endfor %}
+                   </ul>
+               {% else %}
+                   <p class="text-muted">No valid vouchers at this moment.</p>
+               {% endif %}
+           {% else %}
+               <p class="text-muted">No subscription found for this user.</p>
+           {% endif %}
+      
+           <hr>
+       </div>
+      
+      
+       <!-- Column 2: Explanation -->
+       <div class="col-12 col-lg-6">
+           <div class="membership-info p-3 mt-3 mt-lg-0 rounded shadow-sm" style="background-color: #f9f9f9;">
+               <h5 class="text-primary">How the Loyalty Program Works</h5>
+               <p class="mb-2">
+                   Each <strong>$1 spent</strong> earns you <strong>1 point</strong>.
+               </p>
+               <p class="mb-2">
+                   As your total points increase, your membership level upgrades automatically:
+               </p>
+               <ul class="mb-3">
+                   <li><strong>Standard</strong> → base level</li>
+                   <li><strong>Plus</strong> → more than 1000 points</li>
+                   <li><strong>Premium</strong> → more than 2000 points</li>
+                   <li><strong>Metal</strong> → more than 3000 points</li>
+                   <li><strong>Ultra</strong> → more than 4000 points</li>
+               </ul>
+               <p class="mb-2">
+                   Upon each purchase, <strong>pocket money</strong> is added to your wallet:
+               </p>
+               <ul class="mb-3">
+                   <li>Standard: $100 spent = $1 pocket money </li>
+                   <li>Plus: $100 spent = $1 pocket money</li>
+                   <li>Premium: $100 spent = $1 pocket money</li>
+                   <li>Metal: $100 spent = $1 pocket money</li>
+                   <li>Ultra: $100 spent = $1 pocket money</li>
+               </ul>
+               <p>
+                   With each completed purchase, you also receive <strong>special promotions</strong> and
+                   <strong>exclusive discounts</strong> — the higher your membership level, the bigger the rewards.
+               </p>
+           </div>
+       </div>
+   </div>
+
+
+   <hr class="mt-5">
+  
+   <div class="row mt-4">
+       <!-- Left: User Information -->
+       <div class="col-12 col-lg-6">
+           <h4 class="text-muted">Default Delivery Information</h4>
+           <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+               {% csrf_token %}
+               {{ form|crispy }}
+               <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
+           </form>
+       </div>
+
+
+       <!-- Right: Order History -->
+       <div class="col-12 col-lg-6">
+           <h4 class="text-muted">Order History</h4>
+           <div class="order-history table-responsive">
+               <table class="table table-sm table-borderless">
+                   <thead>
+                       <tr>
+                           <th>Order Number</th>
+                           <th>Date</th>
+                           <th>Items</th>
+                           <th>Order Total</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       {% for order in orders %}
+                       <tr>
+                           <td>
+                               <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
+                                   {{ order.order_number|truncatechars:6 }}
+                               </a>
+                           </td>
+                           <td>{{ order.date }}</td>
+                           <td>
+                               <ul class="list-unstyled">
+                                   {% for item in order.lineitems.all %}
+                                   <li class="small">
+                                       {% if item.product.has_sizes %}
+                                       Size {{ item.product.size|upper }}
+                                       {% endif %}
+                                       {{ item.product.name }} x{{ item.quantity }}
+                                   </li>
+                                   {% endfor %}
+                               </ul>
+                           </td>
+                           <td>${{ order.grand_total }}</td>
+                       </tr>
+                       {% endfor %}
+                   </tbody>
+               </table>
+           </div>
+       </div>
+   </div>
+
+
+   {% endif %}
+</div>
 {% endblock %}
 
+
 {% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
+{{ block.super }}
+<script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
+{% if request.user.is_authenticated %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+
+   function updateMembershipStars() {
+       const membershipTextElement = document.querySelector("#user-options p.my-0");
+       const starsElement = document.getElementById("membership-stars");
+       const labelElement = document.getElementById("membership-label");
+       if (!membershipTextElement || !starsElement || !labelElement) return false;
+
+
+       const membershipText = membershipTextElement.textContent.trim().toLowerCase();
+       if (!membershipText || membershipText === "my account") return false;
+
+
+       // Define membership levels with color, star count, and label
+       const membershipLevels = {
+           "standard": { color: "#808080", stars: 1, label: "Standard" },
+           "plus": { color: "#0b5394", stars: 2, label: "Plus" },
+           "premium": { color: "#bf9000", stars: 3, label: "Premium" },
+           "metal": { color: "#38761d", stars: 4, label: "Metal" },
+           "ultra": { color: "#8B0000", stars: 5, label: "Ultra" }
+       };
+
+
+       let level = null;
+       for (const key in membershipLevels) {
+           if (membershipText.includes(key)) {
+               level = membershipLevels[key];
+               break;
+           }
+       }
+
+
+       // Apply color and label
+       if (level) {
+           const stars = "★★★★★".split('');
+           const coloredStars = stars.map((star, i) =>
+               i < level.stars
+                   ? `<span style="color:${level.color};">${star}</span>`
+                   : `<span style="color:#ccc;">${star}</span>`
+           ).join('');
+           starsElement.innerHTML = coloredStars;
+
+
+           labelElement.textContent = level.label + " Member";
+           labelElement.style.color = level.color;
+           return true;
+       }
+       return false;
+   }
+
+
+   // Keep checking until the membership text updates (max ~3 seconds)
+   let tries = 0;
+   const interval = setInterval(() => {
+       if (updateMembershipStars()) clearInterval(interval);
+       if (++tries > 15) clearInterval(interval);
+   }, 200);
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+   const csrfToken = '{{ csrf_token }}';
+
+
+   // Toggle promotion
+   document.querySelectorAll(".toggle-promo").forEach(button => {
+       button.addEventListener("click", function() {
+           const promoId = this.dataset.promoId;
+           fetch("{% url 'toggle_promotion' %}", {
+               method: "POST",
+               headers: {
+                   "X-CSRFToken": csrfToken,
+                   "Content-Type": "application/json"
+               },
+               body: JSON.stringify({ promo_id: promoId })
+           }).then(() => location.reload());
+       });
+   });
+
+
+   // Toggle voucher
+   document.querySelectorAll(".toggle-voucher").forEach(button => {
+       button.addEventListener("click", function() {
+           const voucherId = this.dataset.voucherId;
+           fetch("{% url 'toggle_voucher' %}", {
+               method: "POST",
+               headers: {
+                   "X-CSRFToken": csrfToken,
+                   "Content-Type": "application/json"
+               },
+               body: JSON.stringify({ voucher_id: voucherId })
+           }).then(() => location.reload());
+       });
+   });
+});
+</script>
+{% endif %}
 {% endblock %}
+
+
+
