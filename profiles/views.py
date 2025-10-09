@@ -3,9 +3,10 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
-
-
+import json
+from django.http import JsonResponse
 from checkout.models import Order
+from profiles.models import Subscription, Promotion
 
 
 
@@ -27,9 +28,8 @@ def profile(request):
    else:
        form = UserProfileForm(instance=profile)
   
-   # Get filtered promotions and vouchers
+   # Get filtered promotions
    valid_promotions = subscription.promotions.filter(validity=True) if subscription else []
-   valid_vouchers = subscription.vouchers.filter(validity=True) if subscription else []
    orders = profile.orders.all()
 
 
@@ -40,7 +40,6 @@ def profile(request):
        'on_profile_page': True,
        'subscription': subscription,
        'valid_promotions': valid_promotions,
-       'valid_vouchers': valid_vouchers,
    }
 
 
@@ -79,27 +78,6 @@ def toggle_promotion(request):
    return JsonResponse({"error": "Invalid request"}, status=400)
 
 
-
-
-@login_required
-def toggle_voucher(request):
-   """
-   Activate/deactivate a voucher for the user's subscription.
-   No restrictions on multiple vouchers.
-   """
-   if request.method == "POST":
-       data = json.loads(request.body)
-       voucher_id = data.get("voucher_id")
-       subscription = get_object_or_404(Subscription, user=request.user)
-       voucher = get_object_or_404(Voucher, id=voucher_id, validity=True)
-
-
-       voucher.active = not voucher.active
-       voucher.save()
-       return JsonResponse({"status": "activated" if voucher.active else "deactivated"})
-
-
-   return JsonResponse({"error": "Invalid request"}, status=400)
 
 
 def order_history(request, order_number):

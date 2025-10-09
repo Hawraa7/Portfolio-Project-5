@@ -11,8 +11,8 @@ from django_countries.fields import CountryField
 
 
 # --- Utility function to set default deadline one year from now ---
-def default_deadline():
-   return timezone.now().date() + timedelta(days=365)
+def default_deadline(daysDelta=365):
+   return timezone.now().date() + timedelta(days=daysDelta)
 
 
 # --- User Profile ---
@@ -42,7 +42,7 @@ class Promotion(models.Model):
        help_text="Product category associated with this promotion."
    )
    percentage = models.PositiveSmallIntegerField(help_text="Discount percentage (1–100)")
-   deadline = models.DateField(default=default_deadline, help_text="Promotion expiration date")
+   deadline = models.DateField(default=default_deadline(30), help_text="Promotion expiration date")
    active = models.BooleanField(default=False, help_text="Is the promotion currently active?")
    validity = models.BooleanField(default=True, help_text="Is the promotion still valid?")
 
@@ -67,53 +67,13 @@ class Promotion(models.Model):
        self.save(update_fields=["validity"])
 
 
-# --- Voucher ---
-class Voucher(models.Model):
-   """Represents a monetary discount voucher."""
-   value = models.DecimalField(max_digits=6, decimal_places=2, default=0,
-                               help_text="Value of the voucher in euros")
-   minimum_purchase = models.DecimalField(max_digits=6, decimal_places=2, default=0,
-                                          help_text="Minimum purchase to apply voucher")
-   deadline = models.DateField(default=default_deadline, help_text="Voucher expiration date")
-   active = models.BooleanField(default=False, help_text="Is the voucher active?")
-   validity = models.BooleanField(default=True, help_text="Is the voucher still valid?")
-
-
-   def save(self, *args, **kwargs):
-       """Automatically set minimum purchase if not provided."""
-       if not self.minimum_purchase:
-           self.minimum_purchase = self.value + 5
-       super().save(*args, **kwargs)
-
-
-   def use_voucher(self):
-       """Mark voucher as used/invalid."""
-       self.validity = False
-       self.save(update_fields=["validity"])
-
-
-   def check_validity(self):
-       """Check if voucher has expired."""
-       if timezone.now().date() > self.deadline:
-           self.validity = False
-           self.save(update_fields=["validity"])
-       return self.validity
-
-
-   def __str__(self):
-       status = "Active" if self.active else "Inactive"
-       valid_text = "Valid" if self.validity else "Expired"
-       return f"Voucher €{self.value} (Min purchase: €{self.minimum_purchase}) - {status}, {valid_text}"
-
-
 # --- Subscription ---
 class Subscription(models.Model):
-   """Tracks user points, promotions, vouchers, and wallet balance."""
+   """Tracks user points, promotions, and wallet balance."""
    user = models.OneToOneField(User, on_delete=models.CASCADE)
    number = models.CharField(max_length=12, unique=True, default=get_random_string)
    points = models.PositiveIntegerField(default=0)  # 1€ spent = 1 point
    promotions = models.ManyToManyField(Promotion, blank=True)
-   vouchers = models.ManyToManyField(Voucher, blank=True)
    wallet = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
 
 
@@ -140,15 +100,20 @@ class Subscription(models.Model):
 
 
    def redeem_points(self, points_to_redeem):
-       """Convert points to wallet dollars based on membership level (points are not reduced)."""
+       """Convert points to wallet dollars based on membership level."""
        if points_to_redeem <= 0:
            return 0
        _, _, dollars_per_100 = self.get_membership_level()
-       redeemable_blocks = points_to_redeem // 100
-       redeemed_dollars = redeemable_blocks * dollars_per_100
+      
+       # Redeem proportionally
+       redeemed_dollars = (points_to_redeem / 100) * dollars_per_100
+       redeemed_dollars = round(redeemed_dollars, 2)  # round to 2 decimals
+      
        self.wallet += redeemed_dollars
        self.save(update_fields=["wallet"])
        return redeemed_dollars
+
+
 
 
    # --- Promotions ---
@@ -159,12 +124,12 @@ class Subscription(models.Model):
        if not all_categories.exists():
            return None
        random_category = random.choice(list(all_categories))
-       deadline = timezone.now().date() + timedelta(days=365)
+       deadline = timezone.now().date() + timedelta(days=30)
        promotion = Promotion.objects.create(
            category=random_category,
            percentage=base_discount * 2,  # discount increases with level
            deadline=deadline,
-           active=True,
+           active=False,
        )
        self.promotions.add(promotion)
        self.save()
@@ -187,6 +152,3 @@ def create_or_update_user_related(sender, instance, created, **kwargs):
            instance.subscription.save()
        else:
            Subscription.objects.create(user=instance)
-
-
-

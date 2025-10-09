@@ -68,6 +68,8 @@ def fitness_class_detail(request, class_id):
    # Check for booking success in GET params and add message
    if request.GET.get('booking') == 'success':
        messages.success(request, "Your booking and payment were successful! 🎉")
+       if 'bag' in request.session:
+           del request.session['bag']
 
    context = {
        'class_obj': class_obj,
@@ -91,6 +93,8 @@ def book_fitness_class(request, class_id):
        if 'bag' in request.session:
            del request.session['bag']
        messages.info(request, "You’ve already booked this class.")
+       if 'bag' in request.session:
+           del request.session['bag']
        return redirect('fitness_class_detail', class_id=class_id)
 
    stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -130,11 +134,15 @@ def my_bookings(request):
             class_obj = FitnessClass.objects.get(id=class_id)
             if Booking.objects.filter(user=request.user, fitness_class=class_obj).exists():
                 messages.success(request, f'You have successfully booked "{class_obj.title}"! 🎉')
+                if 'bag' in request.session:
+                    del request.session['bag']
             else:
                 messages.warning(
                     request,
                     f'Payment received for "{class_obj.title}", but booking not yet confirmed. Please refresh after a few seconds.'
                 )
+                if 'bag' in request.session:
+                    del request.session['bag']
         except FitnessClass.DoesNotExist:
             pass
 
@@ -147,6 +155,8 @@ def cancel_booking(request, booking_id):
    if request.method == 'POST':
        booking.delete()
        messages.success(request, "Booking cancelled successfully.")
+       if 'bag' in request.session:
+           del request.session['bag']
    return redirect('fitness_class_list')
 
 

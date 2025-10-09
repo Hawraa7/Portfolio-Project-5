@@ -59,43 +59,25 @@ Your Profile - Zouzou's Fitness
                {% comment %}Valid Promotions{% endcomment %}
                {% if valid_promotions %}
                    <h6 class="mt-3">Valid Promotions:</h6>
-                   <ul class="list-group">
-                       {% for promo in valid_promotions %}
-                           <li class="list-group-item d-flex justify-content-between align-items-center">
-                               {{ promo.category.name }} Discount - {{ promo.percentage }}%
-                               <div>
-                                   {% if promo.active %}
-                                       <button class="btn btn-sm btn-outline-danger toggle-promo" data-promo-id="{{ promo.id }}">Deactivate</button>
-                                   {% else %}
-                                       <button class="btn btn-sm btn-outline-success toggle-promo" data-promo-id="{{ promo.id }}">Activate</button>
-                                   {% endif %}
-                               </div>
-                           </li>
-                       {% endfor %}
-                   </ul>
+                   <div class="promotions-container border rounded p-2 mb-3" style="max-height: 250px; overflow-y: auto;">
+                       <ul class="list-group mb-0">
+                           {% for promo in valid_promotions %}
+                               <li class="list-group-item d-flex justify-content-between align-items-center">
+                                   {{ promo.category.name }} Discount - {{ promo.percentage }}%
+                                   <small class="text-muted">(Valid until {{ promo.deadline }})</small>
+                                   <div>
+                                       {% if promo.active %}
+                                           <button class="btn btn-sm btn-outline-danger toggle-promo" data-promo-id="{{ promo.id }}">Deactivate</button>
+                                       {% else %}
+                                           <button class="btn btn-sm btn-outline-success toggle-promo" data-promo-id="{{ promo.id }}">Activate</button>
+                                       {% endif %}
+                                   </div>
+                               </li>
+                           {% endfor %}
+                       </ul>
+                   </div>
                {% else %}
                    <p class="text-muted">No valid promotions at this moment.</p>
-               {% endif %}
-      
-               {% comment %}Valid Vouchers{% endcomment %}
-               {% if valid_vouchers %}
-                   <h6 class="mt-3">Valid Vouchers:</h6>
-                   <ul class="list-group">
-                       {% for voucher in valid_vouchers %}
-                           <li class="list-group-item d-flex justify-content-between align-items-center">
-                               Voucher €{{ voucher.value }} (Min: €{{ voucher.minimum_purchase }})
-                               <div>
-                                   {% if voucher.active %}
-                                       <button class="btn btn-sm btn-outline-danger toggle-voucher" data-voucher-id="{{ voucher.id }}">Deactivate</button>
-                                   {% else %}
-                                       <button class="btn btn-sm btn-outline-success toggle-voucher" data-voucher-id="{{ voucher.id }}">Activate</button>
-                                   {% endif %}
-                               </div>
-                           </li>
-                       {% endfor %}
-                   </ul>
-               {% else %}
-                   <p class="text-muted">No valid vouchers at this moment.</p>
                {% endif %}
            {% else %}
                <p class="text-muted">No subscription found for this user.</p>
@@ -285,22 +267,6 @@ document.addEventListener("DOMContentLoaded", function() {
                    "Content-Type": "application/json"
                },
                body: JSON.stringify({ promo_id: promoId })
-           }).then(() => location.reload());
-       });
-   });
-
-
-   // Toggle voucher
-   document.querySelectorAll(".toggle-voucher").forEach(button => {
-       button.addEventListener("click", function() {
-           const voucherId = this.dataset.voucherId;
-           fetch("{% url 'toggle_voucher' %}", {
-               method: "POST",
-               headers: {
-                   "X-CSRFToken": csrfToken,
-                   "Content-Type": "application/json"
-               },
-               body: JSON.stringify({ voucher_id: voucherId })
            }).then(() => location.reload());
        });
    });
