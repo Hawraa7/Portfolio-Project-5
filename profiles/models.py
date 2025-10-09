@@ -27,7 +27,6 @@ class UserProfile(models.Model):
    default_postcode = models.CharField(max_length=20, null=True, blank=True)
    default_country = CountryField(blank_label='Country', null=True, blank=True)
 
-
    def __str__(self):
        return self.user.username
 
@@ -46,12 +45,10 @@ class Promotion(models.Model):
    active = models.BooleanField(default=False, help_text="Is the promotion currently active?")
    validity = models.BooleanField(default=True, help_text="Is the promotion still valid?")
 
-
    def __str__(self):
        status = "Active" if self.active else "Inactive"
        valid_text = "Valid" if self.validity else "Expired"
        return f"{self.category.name} - {self.percentage}% ({status}, {valid_text}) until {self.deadline}"
-
 
    def check_validity(self):
        """Update validity if the deadline has passed."""
@@ -59,7 +56,6 @@ class Promotion(models.Model):
            self.validity = False
            self.save(update_fields=["validity"])
        return self.validity
-
 
    def use_promotion(self):
        """Mark promotion as used/invalid."""
@@ -76,7 +72,6 @@ class Subscription(models.Model):
    promotions = models.ManyToManyField(Promotion, blank=True)
    wallet = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
 
-
    # --- Membership Levels ---
    def get_membership_level(self):
        """Return membership name, stars, and conversion rate from points to wallet dollars."""
@@ -91,30 +86,25 @@ class Subscription(models.Model):
        else:
            return "Ultra", 5, 5
 
-
    # --- Points management ---
    def add_points(self, amount_spent):
        """Add points based on euros spent."""
        self.points += int(amount_spent)
        self.save()
 
-
    def redeem_points(self, points_to_redeem):
        """Convert points to wallet dollars based on membership level."""
        if points_to_redeem <= 0:
            return 0
        _, _, dollars_per_100 = self.get_membership_level()
-      
+
        # Redeem proportionally
        redeemed_dollars = (points_to_redeem / 100) * dollars_per_100
        redeemed_dollars = round(redeemed_dollars, 2)  # round to 2 decimals
-      
+
        self.wallet += redeemed_dollars
        self.save(update_fields=["wallet"])
        return redeemed_dollars
-
-
-
 
    # --- Promotions ---
    def get_random_promotion(self):
@@ -134,7 +124,6 @@ class Subscription(models.Model):
        self.promotions.add(promotion)
        self.save()
        return promotion
-
 
    def __str__(self):
        return f"Subscription {self.number} for {self.user.username}"

@@ -9,14 +9,11 @@ from checkout.models import Order
 from profiles.models import Subscription, Promotion
 
 
-
-
 @login_required
 def profile(request):
    """ Display the user's profile. """
    profile = get_object_or_404(UserProfile, user=request.user)
    subscription = getattr(request.user, 'subscription', None)
-
 
    if request.method == 'POST':
        form = UserProfileForm(request.POST, instance=profile)
@@ -27,11 +24,10 @@ def profile(request):
            messages.error(request, 'Update failed. Please ensure the form is valid.')
    else:
        form = UserProfileForm(instance=profile)
-  
+
    # Get filtered promotions
    valid_promotions = subscription.promotions.filter(validity=True) if subscription else []
    orders = profile.orders.all()
-
 
    template = 'profiles/profile.html'
    context = {
@@ -42,10 +38,7 @@ def profile(request):
        'valid_promotions': valid_promotions,
    }
 
-
    return render(request, template, context)
-
-
 
 
 @login_required
@@ -60,7 +53,6 @@ def toggle_promotion(request):
        subscription = get_object_or_404(Subscription, user=request.user)
        promo = get_object_or_404(Promotion, id=promo_id, validity=True)
 
-
        if promo.active:
            # Deactivate promotion
            promo.active = False
@@ -74,21 +66,16 @@ def toggle_promotion(request):
            promo.save()
            return JsonResponse({"status": "activated"})
 
-
    return JsonResponse({"error": "Invalid request"}, status=400)
-
-
 
 
 def order_history(request, order_number):
    order = get_object_or_404(Order, order_number=order_number)
 
-
    messages.info(request, (
        f'This is a past confirmation for order number {order_number}. '
        'A confirmation email was sent on the order date.'
    ))
-
 
    template = 'checkout/checkout_success.html'
    context = {
@@ -96,6 +83,4 @@ def order_history(request, order_number):
        'from_profile': True,
    }
 
-
    return render(request, template, context)
-

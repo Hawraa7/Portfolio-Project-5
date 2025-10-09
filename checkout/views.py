@@ -164,7 +164,6 @@ def checkout(request):
                        product_size=li["size"],
                    )
 
-
                request.session["recent_order_number"] = order.order_number
                request.session["promotion_ids_used"] = [p["promo"].id for p in promotion_breakdown]
                request.session["wallet_used"] = float(wallet_used)
