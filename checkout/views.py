@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse
-from django.shortcuts get_object_or_404, HttpResponse
+from django.shortcuts import get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
