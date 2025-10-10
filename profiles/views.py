@@ -8,12 +8,45 @@ from django.http import JsonResponse
 from checkout.models import Order
 from profiles.models import Subscription, Promotion
 
+def delete_duplicate_orders():
+    """
+    Detect and remove duplicate orders created within the same minute
+    for the same user (or same email for guest checkouts).
+    Keeps the one with the lower grand_total.
+    """
+    orders = Order.objects.all().order_by('email', 'date')
+    duplicates_found = 0
+    deleted_count = 0
 
+    for user_email in orders.values_list('email', flat=True).distinct():
+        user_orders = Order.objects.filter(email=user_email).order_by('date')
+
+        for i in range(len(user_orders) - 1):
+            current_order = user_orders[i]
+            next_order = user_orders[i + 1]
+
+            # Compare if they are within the same minute
+            if abs((next_order.date - current_order.date).total_seconds()) < 60:
+                duplicates_found += 1
+
+                # Decide which one to delete (delete the one with higher grand_total)
+                if next_order.grand_total > current_order.grand_total:
+                    next_order.delete()
+                    deleted_count += 1
+                    print(f"Deleted duplicate order {next_order.order_number} "
+                          f"(higher price: {next_order.grand_total})")
+                else:
+                    current_order.delete()
+                    deleted_count += 1
+                    print(f"Deleted duplicate order {current_order.order_number} "
+                          f"(higher price: {current_order.grand_total})")
+                    
 @login_required
 def profile(request):
    """ Display the user's profile. """
    profile = get_object_or_404(UserProfile, user=request.user)
    subscription = getattr(request.user, 'subscription', None)
+   delete_duplicate_orders()
 
    if request.method == 'POST':
        form = UserProfileForm(request.POST, instance=profile)
