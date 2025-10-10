@@ -269,18 +269,17 @@ def checkout_success(request, order_number):
 
    # --- Grant new promotion (if any) ---
    new_promo = subscription.get_random_promotion()
+   delete_duplicate_orders()
    if new_promo:
        messages.success(
            request,
            f"🎁 New promotion unlocked: {new_promo.percentage}% off {new_promo.category.name}!"
        )
 
-    delete_duplicate_orders()
-
-
    messages.success(request, f"✅ Order {order_number} completed successfully.")
    messages.info(request, f"💰 Wallet balance: €{subscription.wallet}")
    messages.info(request, f"⭐ Current points: {subscription.points}")
+
 
    # --- Cleanup session ---
    for key in ("bag", "recent_order_number", "promotion_ids_used", "wallet_used"):
