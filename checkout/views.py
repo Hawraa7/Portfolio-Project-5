@@ -141,12 +141,11 @@ def checkout(request):
 
    # --- Handle POST ---
    if request.method == "POST":
-        existing_order = Order.objects.filter(stripe_pid=intent.id).first()
-        if existing_order:
-            return redirect(reverse("checkout_success", args=[existing_order.order_number]))
-        
-        order_form = OrderForm(request.POST)
-        if order_form.is_valid():
+       existing_order = Order.objects.filter(stripe_pid=intent.id).first()
+       if existing_order:
+           return redirect(reverse("checkout_success", args=[existing_order.order_number]))
+       order_form = OrderForm(request.POST)
+       if order_form.is_valid():
            with transaction.atomic():
                order = order_form.save(commit=False)
                order.original_bag = json.dumps(bag)
