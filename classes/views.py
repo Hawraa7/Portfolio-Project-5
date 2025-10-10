@@ -146,7 +146,7 @@ def my_bookings(request):
                     del request.session['bag']
         except FitnessClass.DoesNotExist:
             pass
-    messages.success(request, f'You have successfully booked "{class_obj.title}"! 🎉')
+    messages.success(request, 'You have successfully booked the class! 🎉')
     if 'bag' in request.session:
         del request.session['bag']
     time.sleep(1)
