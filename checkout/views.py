@@ -43,8 +43,6 @@ def _to_decimal(value):
    return Decimal(value).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 
 
-
-
 def checkout(request):
    """Handles checkout: apply promotions, compute totals, create order and payment intent."""
    stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -143,8 +141,13 @@ def checkout(request):
 
    # --- Handle POST ---
    if request.method == "POST":
+            # Only create an order if this Stripe PaymentIntent hasn't been used yet
+        existing_order = Order.objects.filter(stripe_pid=intent.id).first()
+        if existing_order:
+            return redirect(reverse("checkout_success", args=[existing_order.order_number]))
+        
        order_form = OrderForm(request.POST)
-       if order_form.is_valid():
+        if order_form.is_valid():
            with transaction.atomic():
                order = order_form.save(commit=False)
                order.original_bag = json.dumps(bag)
@@ -257,6 +260,3 @@ def checkout_success(request, order_number):
        "subscription": subscription,
        "new_promo": new_promo,
    })
-
-
-
