@@ -12,6 +12,7 @@ from django.conf import settings
 from django.utils import timezone
 import datetime
 import json
+import time
 
 
 @staff_member_required
@@ -147,7 +148,7 @@ def my_bookings(request):
             messages.success(request, f'You have successfully booked "{class_obj.title}"! 🎉')
             if 'bag' in request.session:
                 del request.session['bag']
-
+    time.sleep(1)
     return render(request, 'classes/my_bookings.html', {'bookings': bookings})
 
 
