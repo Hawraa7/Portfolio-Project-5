@@ -15,11 +15,11 @@ import json
 from decimal import Decimal, ROUND_HALF_UP
 from django.db import transaction
 from django.utils import timezone
-
-
 import stripe
 import json
 import random
+from django.db.models import F
+from datetime import timedelta
 
 
 @require_POST
@@ -42,6 +42,39 @@ def cache_checkout_data(request):
 def _to_decimal(value):
    return Decimal(value).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 
+
+def delete_duplicate_orders():
+    """
+    Detect and remove duplicate orders created within the same minute
+    for the same user (or same email for guest checkouts).
+    Keeps the one with the lower grand_total.
+    """
+    orders = Order.objects.all().order_by('email', 'date')
+    duplicates_found = 0
+    deleted_count = 0
+
+    for user_email in orders.values_list('email', flat=True).distinct():
+        user_orders = Order.objects.filter(email=user_email).order_by('date')
+
+        for i in range(len(user_orders) - 1):
+            current_order = user_orders[i]
+            next_order = user_orders[i + 1]
+
+            # Compare if they are within the same minute
+            if abs((next_order.date - current_order.date).total_seconds()) < 60:
+                duplicates_found += 1
+
+                # Decide which one to delete (delete the one with higher grand_total)
+                if next_order.grand_total > current_order.grand_total:
+                    next_order.delete()
+                    deleted_count += 1
+                    print(f"Deleted duplicate order {next_order.order_number} "
+                          f"(higher price: {next_order.grand_total})")
+                else:
+                    current_order.delete()
+                    deleted_count += 1
+                    print(f"Deleted duplicate order {current_order.order_number} "
+                          f"(higher price: {current_order.grand_total})")
 
 def checkout(request):
    """Handles checkout: apply promotions, compute totals, create order and payment intent."""
@@ -242,11 +275,12 @@ def checkout_success(request, order_number):
            f"🎁 New promotion unlocked: {new_promo.percentage}% off {new_promo.category.name}!"
        )
 
+    delete_duplicate_orders()
+
 
    messages.success(request, f"✅ Order {order_number} completed successfully.")
    messages.info(request, f"💰 Wallet balance: €{subscription.wallet}")
    messages.info(request, f"⭐ Current points: {subscription.points}")
-
 
    # --- Cleanup session ---
    for key in ("bag", "recent_order_number", "promotion_ids_used", "wallet_used"):
