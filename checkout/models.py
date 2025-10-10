@@ -59,6 +59,10 @@ class Order(models.Model):
 
 
        # Grand total now accounts for loyalty discount
+       self.loyalty_discount = Decimal(str(self.loyalty_discount or 0))
+       self.order_total = Decimal(str(self.order_total or 0))
+       self.delivery_cost = Decimal(str(self.delivery_cost or 0))
+
        self.grand_total = self.order_total - self.loyalty_discount + self.delivery_cost
        if self.grand_total < 0:
            self.grand_total = 0
