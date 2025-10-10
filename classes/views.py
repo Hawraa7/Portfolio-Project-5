@@ -144,7 +144,9 @@ def my_bookings(request):
                 if 'bag' in request.session:
                     del request.session['bag']
         except FitnessClass.DoesNotExist:
-            pass
+            messages.success(request, f'You have successfully booked "{class_obj.title}"! 🎉')
+            if 'bag' in request.session:
+                del request.session['bag']
 
     return render(request, 'classes/my_bookings.html', {'bookings': bookings})
 
