@@ -120,7 +120,6 @@ def book_fitness_class(request, class_id):
        'stripe_public_key': settings.STRIPE_PUBLIC_KEY,
        'client_secret': intent.client_secret,
    }
-
    return render(request, 'classes/book_class.html', context)
 
 
@@ -146,9 +145,6 @@ def my_bookings(request):
                     del request.session['bag']
         except FitnessClass.DoesNotExist:
             pass
-    messages.success(request, 'You have successfully booked the class! 🎉')
-    if 'bag' in request.session:
-        del request.session['bag']
     time.sleep(1)
     return render(request, 'classes/my_bookings.html', {'bookings': bookings})
 
@@ -224,29 +220,6 @@ def stripe_webhook(request):
         except Exception as e:
             print("Webhook error:", e)
 
-    return HttpResponse(status=200)
-
-
-@csrf_exempt
-def stripe_webhook2(request):
-    payload = request.body
-    sig_header = request.META.get('HTTP_STRIPE_SIGNATURE')
-    print("Received webhook")
-    print("Signature:", sig_header)
-    print("Payload:", payload[:200])  # first 200 bytes
-
-    try:
-        event = stripe.Webhook.construct_event(
-            payload, sig_header, settings.STRIPE_WH_SECRET
-        )
-    except ValueError:
-        print("Invalid payload")
-        return HttpResponse(status=400)
-    except stripe.error.SignatureVerificationError:
-        print("Invalid signature")
-        return HttpResponse(status=400)
-
-    print("Webhook verified:", event['type'])
     return HttpResponse(status=200)
 
 
